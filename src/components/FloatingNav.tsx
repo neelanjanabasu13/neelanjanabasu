@@ -58,8 +58,8 @@ export const FloatingNav = () => {
         <div
           className={`flex items-center gap-1 px-2 py-2 rounded-full transition-all duration-300 ${
             isScrolled
-              ? "bg-card/95 backdrop-blur-lg shadow-lg border border-border/50"
-              : "bg-primary-foreground/10 backdrop-blur-sm"
+              ? "bg-white shadow-xl border border-border"
+              : "bg-white/20 backdrop-blur-sm"
           }`}
         >
           {navItems.map((item) => {
@@ -70,22 +70,21 @@ export const FloatingNav = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
                   isActive
                     ? isScrolled
                       ? "text-primary"
-                      : "text-accent"
+                      : "text-white"
                     : isScrolled
                     ? "text-muted-foreground hover:text-foreground"
-                    : "text-primary-foreground/80 hover:text-primary-foreground"
+                    : "text-white/80 hover:text-white"
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activeSection"
-                    className={`absolute inset-0 rounded-full ${
-                      isScrolled ? "bg-primary/10" : "bg-primary-foreground/20"
-                    }`}
+                    className="absolute inset-0 rounded-full"
+                    style={{ background: isScrolled ? 'hsl(330 85% 60% / 0.15)' : 'rgba(255,255,255,0.25)' }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
@@ -103,7 +102,7 @@ export const FloatingNav = () => {
         animate={{ scale: 1 }}
         transition={{ delay: 0.5 }}
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="fixed top-4 right-4 z-50 md:hidden w-12 h-12 rounded-full bg-card shadow-lg border border-border flex items-center justify-center"
+        className="fixed top-4 right-4 z-50 md:hidden w-12 h-12 rounded-full bg-white shadow-xl border border-border flex items-center justify-center"
       >
         {isMobileMenuOpen ? (
           <X className="w-5 h-5 text-foreground" />
@@ -118,7 +117,7 @@ export const FloatingNav = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-20 right-4 z-50 md:hidden bg-card rounded-2xl shadow-xl border border-border overflow-hidden"
+            className="fixed top-20 right-4 z-50 md:hidden bg-white rounded-2xl shadow-xl border border-border overflow-hidden"
           >
             <div className="p-2">
               {navItems.map((item, index) => {
@@ -132,14 +131,14 @@ export const FloatingNav = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-left transition-colors ${
+                    className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-left transition-colors font-semibold ${
                       isActive
                         ? "bg-primary/10 text-primary"
-                        : "text-muted-foreground hover:bg-muted"
+                        : "text-muted-foreground hover:bg-secondary"
                     }`}
                   >
                     <Icon className="w-5 h-5" />
-                    <span className="font-medium">{item.label}</span>
+                    <span>{item.label}</span>
                   </motion.button>
                 );
               })}

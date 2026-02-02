@@ -52,7 +52,7 @@ export const PortfolioSection = () => {
   );
 
   return (
-    <section id="portfolio" className="py-24 bg-secondary/30">
+    <section id="portfolio" className="py-24 bg-secondary/50">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -61,13 +61,13 @@ export const PortfolioSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display text-foreground mb-4">
-            <span className="italic text-primary">Portfolio</span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-4">
+            <span className="gradient-text">Portfolio</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Key products and features I've built and scaled
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-accent to-amber-glow mx-auto mt-6 rounded-full" />
+          <div className="w-20 h-1.5 mx-auto mt-6 rounded-full" style={{ background: 'var(--gradient-accent)' }} />
         </motion.div>
 
         {/* Coming Soon Banner for Vibe Coded Products */}
@@ -75,11 +75,13 @@ export const PortfolioSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 p-6 rounded-2xl bg-gradient-to-r from-primary/10 to-teal-light/10 border border-primary/20 flex items-center justify-center gap-4"
+          className="mb-12 p-6 rounded-2xl bg-white shadow-lg border border-border flex items-center justify-center gap-4"
         >
-          <Rocket className="w-6 h-6 text-primary animate-float" />
-          <p className="text-foreground font-medium">
-            <span className="text-primary">Vibe Coded Products</span> section coming soon!
+          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'var(--gradient-accent)' }}>
+            <Rocket className="w-5 h-5 text-white" />
+          </div>
+          <p className="text-foreground font-bold">
+            <span className="gradient-text">Vibe Coded Products</span> section coming soon!
           </p>
         </motion.div>
 
@@ -94,22 +96,22 @@ export const PortfolioSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -8 }}
               onClick={() => setSelectedItem(item)}
-              className="card-interactive bg-card rounded-2xl border border-border overflow-hidden cursor-pointer group"
+              className="bg-white rounded-2xl border border-border overflow-hidden cursor-pointer group shadow-lg hover:shadow-xl transition-all"
             >
               {/* Image placeholder */}
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-teal-light/20 flex items-center justify-center relative overflow-hidden">
+              <div className="aspect-video flex items-center justify-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(180 70% 90%), hsl(280 60% 90%))' }}>
                 <FolderOpen className="w-12 h-12 text-primary/40 group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                  <span className="text-xs font-bold text-primary uppercase tracking-wider">
                     {item.category}
                   </span>
-                  <span className="text-xs font-display italic text-accent">{item.impact}</span>
+                  <span className="text-xs font-bold gradient-text">{item.impact}</span>
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground text-sm line-clamp-2">
@@ -119,7 +121,7 @@ export const PortfolioSection = () => {
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 text-xs rounded-full bg-muted text-muted-foreground"
+                      className="px-3 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-semibold"
                     >
                       {tag}
                     </span>
@@ -145,27 +147,27 @@ export const PortfolioSection = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-card rounded-2xl border border-border max-w-2xl w-full max-h-[90vh] overflow-auto"
+                className="bg-white rounded-2xl border border-border max-w-2xl w-full max-h-[90vh] overflow-auto shadow-2xl"
               >
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-teal-light/20 flex items-center justify-center relative">
+                <div className="aspect-video flex items-center justify-center relative" style={{ background: 'linear-gradient(135deg, hsl(180 70% 90%), hsl(280 60% 90%))' }}>
                   <FolderOpen className="w-16 h-16 text-primary/40" />
                   <button
                     onClick={() => setSelectedItem(null)}
-                    className="absolute top-4 right-4 w-10 h-10 rounded-full bg-card/90 backdrop-blur-sm flex items-center justify-center hover:bg-card transition-colors"
+                    className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:shadow-xl transition-all"
                   >
                     <X className="w-5 h-5 text-foreground" />
                   </button>
                 </div>
                 <div className="p-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+                    <span className="text-sm font-bold text-primary uppercase tracking-wider">
                       {selectedItem.category}
                     </span>
-                    <span className="text-sm font-display italic text-accent">
+                    <span className="text-sm font-bold gradient-text">
                       {selectedItem.impact}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-display text-foreground mb-4">
+                  <h3 className="text-2xl font-extrabold text-foreground mb-4">
                     {selectedItem.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed mb-6">
@@ -175,7 +177,7 @@ export const PortfolioSection = () => {
                     {selectedItem.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 text-sm rounded-full bg-muted text-muted-foreground"
+                        className="px-4 py-2 text-sm rounded-full bg-secondary text-muted-foreground font-semibold"
                       >
                         {tag}
                       </span>
