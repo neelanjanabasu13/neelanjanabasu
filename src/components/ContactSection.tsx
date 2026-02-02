@@ -37,8 +37,9 @@ export const ContactSection = () => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/2 -left-1/4 w-[600px] h-[600px] rounded-full bg-teal-light/10 blur-3xl"
+          className="absolute -top-1/2 -left-1/4 w-[600px] h-[600px] rounded-full bg-coral-warm/15 blur-3xl"
         />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-amber-glow/10 blur-3xl" />
       </div>
 
       <div className="section-container relative z-10">
@@ -49,14 +50,14 @@ export const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold text-primary-foreground mb-4">
-            Let's Connect
+          <h2 className="text-4xl sm:text-5xl font-display text-primary-foreground mb-4">
+            Let's <span className="italic text-coral-warm">Connect</span>
           </h2>
           <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
             I'm always open to discussing product leadership, new opportunities, or
             interesting projects
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-coral-warm to-amber-glow mx-auto mt-6 rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent to-amber-glow mx-auto mt-6 rounded-full" />
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -85,7 +86,7 @@ export const ContactSection = () => {
                 }`}
               >
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-coral-warm to-amber-glow flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-amber-glow flex items-center justify-center">
                     <Icon className="w-6 h-6 text-accent-foreground" />
                   </div>
                   {link.href && (

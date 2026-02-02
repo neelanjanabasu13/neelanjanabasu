@@ -13,13 +13,13 @@ export const EducationSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold text-foreground mb-4">
-            Education
+          <h2 className="text-4xl sm:text-5xl font-display text-foreground mb-4">
+            <span className="italic text-primary">Education</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Academic foundation for a product-driven career
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-coral-warm to-amber-glow mx-auto mt-6 rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent to-amber-glow mx-auto mt-6 rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">

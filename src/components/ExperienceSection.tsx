@@ -16,13 +16,13 @@ export const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold text-foreground mb-4">
-            Work Experience
+          <h2 className="text-4xl sm:text-5xl font-display text-foreground mb-4">
+            Work <span className="italic text-primary">Experience</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A decade of building and scaling products that impact millions
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-coral-warm to-amber-glow mx-auto mt-6 rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent to-amber-glow mx-auto mt-6 rounded-full" />
         </motion.div>
 
         <div className="relative">
@@ -116,11 +116,11 @@ export const ExperienceSection = () => {
                                 transition={{ delay: achIndex * 0.1 }}
                                 className="flex items-start gap-4 p-4 rounded-xl bg-muted/50 hover:bg-muted transition-colors"
                               >
-                                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-coral-warm to-amber-glow flex items-center justify-center">
+                                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-amber-glow flex items-center justify-center">
                                   <TrendingUp className="w-5 h-5 text-accent-foreground" />
                                 </div>
                                 <div>
-                                  <span className="text-2xl font-bold text-gradient">
+                                  <span className="text-2xl font-display italic text-primary">
                                     {achievement.metric}
                                   </span>
                                   <p className="text-muted-foreground text-sm mt-1">

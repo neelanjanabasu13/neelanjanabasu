@@ -52,7 +52,7 @@ export const PortfolioSection = () => {
   );
 
   return (
-    <section id="portfolio" className="py-24 bg-muted/30">
+    <section id="portfolio" className="py-24 bg-secondary/30">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -61,13 +61,13 @@ export const PortfolioSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold text-foreground mb-4">
-            Portfolio
+          <h2 className="text-4xl sm:text-5xl font-display text-foreground mb-4">
+            <span className="italic text-primary">Portfolio</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Key products and features I've built and scaled
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-coral-warm to-amber-glow mx-auto mt-6 rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent to-amber-glow mx-auto mt-6 rounded-full" />
         </motion.div>
 
         {/* Coming Soon Banner for Vibe Coded Products */}
@@ -107,7 +107,7 @@ export const PortfolioSection = () => {
                   <span className="text-xs font-semibold text-primary uppercase tracking-wider">
                     {item.category}
                   </span>
-                  <span className="text-xs font-bold text-gradient">{item.impact}</span>
+                  <span className="text-xs font-display italic text-accent">{item.impact}</span>
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {item.title}
@@ -161,11 +161,11 @@ export const PortfolioSection = () => {
                     <span className="text-sm font-semibold text-primary uppercase tracking-wider">
                       {selectedItem.category}
                     </span>
-                    <span className="text-sm font-bold text-gradient">
+                    <span className="text-sm font-display italic text-accent">
                       {selectedItem.impact}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-foreground mb-4">
+                  <h3 className="text-2xl font-display text-foreground mb-4">
                     {selectedItem.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed mb-6">

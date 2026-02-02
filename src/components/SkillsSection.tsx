@@ -52,7 +52,7 @@ const SkillBar = ({
 
 export const SkillsSection = () => {
   return (
-    <section id="skills" className="py-24 bg-muted/30">
+    <section id="skills" className="py-24 bg-secondary/30">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -61,13 +61,13 @@ export const SkillsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-display font-bold text-foreground mb-4">
-            Skills & Expertise
+          <h2 className="text-4xl sm:text-5xl font-display text-foreground mb-4">
+            Skills & <span className="italic text-primary">Expertise</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Core competencies honed through years of product leadership
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-coral-warm to-amber-glow mx-auto mt-6 rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent to-amber-glow mx-auto mt-6 rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
