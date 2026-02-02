@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['DM Sans', 'sans-serif'],
-        display: ['Playfair Display', 'serif'],
+        sans: ['Nunito', 'sans-serif'],
+        display: ['Pacifico', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
