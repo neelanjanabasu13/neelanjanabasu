@@ -30,124 +30,138 @@ export const HeroSection = () => {
 
       <div className="relative z-10 section-container flex flex-col justify-center min-h-screen py-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Location badge - pill style */}
+          {/* Location badge - pill style with dot indicator */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white shadow-lg text-muted-foreground text-sm font-semibold mb-8"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 text-muted-foreground text-sm font-medium mb-8"
           >
-            <MapPin className="w-4 h-4 text-primary" />
-            {resumeData.personal.location}
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            {resumeData.personal.title}
           </motion.div>
 
-          {/* Main heading with gradient text */}
+          {/* Main heading with italic serif styling */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-foreground mb-4 leading-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl font-medium text-foreground mb-6 leading-tight font-serif"
           >
-            Hi, I'm{" "}
-            <span className="gradient-text">{resumeData.personal.name.split(" ")[0]}</span>
+            {resumeData.personal.name.split(" ")[0]}{" "}
+            <span className="italic">{resumeData.personal.name.split(" ").slice(1).join(" ")}</span>
           </motion.h1>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground/80 mb-6"
-          >
-            {resumeData.personal.name.split(" ").slice(1).join(" ")}
-          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl sm:text-2xl gradient-text font-bold mb-6"
-          >
-            {resumeData.personal.title}
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
           >
             {resumeData.personal.summary}
           </motion.p>
 
-          {/* CTA Buttons - gradient style */}
+          {/* Quote card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl px-8 py-6 max-w-2xl mx-auto mb-10"
+          >
+            <p className="text-foreground/80 font-serif italic text-lg">
+              "Turning complex challenges into elegant product solutions — with{" "}
+              <span className="bg-amber-100/80 px-1 rounded">data-driven insights</span> and user-first thinking."
+            </p>
+          </motion.div>
+
+          {/* CTA Buttons - filled + outline style */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-4 mb-16"
+            className="flex flex-wrap justify-center gap-4 mb-12"
           >
+            <a
+              href="#experience"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-all duration-300"
+            >
+              Start Exploring
+              <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
+            </a>
+
             <a
               href="/Neelanjana_Basu.pdf"
               download
-              className="btn-accent inline-flex items-center gap-2 px-8 py-4 text-lg transition-transform duration-300"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-border bg-card/50 text-foreground font-medium hover:bg-card transition-all duration-300"
             >
-              <Download className="w-5 h-5" />
+              <Download className="w-4 h-4" />
               Download Resume
             </a>
+          </motion.div>
+
+          {/* Social links row */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.65 }}
+            className="flex justify-center gap-4 mb-16"
+          >
 
             <a
               href={resumeData.personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white shadow-lg text-foreground font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg"
+              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
             >
-              <Linkedin className="w-5 h-5 text-primary" />
-              LinkedIn
+              <Linkedin className="w-4 h-4" />
             </a>
-
             <a
               href={`mailto:${resumeData.personal.email}`}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white shadow-lg text-foreground font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg"
+              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
             >
-              <Mail className="w-5 h-5 text-primary" />
-              Get in Touch
+              <Mail className="w-4 h-4" />
             </a>
+            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <MapPin className="w-3.5 h-3.5" />
+              {resumeData.personal.location}
+            </span>
           </motion.div>
 
-          {/* Stats in cards */}
+          {/* Stats row - minimal style */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-4"
+            className="flex flex-wrap justify-center gap-8 sm:gap-12"
           >
             {resumeData.highlights.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 + index * 0.1 }}
-                className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="text-center"
               >
-                <div className="text-3xl sm:text-4xl font-extrabold gradient-text mb-1">
+                <div className="text-3xl sm:text-4xl font-serif font-medium text-foreground mb-1">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground font-semibold">{stat.label}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Scroll indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+            className="mt-16 text-center"
+          >
+            <span className="text-xs uppercase tracking-widest text-muted-foreground">Scroll</span>
+            <ChevronDown className="w-5 h-5 mx-auto mt-2 text-muted-foreground animate-bounce" />
+          </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.button
-          onClick={scrollToExperience}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ delay: 1.2, y: { repeat: Infinity, duration: 2 } }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors"
-        >
-          <ChevronDown className="w-8 h-8" />
-        </motion.button>
       </div>
     </section>
   );

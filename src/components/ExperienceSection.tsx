@@ -16,18 +16,17 @@ export const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-foreground mb-4">
-            Work <span className="gradient-text">Experience</span>
+          <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
+            Work <span className="italic">Experience</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A decade of building and scaling products that impact millions
           </p>
-          <div className="w-20 h-1.5 mx-auto mt-6 rounded-full" style={{ background: 'var(--gradient-accent)' }} />
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-1 rounded-full" style={{ background: 'var(--gradient-button)' }} />
+          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-border" />
 
           {resumeData.experience.map((company, companyIndex) => (
             <motion.div
@@ -39,14 +38,14 @@ export const ExperienceSection = () => {
               className="relative pl-12 md:pl-20 mb-12 last:mb-0"
             >
               {/* Timeline dot */}
-              <div className="absolute left-2.5 md:left-6.5 top-2 w-5 h-5 rounded-full ring-4 ring-background shadow-lg" style={{ background: 'var(--gradient-accent)' }} />
+              <div className="absolute left-2.5 md:left-6.5 top-2 w-4 h-4 rounded-full bg-foreground ring-4 ring-background" />
 
               {/* Company header */}
               <div className="mb-6">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <div className="flex items-center gap-2">
-                    <Building2 className="w-5 h-5 text-primary" />
-                    <h3 className="text-2xl font-extrabold text-foreground">
+                    <Building2 className="w-5 h-5 text-muted-foreground" />
+                    <h3 className="text-2xl font-medium text-foreground font-serif">
                       {company.company}
                     </h3>
                   </div>
@@ -67,7 +66,7 @@ export const ExperienceSection = () => {
                     <motion.div
                       key={roleId}
                       layout
-                      className="bg-white rounded-2xl border border-border overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                      className="bg-card rounded-2xl border border-border overflow-hidden hover:border-foreground/20 transition-colors"
                     >
                       <button
                         onClick={() => setExpandedRole(isExpanded ? null : roleId)}
@@ -114,13 +113,13 @@ export const ExperienceSection = () => {
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: achIndex * 0.1 }}
-                                className="flex items-start gap-4 p-4 rounded-xl bg-secondary hover:bg-secondary/80 transition-colors"
+                                className="flex items-start gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors"
                               >
-                                <div className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'var(--gradient-accent)' }}>
-                                  <TrendingUp className="w-5 h-5 text-white" />
+                                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
+                                  <TrendingUp className="w-5 h-5 text-foreground" />
                                 </div>
                                 <div>
-                                  <span className="text-2xl font-extrabold gradient-text">
+                                  <span className="text-xl font-serif font-medium text-foreground">
                                     {achievement.metric}
                                   </span>
                                   <p className="text-muted-foreground text-sm mt-1">
