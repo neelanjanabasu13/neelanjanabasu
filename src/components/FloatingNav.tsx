@@ -76,17 +76,17 @@ export const FloatingNav = () => {
             </button>
 
             {/* Nav Links */}
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-6">
               {actualNavItems.map((item) => {
                 const isActive = activeSection === item.id;
                 return (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`text-sm font-medium transition-colors duration-200 ${
+                    className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                       isActive
-                        ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
+                        ? "bg-primary text-primary-foreground shadow-md"
+                        : "bg-secondary text-secondary-foreground hover:bg-primary/20 hover:text-primary"
                     }`}
                   >
                     {item.label}
