@@ -134,6 +134,6 @@ export const resumeData = {
     { value: "$2B+", label: "Revenue Impact" },
     { value: "10+", label: "Years Experience" },
     { value: "200M+", label: "Customers Served" },
-    { value: "20", label: "Countries" },
+    { value: "20", label: "Countries Impacted" },
   ],
 };
