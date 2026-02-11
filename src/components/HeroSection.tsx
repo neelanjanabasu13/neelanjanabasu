@@ -91,7 +91,9 @@ export const HeroSection = () => {
 
             <a
               href="/Neelanjana_Basu.pdf"
-              download
+              download="Neelanjana_Basu.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-border bg-card/50 text-foreground font-medium hover:bg-card transition-all duration-300"
             >
               <Download className="w-4 h-4" />
