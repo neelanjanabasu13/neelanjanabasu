@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Download, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
-import { generateResumePdf } from "@/lib/generateResumePdf";
 
 export const HeroSection = () => {
   const scrollToExperience = () => {
@@ -90,13 +89,16 @@ export const HeroSection = () => {
               <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
             </a>
 
-            <button
-              onClick={generateResumePdf}
+            <a
+              href="/Neelanjana_Basu.pdf"
+              download="Neelanjana_Basu.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-border bg-card/50 text-foreground font-medium hover:bg-card transition-all duration-300"
             >
               <Download className="w-4 h-4" />
               Download Resume
-            </button>
+            </a>
           </motion.div>
 
           {/* Social links row */}
