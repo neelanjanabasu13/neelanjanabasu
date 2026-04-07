@@ -90,16 +90,13 @@ export const HeroSection = () => {
               <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
             </a>
 
-            <a
-              href="/Neelanjana_Basu.pdf"
-              download="Neelanjana_Basu.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={generateResumePdf}
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-border bg-card/50 text-foreground font-medium hover:bg-card transition-all duration-300"
             >
               <Download className="w-4 h-4" />
               Download Resume
-            </a>
+            </button>
           </motion.div>
 
           {/* Social links row */}
