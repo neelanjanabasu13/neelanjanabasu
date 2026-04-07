@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, X, FolderOpen, Rocket } from "lucide-react";
+import { ExternalLink, X, FolderOpen, Rocket, Sparkles } from "lucide-react";
 
-// Placeholder portfolio items - can be easily extended
 const portfolioItems = [
   {
     id: 1,
@@ -11,8 +10,9 @@ const portfolioItems = [
     description:
       "Revolutionary feature enabling customers to add products directly from search results, scaling to 93% worldwide impressions.",
     impact: "$2B Revenue Impact",
-    image: null, // Placeholder for screenshot
+    image: null,
     tags: ["E-commerce", "Search", "UX"],
+    url: null,
   },
   {
     id: 2,
@@ -23,6 +23,7 @@ const portfolioItems = [
     impact: "$250M Revenue Impact",
     image: null,
     tags: ["Data Systems", "ML", "UX"],
+    url: null,
   },
   {
     id: 3,
@@ -33,6 +34,7 @@ const portfolioItems = [
     impact: "$140M Revenue",
     image: null,
     tags: ["Localization", "Market Expansion"],
+    url: null,
   },
   {
     id: 4,
@@ -43,13 +45,72 @@ const portfolioItems = [
     impact: "$25M Revenue",
     image: null,
     tags: ["Automation", "Analytics"],
+    url: null,
+  },
+];
+
+const vibeCodedItems = [
+  {
+    id: 101,
+    title: "WhatNow Kid",
+    category: "Vibe Coded",
+    description:
+      "AI-powered activity finder for parents — instant activity ideas based on a child's age, mood, and energy level. Zero mental load.",
+    impact: "Consumer AI",
+    tags: ["AI", "Parenting", "UX"],
+    url: "https://whatnow-kid-finder.lovable.app/",
+    builtWith: "Lovable",
+  },
+  {
+    id: 102,
+    title: "Decision Gym",
+    category: "Vibe Coded",
+    description:
+      "Compare your gut instinct against cold, hard math. Interactive decision-training tool with scenario simulations and expected value calculations.",
+    impact: "EdTech",
+    tags: ["Decision Science", "Gamification", "AI"],
+    url: "https://decision-gym-buddy.lovable.app/",
+    builtWith: "Lovable",
+  },
+  {
+    id: 103,
+    title: "FamilyParks London",
+    category: "Vibe Coded",
+    description:
+      "Interactive map of London's family-friendly parks with kid-focused amenity filters — playgrounds, paddling pools, cafés, and more.",
+    impact: "Geo / Local",
+    tags: ["Maps", "Families", "Local Discovery"],
+    url: "https://family-park-explorer.lovable.app/",
+    builtWith: "Lovable",
+  },
+  {
+    id: 104,
+    title: "Monologue",
+    category: "Vibe Coded",
+    description:
+      "Transform rough notes into confident speeches. Choose your style (TED Talk, Business Pitch, Standup Comedy), preview text, and play back with AI-generated voice.",
+    impact: "Productivity AI",
+    tags: ["AI", "Speech", "Content Creation"],
+    url: "https://monologue-ai-speech-9zgm.bolt.host/",
+    builtWith: "Bolt",
+  },
+  {
+    id: 105,
+    title: "Multiverse Signal",
+    category: "Vibe Coded",
+    description:
+      "Internal evaluation platform prototype — tracking learner journeys from learning to real workplace impact with coach reviews and cohort insights.",
+    impact: "Enterprise EdTech",
+    tags: ["Enterprise", "Education", "Analytics"],
+    url: "https://multiverse-signal.lovable.app/",
+    builtWith: "Lovable",
   },
 ];
 
 export const PortfolioSection = () => {
-  const [selectedItem, setSelectedItem] = useState<(typeof portfolioItems)[0] | null>(
-    null
-  );
+  const [selectedItem, setSelectedItem] = useState<
+    (typeof portfolioItems)[0] | (typeof vibeCodedItems)[0] | null
+  >(null);
 
   return (
     <section id="portfolio" className="py-24 bg-background">
@@ -69,22 +130,87 @@ export const PortfolioSection = () => {
           </p>
         </motion.div>
 
-        {/* Coming Soon Banner for Vibe Coded Products */}
+        {/* Vibe Coded Products */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 p-6 rounded-2xl bg-card/60 backdrop-blur-sm border border-border flex items-center justify-center gap-4"
+          className="mb-12"
         >
-          <div className="w-8 h-8 rounded-lg bg-lime-300 flex items-center justify-center">
-            <Rocket className="w-4 h-4 text-foreground" />
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-8 h-8 rounded-lg bg-lime-300 flex items-center justify-center">
+              <Sparkles className="w-4 h-4 text-foreground" />
+            </div>
+            <h3 className="text-2xl font-medium text-foreground font-serif">
+              Vibe Coded <span className="italic">Products</span>
+            </h3>
+            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider bg-secondary px-3 py-1 rounded-full">
+              Built with AI
+            </span>
           </div>
-          <p className="text-foreground font-medium">
-            <span className="font-serif italic">Vibe Coded Products</span> section coming soon!
-          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {vibeCodedItems.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                whileHover={{ y: -6 }}
+                className="bg-card rounded-2xl border border-border overflow-hidden group hover:border-foreground/20 transition-all"
+              >
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-medium text-foreground bg-lime-300/80 px-2.5 py-1 rounded-full">
+                      {item.impact}
+                    </span>
+                    <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
+                      {item.builtWith}
+                    </span>
+                  </div>
+                  <h4 className="text-lg font-medium text-foreground mb-2 font-serif group-hover:text-foreground/80 transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
+                    {item.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-foreground/70 transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Try it live
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
-        {/* Portfolio Grid */}
+        {/* Amazon Portfolio */}
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
+            <Rocket className="w-4 h-4 text-foreground" />
+          </div>
+          <h3 className="text-2xl font-medium text-foreground font-serif">
+            Enterprise <span className="italic">Products</span>
+          </h3>
+        </div>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {portfolioItems.map((item, index) => (
             <motion.div
@@ -97,7 +223,6 @@ export const PortfolioSection = () => {
               onClick={() => setSelectedItem(item)}
               className="bg-card rounded-2xl border border-border overflow-hidden cursor-pointer group hover:border-foreground/20 transition-all"
             >
-              {/* Image placeholder */}
               <div className="aspect-video flex items-center justify-center relative overflow-hidden bg-secondary">
                 <FolderOpen className="w-12 h-12 text-muted-foreground/40 group-hover:scale-110 transition-transform duration-300" />
                 <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -108,7 +233,9 @@ export const PortfolioSection = () => {
                   <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
                     {item.category}
                   </span>
-                  <span className="text-xs font-medium text-foreground bg-secondary px-2 py-1 rounded">{item.impact}</span>
+                  <span className="text-xs font-medium text-foreground bg-secondary px-2 py-1 rounded">
+                    {item.impact}
+                  </span>
                 </div>
                 <h3 className="text-lg font-medium text-foreground mb-2 font-serif group-hover:text-foreground/80 transition-colors">
                   {item.title}
