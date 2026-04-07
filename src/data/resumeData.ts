@@ -34,7 +34,7 @@ export const resumeData = {
             {
               metric: "100M+",
               description:
-                "listings redesigned through SVP-level initiative — led cross-org alignment to resolve foundational data-quality constraints blocking enterprise adoption",
+                "listings redesigned through SVP-level initiative — led cross-org alignment to resolve foundational data-quality constraints blocking product adoption",
             },
             {
               metric: "$140M",
