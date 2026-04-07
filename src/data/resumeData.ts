@@ -52,7 +52,7 @@ export const resumeData = {
             {
               metric: "50K",
               description:
-                "best-selling products transitioned during business sunset — managed enterprise-scale migration with zero customer escalations through rigorous planning and clear comms",
+                "best-selling products transitioned during business sunset — managed large-scale migration with zero customer escalations through rigorous planning and clear comms",
             },
             {
               metric: "$25M",
