@@ -1,7 +1,7 @@
 export const resumeData = {
   personal: {
     name: "Neelanjana Basu",
-    title: "Enterprise Product Leader",
+    title: "Product Leader",
     location: "London, UK",
     email: "neelanjanabasu13@gmail.com",
     phone: "+44 07754356953",
