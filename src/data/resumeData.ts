@@ -80,7 +80,7 @@ export const resumeData = {
             {
               metric: "5%",
               description:
-                "conversion boost and 13% traffic increase by redesigning browse experience based on enterprise customer feedback and analytics",
+                "conversion boost and 13% traffic increase by redesigning browse experience based on customer feedback and analytics",
             },
           ],
         },
