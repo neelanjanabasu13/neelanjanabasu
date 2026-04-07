@@ -69,8 +69,8 @@ export const HeroSection = () => {
             className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl px-8 py-6 max-w-2xl mx-auto mb-10"
           >
             <p className="text-foreground/80 font-serif italic text-lg">
-              "Turning complex challenges into elegant product solutions — with{" "}
-              <span className="bg-amber-100/80 px-1 rounded">data-driven insights</span> and user-first thinking."
+              "Making enterprise products feel inevitable — by listening deeply to customers, scoping ruthlessly, and shipping with{" "}
+              <span className="bg-amber-100/80 px-1 rounded">conviction and clarity</span>."
             </p>
           </motion.div>
 
