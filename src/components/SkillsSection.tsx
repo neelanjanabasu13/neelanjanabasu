@@ -45,15 +45,15 @@ export const SkillsSection = () => {
           className="mt-16 flex flex-wrap justify-center gap-3"
         >
           {[
-            "E-commerce",
-            "B2B Products",
-            "Machine Learning",
-            "UX Design",
-            "Agile",
-            "Data Analytics",
-            "Market Research",
+            "Enterprise SaaS",
+            "Permissions & Admin",
+            "Compliance & Security",
+            "Platform Integrations",
+            "Customer Discovery",
+            "AI-Assisted Workflows",
             "Revenue Growth",
-            "Team Leadership",
+            "Sales Enablement",
+            "Agile Delivery",
             "Strategic Planning",
           ].map((tag, index) => (
             <motion.span

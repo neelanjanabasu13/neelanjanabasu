@@ -58,8 +58,8 @@ export const ContactSection = () => {
             Let's <span className="italic">Connect</span>
           </h2>
           <p className="text-background/60 text-lg max-w-2xl mx-auto">
-            I'm always open to discussing product leadership, new opportunities, or
-            interesting projects
+            Let's talk about enterprise product strategy, AI-powered software, or
+            building products that large teams love
           </p>
         </motion.div>
 
