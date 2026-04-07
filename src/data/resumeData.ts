@@ -65,7 +65,7 @@ export const resumeData = {
           title: "Product Marketing Manager, BISS Europe",
           period: "Sep 2015 – May 2019",
           description:
-            "Founding team member launching Amazon's B2B/Industrial supplies store across Europe — a 0-to-1 enterprise product serving professional and business customers. Built deep understanding of how large organisations discover, evaluate, and adopt new platforms.",
+            "Founding team member launching Amazon's Industrial supplies store across Europe — a 0-to-1 product serving professional customers. Built deep understanding of how customers discover, evaluate, and adopt new platforms.",
           achievements: [
             {
               metric: "$55M",
