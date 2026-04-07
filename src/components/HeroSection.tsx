@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Download, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
+import { generateResumePdf } from "@/lib/generateResumePdf";
 
 export const HeroSection = () => {
   const scrollToExperience = () => {
