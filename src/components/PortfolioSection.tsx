@@ -94,17 +94,6 @@ const vibeCodedItems = [
     url: "https://monologue-ai-speech-9zgm.bolt.host/",
     builtWith: "Bolt",
   },
-  {
-    id: 105,
-    title: "Multiverse Signal",
-    category: "Vibe Coded",
-    description:
-      "Internal evaluation platform prototype — tracking learner journeys from learning to real workplace impact with coach reviews and cohort insights.",
-    impact: "Enterprise EdTech",
-    tags: ["Enterprise", "Education", "Analytics"],
-    url: "https://multiverse-signal.lovable.app/",
-    builtWith: "Lovable",
-  },
 ];
 
 export const PortfolioSection = () => {
