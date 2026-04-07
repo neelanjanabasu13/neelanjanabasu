@@ -122,7 +122,7 @@ export const resumeData = {
     },
   ],
   skills: [
-    { name: "Enterprise Product Strategy", level: 95 },
+    { name: "Product Strategy", level: 95 },
     { name: "Customer Discovery & Advocacy", level: 95 },
     { name: "0-to-1 Product Development", level: 90 },
     { name: "Cross-functional Leadership", level: 95 },
