@@ -7,7 +7,7 @@ export const resumeData = {
     phone: "+44 07754356953",
     linkedin: "https://linkedin.com/in/neelanjana-basu",
     summary:
-      "Enterprise product leader with 10+ years building and scaling B2B and consumer products at Amazon. Deep experience in enterprise product strategy, customer-obsessed roadmap ownership, cross-functional execution, and turning ambiguous customer needs into high-impact solutions. Passionate about AI and its power to reshape how software is built and adopted.",
+      "Product leader with 10+ years building and scaling consumer products at Amazon. Deep experience in product strategy, customer-obsessed roadmap ownership, cross-functional execution, and turning ambiguous customer needs into high-impact solutions. Passionate about AI and its power to reshape how software is built and adopted.",
   },
   experience: [
     {
