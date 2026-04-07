@@ -47,7 +47,7 @@ export const resumeData = {
           title: "Product Manager, Amazon Pantry Europe",
           period: "Jun 2019 – Jun 2020",
           description:
-            "Led product strategy for Amazon Pantry across European markets. Managed complex trade-offs during a high-stakes business transition while maintaining zero customer escalations — demonstrating enterprise-grade operational judgment and stakeholder communication.",
+            "Led product strategy for Amazon Pantry across European markets. Managed complex trade-offs during a high-stakes business transition while maintaining zero customer escalations — demonstrating strong operational judgment and stakeholder communication.",
           achievements: [
             {
               metric: "50K",
