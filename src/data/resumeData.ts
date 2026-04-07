@@ -70,7 +70,7 @@ export const resumeData = {
             {
               metric: "$55M",
               description:
-                "revenue from launching two new-to-Amazon B2B categories: Renewable Energy Supplies and Agricultural Equipment — required enterprise customer discovery and market validation",
+                "revenue from launching two new-to-Amazon categories: Renewable Energy Supplies and Agricultural Equipment — required customer discovery and market validation",
             },
             {
               metric: "90%",
