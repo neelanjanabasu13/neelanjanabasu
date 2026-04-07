@@ -196,7 +196,7 @@ export const PortfolioSection = () => {
             <Rocket className="w-4 h-4 text-foreground" />
           </div>
           <h3 className="text-2xl font-medium text-foreground font-serif">
-            Enterprise <span className="italic">Products</span>
+            Amazon <span className="italic">Products</span>
           </h3>
         </div>
 

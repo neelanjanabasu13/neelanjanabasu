@@ -128,7 +128,7 @@ export const resumeData = {
     { name: "Cross-functional Leadership", level: 95 },
     { name: "Stakeholder Management", level: 92 },
     { name: "AI & Experimentation", level: 88 },
-    { name: "B2B SaaS & Platform Thinking", level: 90 },
+    { name: "Platform Thinking", level: 90 },
     { name: "Data-Driven Decision Making", level: 90 },
     { name: "Market Expansion & Localisation", level: 88 },
     { name: "Technical Communication", level: 90 },

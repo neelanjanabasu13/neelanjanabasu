@@ -45,14 +45,14 @@ export const SkillsSection = () => {
           className="mt-16 flex flex-wrap justify-center gap-3"
         >
           {[
-            "Enterprise SaaS",
-            "Permissions & Admin",
-            "Compliance & Security",
+            "Consumer Products",
+            "Marketplace Strategy",
+            "Growth & Retention",
             "Platform Integrations",
             "Customer Discovery",
             "AI-Assisted Workflows",
             "Revenue Growth",
-            "Sales Enablement",
+            "Internationalisation",
             "Agile Delivery",
             "Strategic Planning",
           ].map((tag, index) => (
