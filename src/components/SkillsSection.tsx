@@ -16,7 +16,7 @@ export const SkillsSection = () => {
             Skills & <span className="italic">Expertise</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Core competencies honed through years of product leadership
+            Enterprise product competencies honed across B2B, platform, and consumer products
           </p>
         </motion.div>
 
