@@ -19,7 +19,7 @@ export const resumeData = {
           title: "Senior Product Manager, Consumables",
           period: "Jul 2020 – Sep 2025",
           description:
-            "Owned end-to-end product strategy for Amazon's worldwide consumables business (200M+ customers, 20 countries). Operated in deeply ambiguous problem spaces — synthesising signals from enterprise-scale customer data, stakeholder interviews, and market analysis into clear roadmap priorities. Led cross-functional teams across Engineering, UX, ML, and Commercial to ship at velocity.",
+            "Owned end-to-end product strategy for Amazon's worldwide consumables business (200M+ customers, 20 countries). Operated in deeply ambiguous problem spaces — synthesising signals from large-scale customer data, stakeholder interviews, and market analysis into clear roadmap priorities. Led cross-functional teams across Engineering, UX, ML, and Commercial to ship at velocity.",
           achievements: [
             {
               metric: "$2B",
