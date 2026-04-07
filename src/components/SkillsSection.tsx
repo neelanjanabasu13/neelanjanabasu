@@ -16,7 +16,7 @@ export const SkillsSection = () => {
             Skills & <span className="italic">Expertise</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Enterprise product competencies honed across B2B, platform, and consumer products
+            Product competencies honed across consumer, platform, and marketplace products
           </p>
         </motion.div>
 
@@ -45,14 +45,14 @@ export const SkillsSection = () => {
           className="mt-16 flex flex-wrap justify-center gap-3"
         >
           {[
-            "Enterprise SaaS",
-            "Permissions & Admin",
-            "Compliance & Security",
+            "Consumer Products",
+            "Marketplace Strategy",
+            "Growth & Retention",
             "Platform Integrations",
             "Customer Discovery",
             "AI-Assisted Workflows",
             "Revenue Growth",
-            "Sales Enablement",
+            "Internationalisation",
             "Agile Delivery",
             "Strategic Planning",
           ].map((tag, index) => (

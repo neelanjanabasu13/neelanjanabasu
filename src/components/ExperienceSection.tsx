@@ -20,7 +20,7 @@ export const ExperienceSection = () => {
             Work <span className="italic">Experience</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A decade of enterprise-scale product leadership across B2B and consumer
+            A decade of product leadership across consumer and platform products
           </p>
         </motion.div>
 
