@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { MapPin, Download, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { MapPin, Download, Linkedin, Mail, ChevronDown, BookOpen } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
+import profilePhoto from "@/assets/profile-photo.png";
 
 export const HeroSection = () => {
   const scrollToExperience = () => {
@@ -39,6 +40,23 @@ export const HeroSection = () => {
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             {resumeData.personal.title}
+          </motion.div>
+
+          {/* Profile photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.25 }}
+            className="mb-6"
+          >
+            <img
+              src={profilePhoto}
+              alt={resumeData.personal.name}
+              className="w-28 h-28 rounded-full object-cover mx-auto ring-4 ring-border/50 shadow-lg"
+              loading="eager"
+              width={112}
+              height={112}
+            />
           </motion.div>
 
           {/* Main heading with italic serif styling */}
@@ -108,7 +126,14 @@ export const HeroSection = () => {
             transition={{ delay: 0.65 }}
             className="flex justify-center gap-4 mb-16"
           >
-
+            <a
+              href="https://neelanjana.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+            >
+              <BookOpen className="w-4 h-4" />
+            </a>
             <a
               href={resumeData.personal.linkedin}
               target="_blank"
