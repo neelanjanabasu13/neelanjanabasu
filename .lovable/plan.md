@@ -1,10 +1,23 @@
 
 
-## Plan: Adjust Visual Navigation Image Offset
+## Plan: Add University Logos to Education Section
 
-Currently `objectPosition: '0 -40px'` shifts the image up by 40px. Need to increase this to crop more of the status bar area while keeping the search bar with "coffee" visible and showing the category labels (Grounds, Whole bean, etc.).
+### What changes
+Replace the generic `GraduationCap` icon in each education card with the actual institution logo.
 
-### Change in `src/components/PortfolioSection.tsx` (line 150)
+### Steps
 
-Update the inline style from `objectPosition: '0 -40px'` to approximately `objectPosition: '0 -80px'`. This shifts the image further up, cropping more of the phone status bar while preserving the search bar and making the visual navigation carousel labels visible. May need fine-tuning (trying -80px first).
+1. **Download logos** from the institution websites:
+   - GIM logo: `https://gim.ac.in/sites/default/files/gim-logo.png` (or extract from the site header)
+   - Gujarat University logo: `https://gujaratuniversity.ac.in/images/gu-logo.png` (the crest visible in the header)
+   
+   If direct URLs don't work, I'll use web search to find clean logo images or take screenshots and crop them. Save to `src/assets/gim-logo.png` and `src/assets/gujarat-university-logo.png`.
+
+2. **Update `src/data/resumeData.ts`**: Add a `logo` field to each education entry pointing to the imported image.
+
+3. **Update `src/components/EducationSection.tsx`**: Replace the `GraduationCap` icon div with an `<img>` tag showing the institution logo, using `object-contain` for proper scaling within the 48x48 container.
+
+### Technical detail
+- The icon container is currently a 48x48 rounded div with a `GraduationCap` — it will become an `<img>` with `rounded-xl object-contain` styling
+- Logos will be imported statically in the component or data file
 
