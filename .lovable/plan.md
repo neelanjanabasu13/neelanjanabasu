@@ -1,17 +1,22 @@
 
 
-## Plan: Reorder Portfolio Sections and Add Amazon Product Images
+## Plan: Replace EU Market Expansion with Visual Navigation
 
-### Changes to `src/components/PortfolioSection.tsx`:
+### Changes
 
-1. **Move Amazon Products section above Vibe Coded Products section** in the JSX render order.
+1. **Copy uploaded images to `src/assets/`**:
+   - `user-uploads://WhatsApp_Image_2026-04-14_at_16.33.14.jpeg` → `src/assets/amazon-visual-nav-coffee.jpeg` (coffee search — first image in order)
+   - `user-uploads://WhatsApp_Image_2026-04-14_at_16.33.14_1.jpeg` → `src/assets/amazon-visual-nav-grounds.jpeg` (coffee grounds search — second image)
 
-2. **Copy uploaded images into `src/assets/`**:
-   - `user-uploads://PHOTO-2026-03-31-09-22-18.jpg` → `src/assets/amazon-add-to-cart.jpg` (for "Add to Cart on Search")
-   - `user-uploads://image.png` → `src/assets/amazon-quantity.png` (for "Quantity Information System")
-   - `user-uploads://image-2.png` → `src/assets/amazon-pantry.png` (for "Range Review Automation" / Pantry)
+2. **Update `src/components/PortfolioSection.tsx`**:
+   - Import both new images
+   - Replace the "EU Market Expansion Suite" entry (id: 3) with a "Visual Navigation" project using the coffee image as the card thumbnail
+   - The card will show one primary image; the second image can be shown in the modal view or as an alternate. Since each card currently supports one image, I'll use the first image (coffee search) as the card image and show both in the modal.
 
-3. **Add image fields to `portfolioItems`** array — map each item to its corresponding imported image.
-
-4. **Replace the placeholder `FolderOpen` icon** in the card's `aspect-video` area with an actual `<img>` tag using `object-cover` styling, for items that have an image. The "EU Market Expansion Suite" item has no image, so it keeps the folder icon fallback.
+### Visual Navigation card details
+- **Title**: "Visual Navigation"
+- **Category**: "Amazon"
+- **Description**: Based on the screenshots, this is about visual category navigation on Amazon search (the horizontal image carousel for filtering by product type like Grounds, Whole bean, Pods, Light roast, etc.)
+- **Image**: The coffee search screenshot
+- **Tags**: Appropriate search/navigation tags
 
