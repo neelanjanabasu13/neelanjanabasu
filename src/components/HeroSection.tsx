@@ -42,6 +42,23 @@ export const HeroSection = () => {
             {resumeData.personal.title}
           </motion.div>
 
+          {/* Profile photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.25 }}
+            className="mb-6"
+          >
+            <img
+              src={profilePhoto}
+              alt={resumeData.personal.name}
+              className="w-28 h-28 rounded-full object-cover mx-auto ring-4 ring-border/50 shadow-lg"
+              loading="eager"
+              width={112}
+              height={112}
+            />
+          </motion.div>
+
           {/* Main heading with italic serif styling */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
