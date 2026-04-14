@@ -113,12 +113,14 @@ export const resumeData = {
       location: "Goa, India",
       degree: "Post Graduate Diploma, Management",
       period: "Jun 2011 – Mar 2013",
+      logo: "gim",
     },
     {
       institution: "Gujarat University",
       location: "Ahmedabad, India",
       degree: "Bachelor of Engineering in Instrumentation & Control",
       period: "Jul 2006 – Aug 2010",
+      logo: "gu",
     },
   ],
   skills: [
