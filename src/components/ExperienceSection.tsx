@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Building2, MapPin, Calendar, ChevronDown, TrendingUp } from "lucide-react";
+import { MapPin, Calendar, ChevronDown, TrendingUp } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
+import amazonLogo from "@/assets/amazon-logo.png";
+import meruLogo from "@/assets/meru-logo.png";
+
+const companyLogoMap: Record<string, string> = {
+  Amazon: amazonLogo,
+  "Meru Cabs Company Pvt Ltd": meruLogo,
+};
 
 export const ExperienceSection = () => {
   const [expandedRole, setExpandedRole] = useState<string | null>("amazon-0");
@@ -43,8 +50,17 @@ export const ExperienceSection = () => {
               {/* Company header */}
               <div className="mb-6">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <div className="flex items-center gap-2">
-                    <Building2 className="w-5 h-5 text-muted-foreground" />
+                  <div className="flex items-center gap-3">
+                    {companyLogoMap[company.company] && (
+                      <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
+                        <img
+                          src={companyLogoMap[company.company]}
+                          alt={`${company.company} logo`}
+                          className="w-8 h-8 object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
                     <h3 className="text-2xl font-medium text-foreground font-serif">
                       {company.company}
                     </h3>
