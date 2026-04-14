@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, X, FolderOpen, Rocket, Sparkles } from "lucide-react";
+import addToCartImg from "@/assets/amazon-add-to-cart.jpg";
+import quantityImg from "@/assets/amazon-quantity.png";
+import pantryImg from "@/assets/amazon-pantry.png";
 
 const portfolioItems = [
   {
@@ -10,7 +13,7 @@ const portfolioItems = [
     description:
       "Revolutionary feature enabling customers to add products directly from search results, scaling to 93% worldwide impressions.",
     impact: "$2B Revenue Impact",
-    image: null,
+    image: addToCartImg,
     tags: ["E-commerce", "Search", "UX"],
     url: null,
   },
@@ -21,7 +24,7 @@ const portfolioItems = [
     description:
       "Redesigned how quantity data is surfaced across 5M+ products, improving customer decision clarity.",
     impact: "$250M Revenue Impact",
-    image: null,
+    image: quantityImg,
     tags: ["Data Systems", "ML", "UX"],
     url: null,
   },
@@ -43,7 +46,7 @@ const portfolioItems = [
     description:
       "Built automated tool for optimizing category curation based on customer expectations.",
     impact: "$25M Revenue",
-    image: null,
+    image: pantryImg,
     tags: ["Automation", "Analytics"],
     url: null,
   },
@@ -119,6 +122,67 @@ export const PortfolioSection = () => {
           </p>
         </motion.div>
 
+        {/* Amazon Products */}
+        <div className="flex items-center gap-3 mb-8">
+          <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
+            <Rocket className="w-4 h-4 text-foreground" />
+          </div>
+          <h3 className="text-2xl font-medium text-foreground font-serif">
+            Amazon <span className="italic">Products</span>
+          </h3>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
+          {portfolioItems.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -8 }}
+              onClick={() => setSelectedItem(item)}
+              className="bg-card rounded-2xl border border-border overflow-hidden cursor-pointer group hover:border-foreground/20 transition-all"
+            >
+              <div className="aspect-video flex items-center justify-center relative overflow-hidden bg-secondary">
+                {item.image ? (
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                ) : (
+                  <FolderOpen className="w-12 h-12 text-muted-foreground/40 group-hover:scale-110 transition-transform duration-300" />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    {item.category}
+                  </span>
+                  <span className="text-xs font-medium text-foreground bg-secondary px-2 py-1 rounded">
+                    {item.impact}
+                  </span>
+                </div>
+                <h3 className="text-lg font-medium text-foreground mb-2 font-serif group-hover:text-foreground/80 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground text-sm line-clamp-2">
+                  {item.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
         {/* Vibe Coded Products */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -189,63 +253,6 @@ export const PortfolioSection = () => {
             ))}
           </div>
         </motion.div>
-
-        {/* Amazon Portfolio */}
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
-            <Rocket className="w-4 h-4 text-foreground" />
-          </div>
-          <h3 className="text-2xl font-medium text-foreground font-serif">
-            Amazon <span className="italic">Products</span>
-          </h3>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
-          {portfolioItems.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              onClick={() => setSelectedItem(item)}
-              className="bg-card rounded-2xl border border-border overflow-hidden cursor-pointer group hover:border-foreground/20 transition-all"
-            >
-              <div className="aspect-video flex items-center justify-center relative overflow-hidden bg-secondary">
-                <FolderOpen className="w-12 h-12 text-muted-foreground/40 group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                    {item.category}
-                  </span>
-                  <span className="text-xs font-medium text-foreground bg-secondary px-2 py-1 rounded">
-                    {item.impact}
-                  </span>
-                </div>
-                <h3 className="text-lg font-medium text-foreground mb-2 font-serif group-hover:text-foreground/80 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground text-sm line-clamp-2">
-                  {item.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Modal */}
         <AnimatePresence>
