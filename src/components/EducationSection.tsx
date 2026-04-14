@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
-import { GraduationCap, MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
+import gimLogo from "@/assets/gim-logo.png";
+import guLogo from "@/assets/gujarat-university-logo.png";
+
+const logoMap: Record<string, string> = {
+  gim: gimLogo,
+  gu: guLogo,
+};
 
 export const EducationSection = () => {
   return (
@@ -33,8 +40,15 @@ export const EducationSection = () => {
               className="bg-card rounded-2xl border border-border p-6 group hover:border-foreground/20 transition-all"
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-foreground/10 flex items-center justify-center group-hover:bg-foreground/15 transition-colors">
-                  <GraduationCap className="w-6 h-6 text-foreground" />
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl overflow-hidden bg-white flex items-center justify-center">
+                  <img
+                    src={logoMap[edu.logo]}
+                    alt={`${edu.institution} logo`}
+                    className="w-10 h-10 object-contain"
+                    loading="lazy"
+                    width={40}
+                    height={40}
+                  />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-medium text-foreground mb-1 font-serif">
