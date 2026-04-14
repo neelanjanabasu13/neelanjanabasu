@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { MapPin, Download, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { MapPin, Download, Linkedin, Mail, ChevronDown, BookOpen } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
+import profilePhoto from "@/assets/profile-photo.png";
 
 export const HeroSection = () => {
   const scrollToExperience = () => {
@@ -108,7 +109,14 @@ export const HeroSection = () => {
             transition={{ delay: 0.65 }}
             className="flex justify-center gap-4 mb-16"
           >
-
+            <a
+              href="https://neelanjana.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+            >
+              <BookOpen className="w-4 h-4" />
+            </a>
             <a
               href={resumeData.personal.linkedin}
               target="_blank"
