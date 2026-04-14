@@ -147,7 +147,7 @@ export const PortfolioSection = () => {
             >
               <div className="aspect-video flex items-center justify-center relative overflow-hidden bg-secondary">
                 {item.image ? (
-                  <img src={item.image} alt={item.title} className="w-full h-full <img src={item.image} alt={item.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" /> transition-transform duration-300" />
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
                 ) : (
                   <FolderOpen className="w-12 h-12 text-muted-foreground/40 group-hover:scale-110 transition-transform duration-300" />
                 )}
