@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, X, FolderOpen, Rocket, Sparkles } from "lucide-react";
+import addToCartImg from "@/assets/amazon-add-to-cart.jpg";
+import quantityImg from "@/assets/amazon-quantity.png";
+import pantryImg from "@/assets/amazon-pantry.png";
 
 const portfolioItems = [
   {
@@ -10,7 +13,7 @@ const portfolioItems = [
     description:
       "Revolutionary feature enabling customers to add products directly from search results, scaling to 93% worldwide impressions.",
     impact: "$2B Revenue Impact",
-    image: null,
+    image: addToCartImg,
     tags: ["E-commerce", "Search", "UX"],
     url: null,
   },
@@ -21,7 +24,7 @@ const portfolioItems = [
     description:
       "Redesigned how quantity data is surfaced across 5M+ products, improving customer decision clarity.",
     impact: "$250M Revenue Impact",
-    image: null,
+    image: quantityImg,
     tags: ["Data Systems", "ML", "UX"],
     url: null,
   },
@@ -43,7 +46,7 @@ const portfolioItems = [
     description:
       "Built automated tool for optimizing category curation based on customer expectations.",
     impact: "$25M Revenue",
-    image: null,
+    image: pantryImg,
     tags: ["Automation", "Analytics"],
     url: null,
   },
