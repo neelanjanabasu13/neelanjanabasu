@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Building2, MapPin, Calendar, ChevronDown, TrendingUp } from "lucide-react";
+import { MapPin, Calendar, ChevronDown, TrendingUp } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
+import amazonLogo from "@/assets/amazon-logo.png";
+import meruLogo from "@/assets/meru-logo.png";
+
+const companyLogoMap: Record<string, string> = {
+  Amazon: amazonLogo,
+  "Meru Cabs Company Pvt Ltd": meruLogo,
+};
 
 export const ExperienceSection = () => {
   const [expandedRole, setExpandedRole] = useState<string | null>("amazon-0");
