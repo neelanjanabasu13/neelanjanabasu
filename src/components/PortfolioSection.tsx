@@ -4,6 +4,7 @@ import { ExternalLink, X, FolderOpen, Rocket, Sparkles } from "lucide-react";
 import addToCartImg from "@/assets/amazon-add-to-cart.jpg";
 import quantityImg from "@/assets/amazon-quantity.png";
 import pantryImg from "@/assets/amazon-pantry.png";
+import visualNavImg from "@/assets/amazon-visual-nav-coffee.jpeg";
 
 const portfolioItems = [
   {
@@ -30,13 +31,13 @@ const portfolioItems = [
   },
   {
     id: 3,
-    title: "EU Market Expansion Suite",
+    title: "Visual Navigation",
     category: "Amazon",
     description:
-      "Adapted US product suite to European markets with five localized features addressing regional needs.",
-    impact: "$140M Revenue",
-    image: null,
-    tags: ["Localization", "Market Expansion"],
+      "Visual category navigation on Amazon search — horizontal image carousels enabling customers to filter by product type at a glance.",
+    impact: "Search UX",
+    image: visualNavImg,
+    tags: ["Search", "Navigation", "UX"],
     url: null,
   },
   {
