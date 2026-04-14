@@ -1,12 +1,12 @@
 
 
-## Plan: Focus Image on Visual Navigation Carousel
+## Plan: Adjust Image Position for Visual Navigation Card
 
-The uploaded screenshot shows the full Amazon search page, but the visual navigation carousel (the horizontal strip with category images like Grounds, Whole bean, Pods) is at the **top** of the image. With `object-cover`, the card crops to the center, showing the video result instead.
+The `object-top` class anchors to the very top of the image, which shows the phone status bar (time, wifi, battery). The visual navigation carousel sits just below that, getting partially hidden by the card description overlay.
 
 ### Fix in `src/components/PortfolioSection.tsx`
 
-Change the `<img>` tag styling for portfolio cards from `object-cover` (centers the crop) to `object-cover object-top` so the image anchors to the **top** of the frame, keeping the visual navigation carousel visible.
+Replace `object-top` with a custom `object-position` style (e.g., `object-position: 0 -40px` or similar) on the portfolio card `<img>` tag, so the image shifts up enough to crop out the status bar while keeping the carousel visible. This can be done inline with a `style` prop or via a Tailwind arbitrary value like `object-[center_top_-40px]`. I'll test with `object-[0_-30px]` and adjust as needed.
 
-This is a one-line CSS class change on the `<img>` element in the portfolio card rendering.
+Single line change on the `<img>` element in the portfolio card rendering.
 
