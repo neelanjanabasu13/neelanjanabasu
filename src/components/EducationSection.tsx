@@ -11,14 +11,14 @@ const logoMap: Record<string, string> = {
 
 export const EducationSection = () => {
   return (
-    <section id="education" className="py-24 bg-background">
+    <section id="education" className="py-12 bg-background">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
             <span className="italic">Education</span>

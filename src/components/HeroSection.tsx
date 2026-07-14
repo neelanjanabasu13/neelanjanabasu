@@ -5,7 +5,7 @@ import profilePhoto from "@/assets/profile-photo.png";
 
 export const HeroSection = () => {
   return (
-    <section id="hero" className="relative min-h-screen bg-background overflow-hidden">
+    <section id="hero" className="relative bg-background overflow-hidden">
       {/* Soft animated background blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -25,7 +25,7 @@ export const HeroSection = () => {
         />
       </div>
 
-      <div className="relative z-10 section-container flex flex-col justify-center min-h-screen py-20">
+      <div className="relative z-10 section-container flex flex-col justify-center py-16">
         <div className="max-w-4xl mx-auto text-center">
           {/* Profile photo */}
           <motion.div

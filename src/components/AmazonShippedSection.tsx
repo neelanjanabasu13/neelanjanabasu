@@ -57,14 +57,14 @@ export const AmazonShippedSection = () => {
   const [selectedItem, setSelectedItem] = useState<(typeof portfolioItems)[0] | null>(null);
 
   return (
-    <section id="portfolio" className="py-24 bg-background">
+    <section id="portfolio" className="py-12 bg-background">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
             What I shipped at <span className="italic">Amazon</span>
