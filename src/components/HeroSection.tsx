@@ -112,7 +112,7 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.65 }}
+            transition={{ delay: 0.55 }}
             className="flex justify-center gap-4 mb-16"
           >
             <a
@@ -147,7 +147,7 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
+            transition={{ delay: 0.6 }}
             className="flex flex-wrap justify-center gap-8 sm:gap-12"
           >
             {resumeData.highlights.map((stat, index) => (
