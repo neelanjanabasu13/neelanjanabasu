@@ -170,7 +170,7 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
+            transition={{ delay: 0.9 }}
             className="mt-16 text-center"
           >
             <span className="text-xs uppercase tracking-widest text-muted-foreground">Scroll</span>
