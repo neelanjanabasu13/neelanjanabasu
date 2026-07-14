@@ -155,6 +155,7 @@ export const AmazonShippedSection = () => {
                   <FolderOpen className="w-16 h-16 text-muted-foreground/40" />
                   <button
                     onClick={() => setSelectedItem(null)}
+                    aria-label="Close modal"
                     className="absolute top-4 right-4 w-10 h-10 rounded-full bg-card shadow-lg flex items-center justify-center hover:bg-secondary transition-all"
                   >
                     <X className="w-5 h-5 text-foreground" />

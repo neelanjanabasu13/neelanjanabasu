@@ -104,6 +104,8 @@ export const FloatingNav = () => {
         animate={{ scale: 1 }}
         transition={{ delay: 0.5 }}
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={isMobileMenuOpen}
         className="fixed top-4 right-4 z-50 md:hidden w-12 h-12 rounded-full bg-card shadow-lg border border-border flex items-center justify-center"
       >
         {isMobileMenuOpen ? (
