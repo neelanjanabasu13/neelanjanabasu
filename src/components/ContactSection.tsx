@@ -31,7 +31,7 @@ export const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-foreground">
+    <section id="contact" className="py-12 relative overflow-hidden bg-foreground">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -52,7 +52,7 @@ export const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl sm:text-5xl font-medium text-background mb-4 font-serif">
             Let's <span className="italic">Connect</span>
