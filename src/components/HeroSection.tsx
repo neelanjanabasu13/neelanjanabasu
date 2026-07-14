@@ -115,6 +115,7 @@ export const HeroSection = () => {
               href="https://neelanjana.substack.com/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Read Neelanjana's Substack"
               className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
             >
               <BookOpen className="w-4 h-4" />
@@ -123,12 +124,14 @@ export const HeroSection = () => {
               href={resumeData.personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Neelanjana on LinkedIn"
               className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
             >
               <Linkedin className="w-4 h-4" />
             </a>
             <a
               href={`mailto:${resumeData.personal.email}`}
+              aria-label="Email Neelanjana"
               className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
             >
               <Mail className="w-4 h-4" />

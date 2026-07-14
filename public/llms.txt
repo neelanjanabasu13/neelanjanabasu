@@ -1,0 +1,13 @@
+# Neelanjana Basu
+
+> Ex-Amazon senior product manager, now building award-winning AI products end to end.
+
+Portfolio site of Neelanjana Basu — 10 years as an Amazon PM shipping $2B+ in impact, now shipping AI products in public hackathons and challenges.
+
+## Pages
+
+- [Home](/): Hero, AI products built, Amazon experience, skills, and contact.
+
+## Optional
+
+- [Build logs on Substack](https://neelanjana.substack.com/): Long-form writeups of each AI product build.
