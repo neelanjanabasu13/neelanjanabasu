@@ -31,22 +31,11 @@ export const HeroSection = () => {
 
       <div className="relative z-10 section-container flex flex-col justify-center min-h-screen py-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Location badge - pill style with dot indicator */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 text-muted-foreground text-sm font-medium mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            {resumeData.personal.title}
-          </motion.div>
-
           {/* Profile photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.25 }}
+            transition={{ delay: 0.2 }}
             className="mb-6"
           >
             <img
@@ -64,47 +53,47 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-medium text-foreground mb-6 leading-tight font-serif"
+            className="text-5xl sm:text-6xl lg:text-7xl font-medium text-foreground mb-4 leading-tight font-serif"
           >
             {resumeData.personal.name.split(" ")[0]}{" "}
             <span className="italic">{resumeData.personal.name.split(" ").slice(1).join(" ")}</span>
           </motion.h1>
 
+          {/* Title */}
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35 }}
+            className="text-2xl sm:text-3xl font-medium text-foreground mb-4"
+          >
+            I ship AI products
+          </motion.h2>
+
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
+            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
           >
-            {resumeData.personal.summary}
+            I spent 10 years as an Amazon PM, shipping $2B+ in impact. Now I build AI products end to end, pressure-testing them in public hackathons and challenges. Sometimes I win.
           </motion.p>
 
-          {/* Quote card */}
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl px-8 py-6 max-w-2xl mx-auto mb-10"
-          >
-            <p className="text-foreground/80 font-serif italic text-lg">
-              "Making products feel inevitable — by listening deeply to customers, scoping ruthlessly, and shipping with{" "}
-              <span className="bg-amber-100/80 px-1 rounded">conviction and clarity</span>."
-            </p>
-          </motion.div>
-
-          {/* CTA Buttons - filled + outline style */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
             className="flex flex-wrap justify-center gap-4 mb-12"
           >
             <a
-              href="#experience"
+              href="https://neelanjana.substack.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-all duration-300"
             >
-              Start Exploring
-              <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
+              <BookOpen className="w-4 h-4" />
+              Read my build logs
             </a>
 
             <a
