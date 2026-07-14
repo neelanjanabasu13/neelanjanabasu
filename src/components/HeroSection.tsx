@@ -4,10 +4,6 @@ import { resumeData } from "@/data/resumeData";
 import profilePhoto from "@/assets/profile-photo.png";
 
 export const HeroSection = () => {
-  const scrollToExperience = () => {
-    document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section id="hero" className="relative min-h-screen bg-background overflow-hidden">
       {/* Soft animated background blobs */}
