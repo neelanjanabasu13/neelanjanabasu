@@ -1,9 +1,10 @@
 import { FloatingNav } from "@/components/FloatingNav";
 import { HeroSection } from "@/components/HeroSection";
+import { AIBuiltSection } from "@/components/AIBuiltSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { EducationSection } from "@/components/EducationSection";
-import { PortfolioSection } from "@/components/PortfolioSection";
+import { AmazonShippedSection } from "@/components/AmazonShippedSection";
 import { ContactSection } from "@/components/ContactSection";
 
 const Index = () => {
@@ -11,10 +12,11 @@ const Index = () => {
     <main className="min-h-screen">
       <FloatingNav />
       <HeroSection />
+      <AIBuiltSection />
       <ExperienceSection />
       <SkillsSection />
       <EducationSection />
-      <PortfolioSection />
+      <AmazonShippedSection />
       <ContactSection />
     </main>
   );
