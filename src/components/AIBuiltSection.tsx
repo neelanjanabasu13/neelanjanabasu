@@ -33,6 +33,10 @@ const aiProducts: Project[] = [
     id: 3,
     title: "Assembli",
     hook: "Interactive 3D assembly guides for furniture retailers. Flat-pack returns cost $20-30 per unit; one in five is a comprehension failure.",
+    link: {
+      label: "Live",
+      url: "https://omma.build/p/matte-black-sneaker-studio-shot-xn5evb",
+    },
   },
   {
     id: 4,
