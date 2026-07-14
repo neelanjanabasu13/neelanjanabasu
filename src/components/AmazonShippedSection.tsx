@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, X, FolderOpen, Rocket } from "lucide-react";
-import addToCartAsset from "@/assets/amazon-add-to-cart.jpg.asset.json";
+import addToCartImg from "@/assets/amazon-add-to-cart.jpg";
 import quantityImg from "@/assets/amazon-quantity.png";
 import pantryImg from "@/assets/amazon-pantry.png";
 import visualNavImg from "@/assets/amazon-visual-nav-coffee.jpeg";
@@ -14,10 +14,10 @@ const portfolioItems = [
     description:
       "Revolutionary feature enabling customers to add products directly from search results, scaling to 93% worldwide impressions.",
     impact: "$2B Revenue Impact",
-    image: addToCartAsset.url,
+    image: addToCartImg,
     tags: ["E-commerce", "Search", "UX"],
     url: null,
-    objectPosition: "center",
+    objectPosition: "center 55%",
   },
   {
     id: 2,
