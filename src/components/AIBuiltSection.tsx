@@ -1,17 +1,65 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Sparkles } from "lucide-react";
+import { ExternalLink, Sparkles, Trophy } from "lucide-react";
 
-const aiProducts = [
+type Project = {
+  id: number;
+  title: string;
+  award?: string;
+  hook: string;
+  link?: { label: string; url: string };
+};
+
+const aiProducts: Project[] = [
   {
-    id: 102,
+    id: 1,
+    title: "Recipe2Reel",
+    award: "Winner, ElevenLabs ElevenCreative Challenge",
+    hook: "One-click AI reels for food creators: image, video, voiceover and music chained into a single template.",
+    link: {
+      label: "Build story",
+      url: "https://neelanjana.substack.com/p/i-entered-an-ai-challenge-on-a-whim",
+    },
+  },
+  {
+    id: 2,
+    title: "Slack Agent for Invisible Work",
+    hook: "A Slack agent that surfaces the work nobody sees, built for the Devpost Agent Challenge.",
+    link: {
+      label: "Build story",
+      url: "https://neelanjana.substack.com/p/i-cooked-up-a-slack-agent-that-makes",
+    },
+  },
+  {
+    id: 3,
+    title: "Assembli",
+    hook: "Interactive 3D assembly guides for furniture retailers. Flat-pack returns cost $20-30 per unit; one in five is a comprehension failure.",
+  },
+  {
+    id: 4,
     title: "Decision Gym",
-    category: "Vibe Coded",
-    description:
-      "Compare your gut instinct against cold, hard math. Interactive decision-training tool with scenario simulations and expected value calculations.",
-    impact: "EdTech",
-    tags: ["Decision Science", "Gamification", "AI"],
-    url: "https://decision-gym-buddy.lovable.app/",
-    builtWith: "Lovable",
+    hook: "Polymarket for life decisions: practice judgment, get scored, build calibration.",
+    link: {
+      label: "Live",
+      url: "https://flower-plugin-92759538.figma.site/",
+    },
+  },
+  {
+    id: 5,
+    title: "VenueScout",
+    hook: "An AI agent that sourced and contacted venues for a toddler's birthday party, end to end.",
+    link: {
+      label: "Build story",
+      url: "https://neelanjana.substack.com/p/building-an-ai-agent-to-find-my-toddlers",
+    },
+  },
+  {
+    id: 6,
+    title: "Email Agent",
+    hook: "My first AI agent: automating email triage and drafting end to end, the build that started the Shipping Anyway series.",
+    link: {
+      label: "Build story",
+      url: "https://neelanjana.substack.com/p/shipping-anyway-series",
+    },
   },
 ];
 
@@ -38,7 +86,6 @@ export const AIBuiltSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="w-8 h-8 rounded-lg bg-lime-300 flex items-center justify-center">
@@ -61,43 +108,32 @@ export const AIBuiltSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 whileHover={{ y: -6 }}
-                className="bg-card rounded-2xl border border-border overflow-hidden group hover:border-foreground/20 transition-all"
+                className="bg-card rounded-2xl border border-border overflow-hidden group hover:border-foreground/20 transition-all flex flex-col"
               >
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium text-foreground bg-lime-300/80 px-2.5 py-1 rounded-full">
-                      {item.impact}
-                    </span>
-                    <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
-                      {item.builtWith}
-                    </span>
-                  </div>
+                <div className="p-6 flex flex-col flex-1">
+                  {item.award && (
+                    <div className="inline-flex items-center gap-1.5 mb-3 self-start px-2.5 py-1 rounded-full bg-lime-300/80 text-foreground text-xs font-medium">
+                      <Trophy className="w-3.5 h-3.5" />
+                      {item.award}
+                    </div>
+                  )}
                   <h4 className="text-lg font-medium text-foreground mb-2 font-serif group-hover:text-foreground/80 transition-colors">
                     {item.title}
                   </h4>
-                  <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
-                    {item.description}
+                  <p className="text-muted-foreground text-sm mb-4 flex-1">
+                    {item.hook}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-foreground/70 transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Try it live
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                  {item.link && (
+                    <a
+                      href={item.link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-foreground/70 transition-colors self-start"
+                    >
+                      {item.link.label}
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
