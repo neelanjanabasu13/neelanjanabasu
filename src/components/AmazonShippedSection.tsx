@@ -17,7 +17,8 @@ const portfolioItems = [
     image: addToCartImg,
     tags: ["E-commerce", "Search", "UX"],
     url: null,
-    objectPosition: "center 55%",
+    objectFit: "object-contain",
+    objectPosition: "center",
   },
   {
     id: 2,
