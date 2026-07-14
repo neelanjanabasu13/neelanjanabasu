@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, X, FolderOpen, Rocket, Sparkles } from "lucide-react";
+import { ExternalLink, X, FolderOpen, Rocket } from "lucide-react";
 import addToCartImg from "@/assets/amazon-add-to-cart.jpg";
 import quantityImg from "@/assets/amazon-quantity.png";
 import pantryImg from "@/assets/amazon-pantry.png";
@@ -53,57 +53,8 @@ const portfolioItems = [
   },
 ];
 
-const vibeCodedItems = [
-  {
-    id: 101,
-    title: "WhatNow Kid",
-    category: "Vibe Coded",
-    description:
-      "AI-powered activity finder for parents — instant activity ideas based on a child's age, mood, and energy level. Zero mental load.",
-    impact: "Consumer AI",
-    tags: ["AI", "Parenting", "UX"],
-    url: "https://whatnow-kid-finder.lovable.app/",
-    builtWith: "Lovable",
-  },
-  {
-    id: 102,
-    title: "Decision Gym",
-    category: "Vibe Coded",
-    description:
-      "Compare your gut instinct against cold, hard math. Interactive decision-training tool with scenario simulations and expected value calculations.",
-    impact: "EdTech",
-    tags: ["Decision Science", "Gamification", "AI"],
-    url: "https://decision-gym-buddy.lovable.app/",
-    builtWith: "Lovable",
-  },
-  {
-    id: 103,
-    title: "FamilyParks London",
-    category: "Vibe Coded",
-    description:
-      "Interactive map of London's family-friendly parks with kid-focused amenity filters — playgrounds, paddling pools, cafés, and more.",
-    impact: "Geo / Local",
-    tags: ["Maps", "Families", "Local Discovery"],
-    url: "https://family-park-explorer.lovable.app/",
-    builtWith: "Lovable",
-  },
-  {
-    id: 104,
-    title: "Monologue",
-    category: "Vibe Coded",
-    description:
-      "Transform rough notes into confident speeches. Choose your style (TED Talk, Business Pitch, Standup Comedy), preview text, and play back with AI-generated voice.",
-    impact: "Productivity AI",
-    tags: ["AI", "Speech", "Content Creation"],
-    url: "https://monologue-ai-speech-9zgm.bolt.host/",
-    builtWith: "Bolt",
-  },
-];
-
-export const PortfolioSection = () => {
-  const [selectedItem, setSelectedItem] = useState<
-    (typeof portfolioItems)[0] | (typeof vibeCodedItems)[0] | null
-  >(null);
+export const AmazonShippedSection = () => {
+  const [selectedItem, setSelectedItem] = useState<(typeof portfolioItems)[0] | null>(null);
 
   return (
     <section id="portfolio" className="py-24 bg-background">
@@ -116,14 +67,13 @@ export const PortfolioSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
-            <span className="italic">Portfolio</span>
+            What I shipped at <span className="italic">Amazon</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Key products and features I've built and scaled
+            Key products and features I built and scaled across consumer and platform teams
           </p>
         </motion.div>
 
-        {/* Amazon Products */}
         <div className="flex items-center gap-3 mb-8">
           <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
             <Rocket className="w-4 h-4 text-foreground" />
@@ -183,77 +133,6 @@ export const PortfolioSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Vibe Coded Products */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-8 h-8 rounded-lg bg-lime-300 flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-foreground" />
-            </div>
-            <h3 className="text-2xl font-medium text-foreground font-serif">
-              Vibe Coded <span className="italic">Products</span>
-            </h3>
-            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider bg-secondary px-3 py-1 rounded-full">
-              Built with AI
-            </span>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {vibeCodedItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                whileHover={{ y: -6 }}
-                className="bg-card rounded-2xl border border-border overflow-hidden group hover:border-foreground/20 transition-all"
-              >
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium text-foreground bg-lime-300/80 px-2.5 py-1 rounded-full">
-                      {item.impact}
-                    </span>
-                    <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
-                      {item.builtWith}
-                    </span>
-                  </div>
-                  <h4 className="text-lg font-medium text-foreground mb-2 font-serif group-hover:text-foreground/80 transition-colors">
-                    {item.title}
-                  </h4>
-                  <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
-                    {item.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-foreground/70 transition-colors"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    Try it live
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Modal */}
         <AnimatePresence>
