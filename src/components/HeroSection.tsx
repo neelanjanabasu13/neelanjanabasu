@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Download, Linkedin, Mail, ChevronDown, BookOpen } from "lucide-react";
+import { MapPin, Download, Linkedin, Mail, ChevronDown, BookOpen, Github } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
 import profilePhoto from "@/assets/profile-photo.png";
 
@@ -112,13 +112,13 @@ export const HeroSection = () => {
             className="flex justify-center gap-4 mb-16"
           >
             <a
-              href="https://neelanjana.substack.com/"
+              href="https://github.com/neelanjanabasu13"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Read Neelanjana's Substack"
+              aria-label="Neelanjana on GitHub"
               className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
             >
-              <BookOpen className="w-4 h-4" />
+              <Github className="w-4 h-4" />
             </a>
             <a
               href={resumeData.personal.linkedin}
