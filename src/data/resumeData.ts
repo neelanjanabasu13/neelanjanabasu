@@ -5,7 +5,7 @@ export const resumeData = {
     location: "London, UK",
     email: "neelanjanabasu13@gmail.com",
     phone: "+44 07754356953",
-    linkedin: "https://linkedin.com/in/neelanjana-basu",
+    linkedin: "https://www.linkedin.com/in/neelanjana-basu",
     summary:
       "Product leader with 10+ years building and scaling consumer products at Amazon. Deep experience in product strategy, customer-obsessed roadmap ownership, cross-functional execution, and turning ambiguous customer needs into high-impact solutions. Passionate about AI and its power to reshape how software is built and adopted.",
   },
