@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { MapPin, Download, Linkedin, Mail, ChevronDown, BookOpen, Github } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
 import profilePhoto from "@/assets/profile-photo.png";
+import resumePdf from "@/assets/Neelanjana_Basu.pdf.asset.json";
 
 export const HeroSection = () => {
   return (
