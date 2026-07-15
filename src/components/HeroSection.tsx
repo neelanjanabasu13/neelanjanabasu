@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Download, Linkedin, Mail, ChevronDown, BookOpen } from "lucide-react";
+import { MapPin, Download, Linkedin, Mail, ChevronDown, BookOpen, Github } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
 import profilePhoto from "@/assets/profile-photo.png";
 
