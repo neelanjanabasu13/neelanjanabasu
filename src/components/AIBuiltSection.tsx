@@ -31,6 +31,11 @@ const aiProducts: Project[] = [
         label: "Build story",
         url: "https://neelanjana.substack.com/p/i-cooked-up-a-slack-agent-that-makes",
       },
+      {
+        label: "GitHub",
+        url: "https://github.com/neelanjanabasu13/receipts-app",
+        icon: "github",
+      },
     ],
   },
   {
