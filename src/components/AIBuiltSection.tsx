@@ -47,6 +47,10 @@ const aiProducts: Project[] = [
         label: "Live",
         url: "https://omma.build/p/matte-black-sneaker-studio-shot-xn5evb",
       },
+      {
+        label: "Build story",
+        url: "https://substack.com/home/post/p-207773480",
+      },
     ],
   },
   {
@@ -62,6 +66,10 @@ const aiProducts: Project[] = [
         label: "GitHub",
         url: "https://github.com/neelanjanabasu13/DecisionGym",
         icon: "github",
+      },
+      {
+        label: "Build story",
+        url: "https://substack.com/home/post/p-207773480",
       },
     ],
   },
