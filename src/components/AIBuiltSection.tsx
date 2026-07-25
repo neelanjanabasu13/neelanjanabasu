@@ -5,6 +5,7 @@ type Project = {
   id: number;
   title: string;
   award?: string;
+  platform: string;
   hook: string;
   links: { label: string; url: string; icon?: "external" | "github" }[];
 };
