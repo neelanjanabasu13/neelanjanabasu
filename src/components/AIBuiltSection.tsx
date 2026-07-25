@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Sparkles, Trophy } from "lucide-react";
+import { ExternalLink, Github, Sparkles, Trophy } from "lucide-react";
 
 type Project = {
   id: number;
   title: string;
   award?: string;
   hook: string;
-  link?: { label: string; url: string };
+  links: { label: string; url: string; icon?: "external" | "github" }[];
 };
 
 const aiProducts: Project[] = [
@@ -15,55 +15,103 @@ const aiProducts: Project[] = [
     title: "Recipe2Reel",
     award: "Winner, ElevenLabs ElevenCreative Challenge",
     hook: "One-click AI reels for food creators: image, video, voiceover and music chained into a single template.",
-    link: {
-      label: "Build story",
-      url: "https://neelanjana.substack.com/p/i-entered-an-ai-challenge-on-a-whim",
-    },
+    links: [
+      {
+        label: "Build story",
+        url: "https://neelanjana.substack.com/p/i-entered-an-ai-challenge-on-a-whim",
+      },
+    ],
   },
   {
     id: 2,
     title: "Slack Agent for Invisible Work",
     hook: "A Slack agent that surfaces the work nobody sees, built for the Devpost Agent Challenge.",
-    link: {
-      label: "Build story",
-      url: "https://neelanjana.substack.com/p/i-cooked-up-a-slack-agent-that-makes",
-    },
+    links: [
+      {
+        label: "Build story",
+        url: "https://neelanjana.substack.com/p/i-cooked-up-a-slack-agent-that-makes",
+      },
+    ],
   },
   {
     id: 3,
     title: "Assembli",
     hook: "Interactive 3D assembly guides for furniture retailers. Flat-pack returns cost $20-30 per unit; one in five is a comprehension failure.",
-    link: {
-      label: "Live",
-      url: "https://omma.build/p/matte-black-sneaker-studio-shot-xn5evb",
-    },
+    links: [
+      {
+        label: "Live",
+        url: "https://omma.build/p/matte-black-sneaker-studio-shot-xn5evb",
+      },
+    ],
   },
   {
     id: 4,
     title: "Decision Gym",
     hook: "Polymarket for life decisions: practice judgment, get scored, build calibration.",
-    link: {
-      label: "Live",
-      url: "https://flower-plugin-92759538.figma.site/",
-    },
+    links: [
+      {
+        label: "Live",
+        url: "https://flower-plugin-92759538.figma.site/",
+      },
+    ],
   },
   {
     id: 5,
     title: "VenueScout",
     hook: "An AI agent that sourced and contacted venues for a toddler's birthday party, end to end.",
-    link: {
-      label: "Build story",
-      url: "https://neelanjana.substack.com/p/building-an-ai-agent-to-find-my-toddlers",
-    },
+    links: [
+      {
+        label: "Build story",
+        url: "https://neelanjana.substack.com/p/building-an-ai-agent-to-find-my-toddlers",
+      },
+    ],
   },
   {
     id: 6,
     title: "Email Agent",
     hook: "My first AI agent: automating email triage and drafting end to end, the build that started the Shipping Anyway series.",
-    link: {
-      label: "Build story",
-      url: "https://neelanjana.substack.com/p/shipping-anyway-series",
-    },
+    links: [
+      {
+        label: "Build story",
+        url: "https://neelanjana.substack.com/p/shipping-anyway-series",
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "PM Sandbox",
+    hook: "A flight simulator for product-manager interviews. Practice 3,400+ real product sense/execution/strategy questions with guided, gamified drills and AI feedback.",
+    links: [
+      {
+        label: "Live",
+        url: "https://product-sense-sandbox.bolt.host/",
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/neelanjanabasu13/pm-sandbox",
+        icon: "github",
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "Product Genome Studio",
+    hook: "A hands-on simulator for product judgment: pick customer journey patterns from companies that nailed them, see the trade-offs/conflicts, and synthesize the best of all worlds.",
+    links: [
+      {
+        label: "Live",
+        url: "https://productgenomestudio.lovable.app/",
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/neelanjanabasu13/productgenomestudio",
+        icon: "github",
+      },
+      {
+        label: "Build story",
+        url: "https://devpost.com/software/product-genome-studio",
+      },
+    ],
   },
 ];
 
@@ -127,17 +175,24 @@ export const AIBuiltSection = () => {
                   <p className="text-muted-foreground text-sm mb-4 flex-1">
                     {item.hook}
                   </p>
-                  {item.link && (
-                    <a
-                      href={item.link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-foreground/70 transition-colors self-start"
-                    >
-                      {item.link.label}
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  )}
+                  <div className="flex flex-wrap items-center gap-4">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-foreground/70 transition-colors"
+                      >
+                        {link.label}
+                        {link.icon === "github" ? (
+                          <Github className="w-3.5 h-3.5" />
+                        ) : (
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        )}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
