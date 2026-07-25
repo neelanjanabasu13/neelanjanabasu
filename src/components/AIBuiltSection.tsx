@@ -154,12 +154,7 @@ const aiProducts: Project[] = [
   },
 ];
 
-const FEATURED_COUNT = 4;
-
 export const AIBuiltSection = () => {
-  const featuredProducts = aiProducts.slice(0, FEATURED_COUNT);
-  const carouselProducts = aiProducts.slice(FEATURED_COUNT);
-
   return (
     <section id="ai-products" className="py-12 bg-background">
       <div className="section-container">
@@ -195,17 +190,10 @@ export const AIBuiltSection = () => {
             </span>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {featuredProducts.map((item, index) => (
-              <ProjectCard key={item.id} item={item} index={index} />
-            ))}
-          </div>
-
-          {carouselProducts.length > 0 && (
-            <AICarousel projects={carouselProducts} />
-          )}
+          <AICarousel projects={aiProducts} />
         </motion.div>
       </div>
     </section>
   );
 };
+
