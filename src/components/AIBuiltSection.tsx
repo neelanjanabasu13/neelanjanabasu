@@ -200,12 +200,17 @@ export const AIBuiltSection = () => {
                 className="bg-card rounded-2xl border border-border overflow-hidden group hover:border-foreground/20 transition-all flex flex-col"
               >
                 <div className="p-6 flex flex-col flex-1">
-                  {item.award && (
-                    <div className="inline-flex items-center gap-1.5 mb-3 self-start px-2.5 py-1 rounded-full bg-lime-300/80 text-foreground text-xs font-medium">
-                      <Trophy className="w-3.5 h-3.5" />
-                      {item.award}
-                    </div>
-                  )}
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    {item.award && (
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-lime-300/80 text-foreground text-xs font-medium">
+                        <Trophy className="w-3.5 h-3.5" />
+                        {item.award}
+                      </div>
+                    )}
+                    <span className={`inline-flex items-center px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium ${item.award ? "" : "ml-auto"}`}>
+                      {item.platform}
+                    </span>
+                  </div>
                   <h4 className="text-lg font-medium text-foreground mb-2 font-serif group-hover:text-foreground/80 transition-colors">
                     {item.title}
                   </h4>
