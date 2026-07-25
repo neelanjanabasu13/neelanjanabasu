@@ -58,6 +58,11 @@ const aiProducts: Project[] = [
         label: "Live",
         url: "https://flower-plugin-92759538.figma.site/",
       },
+      {
+        label: "GitHub",
+        url: "https://github.com/neelanjanabasu13/DecisionGym",
+        icon: "github",
+      },
     ],
   },
   {
@@ -69,6 +74,11 @@ const aiProducts: Project[] = [
         label: "Build story",
         url: "https://neelanjana.substack.com/p/building-an-ai-agent-to-find-my-toddlers",
       },
+      {
+        label: "GitHub",
+        url: "https://github.com/neelanjanabasu13/venuescout-automation",
+        icon: "github",
+      },
     ],
   },
   {
@@ -79,6 +89,11 @@ const aiProducts: Project[] = [
       {
         label: "Build story",
         url: "https://neelanjana.substack.com/p/shipping-anyway-series",
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/neelanjanabasu13/task-digest-agent",
+        icon: "github",
       },
     ],
   },
