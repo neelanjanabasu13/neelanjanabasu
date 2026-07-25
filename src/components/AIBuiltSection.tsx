@@ -15,6 +15,7 @@ const aiProducts: Project[] = [
     id: 1,
     title: "Recipe2Reel",
     award: "Winner, ElevenLabs ElevenCreative Challenge",
+    platform: "ElevenLabs",
     hook: "One-click AI reels for food creators: image, video, voiceover and music chained into a single template.",
     links: [
       {
@@ -26,6 +27,7 @@ const aiProducts: Project[] = [
   {
     id: 2,
     title: "Slack Agent for Invisible Work",
+    platform: "Slack + Replit",
     hook: "A Slack agent that surfaces the work nobody sees, built for the Devpost Agent Challenge.",
     links: [
       {
@@ -42,6 +44,7 @@ const aiProducts: Project[] = [
   {
     id: 7,
     title: "PM Sandbox",
+    platform: "Bolt.new",
     hook: "A flight simulator for product-manager interviews. Practice 3,400+ real product sense/execution/strategy questions with guided, gamified drills and AI feedback.",
     links: [
       {
@@ -58,6 +61,7 @@ const aiProducts: Project[] = [
   {
     id: 6,
     title: "Email Agent",
+    platform: "Codex",
     hook: "My first AI agent: automating email triage and drafting end to end, the build that started the Shipping Anyway series.",
     links: [
       {
@@ -74,6 +78,7 @@ const aiProducts: Project[] = [
   {
     id: 3,
     title: "Assembli",
+    platform: "Omma",
     hook: "Interactive 3D assembly guides for furniture retailers. Flat-pack returns cost $20-30 per unit; one in five is a comprehension failure.",
     links: [
       {
@@ -89,6 +94,7 @@ const aiProducts: Project[] = [
   {
     id: 4,
     title: "Decision Gym",
+    platform: "Figma Make",
     hook: "Polymarket for life decisions: practice judgment, get scored, build calibration.",
     links: [
       {
@@ -109,6 +115,7 @@ const aiProducts: Project[] = [
   {
     id: 5,
     title: "VenueScout",
+    platform: "Codex",
     hook: "An AI agent that sourced and contacted venues for a toddler's birthday party, end to end.",
     links: [
       {
@@ -125,6 +132,7 @@ const aiProducts: Project[] = [
   {
     id: 8,
     title: "Product Genome Studio",
+    platform: "Lovable",
     hook: "A hands-on simulator for product judgment: pick customer journey patterns from companies that nailed them, see the trade-offs/conflicts, and synthesize the best of all worlds.",
     links: [
       {
