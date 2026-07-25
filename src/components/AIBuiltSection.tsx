@@ -39,6 +39,38 @@ const aiProducts: Project[] = [
     ],
   },
   {
+    id: 7,
+    title: "PM Sandbox",
+    hook: "A flight simulator for product-manager interviews. Practice 3,400+ real product sense/execution/strategy questions with guided, gamified drills and AI feedback.",
+    links: [
+      {
+        label: "Live",
+        url: "https://product-sense-sandbox.bolt.host/",
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/neelanjanabasu13/pm-sandbox",
+        icon: "github",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Email Agent",
+    hook: "My first AI agent: automating email triage and drafting end to end, the build that started the Shipping Anyway series.",
+    links: [
+      {
+        label: "Build story",
+        url: "https://neelanjana.substack.com/p/shipping-anyway-series",
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/neelanjanabasu13/task-digest-agent",
+        icon: "github",
+      },
+    ],
+  },
+  {
     id: 3,
     title: "Assembli",
     hook: "Interactive 3D assembly guides for furniture retailers. Flat-pack returns cost $20-30 per unit; one in five is a comprehension failure.",
@@ -85,38 +117,6 @@ const aiProducts: Project[] = [
       {
         label: "GitHub",
         url: "https://github.com/neelanjanabasu13/venuescout-automation",
-        icon: "github",
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: "Email Agent",
-    hook: "My first AI agent: automating email triage and drafting end to end, the build that started the Shipping Anyway series.",
-    links: [
-      {
-        label: "Build story",
-        url: "https://neelanjana.substack.com/p/shipping-anyway-series",
-      },
-      {
-        label: "GitHub",
-        url: "https://github.com/neelanjanabasu13/task-digest-agent",
-        icon: "github",
-      },
-    ],
-  },
-  {
-    id: 7,
-    title: "PM Sandbox",
-    hook: "A flight simulator for product-manager interviews. Practice 3,400+ real product sense/execution/strategy questions with guided, gamified drills and AI feedback.",
-    links: [
-      {
-        label: "Live",
-        url: "https://product-sense-sandbox.bolt.host/",
-      },
-      {
-        label: "GitHub",
-        url: "https://github.com/neelanjanabasu13/pm-sandbox",
         icon: "github",
       },
     ],
@@ -179,7 +179,7 @@ export const AIBuiltSection = () => {
             </span>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {aiProducts.map((item, index) => (
               <motion.div
                 key={item.id}
