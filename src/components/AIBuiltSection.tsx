@@ -5,6 +5,7 @@ type Project = {
   id: number;
   title: string;
   award?: string;
+  platform: string;
   hook: string;
   links: { label: string; url: string; icon?: "external" | "github" }[];
 };
@@ -14,6 +15,7 @@ const aiProducts: Project[] = [
     id: 1,
     title: "Recipe2Reel",
     award: "Winner, ElevenLabs ElevenCreative Challenge",
+    platform: "ElevenLabs",
     hook: "One-click AI reels for food creators: image, video, voiceover and music chained into a single template.",
     links: [
       {
@@ -25,6 +27,7 @@ const aiProducts: Project[] = [
   {
     id: 2,
     title: "Slack Agent for Invisible Work",
+    platform: "Slack + Replit",
     hook: "A Slack agent that surfaces the work nobody sees, built for the Devpost Agent Challenge.",
     links: [
       {
@@ -41,6 +44,7 @@ const aiProducts: Project[] = [
   {
     id: 7,
     title: "PM Sandbox",
+    platform: "Bolt.new",
     hook: "A flight simulator for product-manager interviews. Practice 3,400+ real product sense/execution/strategy questions with guided, gamified drills and AI feedback.",
     links: [
       {
@@ -57,6 +61,7 @@ const aiProducts: Project[] = [
   {
     id: 6,
     title: "Email Agent",
+    platform: "Codex",
     hook: "My first AI agent: automating email triage and drafting end to end, the build that started the Shipping Anyway series.",
     links: [
       {
@@ -73,6 +78,7 @@ const aiProducts: Project[] = [
   {
     id: 3,
     title: "Assembli",
+    platform: "Omma",
     hook: "Interactive 3D assembly guides for furniture retailers. Flat-pack returns cost $20-30 per unit; one in five is a comprehension failure.",
     links: [
       {
@@ -88,6 +94,7 @@ const aiProducts: Project[] = [
   {
     id: 4,
     title: "Decision Gym",
+    platform: "Figma Make",
     hook: "Polymarket for life decisions: practice judgment, get scored, build calibration.",
     links: [
       {
@@ -108,6 +115,7 @@ const aiProducts: Project[] = [
   {
     id: 5,
     title: "VenueScout",
+    platform: "Codex",
     hook: "An AI agent that sourced and contacted venues for a toddler's birthday party, end to end.",
     links: [
       {
@@ -124,6 +132,7 @@ const aiProducts: Project[] = [
   {
     id: 8,
     title: "Product Genome Studio",
+    platform: "Lovable",
     hook: "A hands-on simulator for product judgment: pick customer journey patterns from companies that nailed them, see the trade-offs/conflicts, and synthesize the best of all worlds.",
     links: [
       {
@@ -191,12 +200,17 @@ export const AIBuiltSection = () => {
                 className="bg-card rounded-2xl border border-border overflow-hidden group hover:border-foreground/20 transition-all flex flex-col"
               >
                 <div className="p-6 flex flex-col flex-1">
-                  {item.award && (
-                    <div className="inline-flex items-center gap-1.5 mb-3 self-start px-2.5 py-1 rounded-full bg-lime-300/80 text-foreground text-xs font-medium">
-                      <Trophy className="w-3.5 h-3.5" />
-                      {item.award}
-                    </div>
-                  )}
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    {item.award && (
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-lime-300/80 text-foreground text-xs font-medium">
+                        <Trophy className="w-3.5 h-3.5" />
+                        {item.award}
+                      </div>
+                    )}
+                    <span className={`inline-flex items-center px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium ${item.award ? "" : "ml-auto"}`}>
+                      {item.platform}
+                    </span>
+                  </div>
                   <h4 className="text-lg font-medium text-foreground mb-2 font-serif group-hover:text-foreground/80 transition-colors">
                     {item.title}
                   </h4>
