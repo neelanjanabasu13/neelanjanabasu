@@ -152,18 +152,6 @@ const aiProducts: Project[] = [
       },
     ],
   },
-  {
-    id: 99,
-    title: "Test Project",
-    platform: "Test",
-    hook: "Temporary test project to verify carousel pagination.",
-    links: [
-      {
-        label: "Live",
-        url: "https://example.com",
-      },
-    ],
-  },
 ];
 
 const FEATURED_COUNT = 4;
