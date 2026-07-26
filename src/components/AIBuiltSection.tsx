@@ -156,7 +156,7 @@ const aiProducts: Project[] = [
     id: 9,
     title: "WhatNowKid Activity Finder",
     platform: "Lovable",
-    hook: "An activity finder for parents scrambling to answer 'what now?'. It surfaces kid-friendly things to do based on the child's age, location, and mood."
+    hook: "An activity finder for parents scrambling to answer 'what now?'. It surfaces kid-friendly things to do based on the child's age, location, and mood.",
     links: [
       {
         label: "Live",
