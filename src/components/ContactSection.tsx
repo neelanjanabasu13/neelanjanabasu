@@ -115,7 +115,7 @@ export const ContactSection = () => {
           transition={{ delay: 0.5 }}
           className="mt-20 pt-8 border-t border-background/20 text-center"
         >
-          <p className="text-background/40 text-sm">
+          <p className="text-background/70 text-sm">
             © {new Date().getFullYear()} {resumeData.personal.name}. All rights reserved.
           </p>
         </motion.div>
