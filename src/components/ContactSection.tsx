@@ -93,10 +93,10 @@ export const ContactSection = () => {
                     <Icon className="w-5 h-5 text-background" />
                   </div>
                   {link.href && (
-                    <ArrowUpRight className="w-5 h-5 text-background/50 group-hover:text-background transition-colors" />
+                    <ArrowUpRight className="w-5 h-5 text-background/80 group-hover:text-background transition-colors" />
                   )}
                 </div>
-                <h3 className="text-sm font-medium text-background/60 mb-1">
+                <h3 className="text-sm font-medium text-background/80 mb-1">
                   {link.label}
                 </h3>
                 <p className="text-background font-medium text-sm break-all">
