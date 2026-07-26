@@ -152,6 +152,23 @@ const aiProducts: Project[] = [
       },
     ],
   },
+  {
+    id: 9,
+    title: "WhatNowKid Activity Finder",
+    platform: "Lovable",
+    hook: "An activity finder for parents scrambling to answer 'what now?' — surfaces kid-friendly things to do based on age, location, and mood.",
+    links: [
+      {
+        label: "Live",
+        url: "https://whatnowkid-activity-finder.lovable.app/",
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/neelanjanabasu13/whatnowkid-activity-finder",
+        icon: "github",
+      },
+    ],
+  },
 ];
 
 export const AIBuiltSection = () => {
