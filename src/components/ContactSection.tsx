@@ -57,7 +57,7 @@ export const ContactSection = () => {
           <h2 className="text-4xl sm:text-5xl font-medium text-background mb-4 font-serif">
             Let's <span className="italic">Connect</span>
           </h2>
-          <p className="text-background/60 text-lg max-w-2xl mx-auto">
+          <p className="text-background/80 text-lg max-w-2xl mx-auto">
             Let's talk about product strategy, AI-powered software, or
             building products that customers love
           </p>
