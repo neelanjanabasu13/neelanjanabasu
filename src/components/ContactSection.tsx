@@ -57,7 +57,7 @@ export const ContactSection = () => {
           <h2 className="text-4xl sm:text-5xl font-medium text-background mb-4 font-serif">
             Let's <span className="italic">Connect</span>
           </h2>
-          <p className="text-background/60 text-lg max-w-2xl mx-auto">
+          <p className="text-background/80 text-lg max-w-2xl mx-auto">
             Let's talk about product strategy, AI-powered software, or
             building products that customers love
           </p>
@@ -93,10 +93,10 @@ export const ContactSection = () => {
                     <Icon className="w-5 h-5 text-background" />
                   </div>
                   {link.href && (
-                    <ArrowUpRight className="w-5 h-5 text-background/50 group-hover:text-background transition-colors" />
+                    <ArrowUpRight className="w-5 h-5 text-background/80 group-hover:text-background transition-colors" />
                   )}
                 </div>
-                <h3 className="text-sm font-medium text-background/60 mb-1">
+                <h3 className="text-sm font-medium text-background/80 mb-1">
                   {link.label}
                 </h3>
                 <p className="text-background font-medium text-sm break-all">
@@ -115,7 +115,7 @@ export const ContactSection = () => {
           transition={{ delay: 0.5 }}
           className="mt-20 pt-8 border-t border-background/20 text-center"
         >
-          <p className="text-background/40 text-sm">
+          <p className="text-background/70 text-sm">
             © {new Date().getFullYear()} {resumeData.personal.name}. All rights reserved.
           </p>
         </motion.div>
