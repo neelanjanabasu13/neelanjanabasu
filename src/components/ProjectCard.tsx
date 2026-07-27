@@ -7,7 +7,10 @@ interface ProjectCardProps {
   index?: number;
 }
 
+const ACCENTS = ["#C1272D", "#E8A33D", "#1B6E86", "#E38FA8", "#3F6B2F", "#DC5A2E"];
+
 export const ProjectCard = ({ item, index = 0 }: ProjectCardProps) => {
+  const accent = ACCENTS[index % ACCENTS.length];
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -15,7 +18,8 @@ export const ProjectCard = ({ item, index = 0 }: ProjectCardProps) => {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ y: -4 }}
-      className="folk-card group hover:border-foreground/30 flex flex-col"
+      className="folk-card group hover:border-foreground/30 flex flex-col overflow-hidden"
+      style={{ borderTop: `6px solid ${accent}` }}
     >
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-3">
