@@ -11,8 +11,7 @@
     <script>
       (function () {
         const stored = localStorage.getItem("nb-theme");
-        const hour = new Date().getHours();
-        const theme = stored ? stored : hour >= 6 && hour < 19 ? "light" : "dark";
+        const theme = stored ? stored : "light";
         if (theme === "dark") document.documentElement.classList.add("dark");
         document.documentElement.setAttribute("data-theme", theme);
       })();

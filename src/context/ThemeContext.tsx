@@ -27,9 +27,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       typeof window !== "undefined"
         ? (window.localStorage.getItem(STORAGE_KEY) as Theme | null)
         : null;
-    const hour = typeof window !== "undefined" ? new Date().getHours() : 12;
-    const fallback: Theme = hour >= 6 && hour < 19 ? "light" : "dark";
-    const initial = stored ?? fallback;
+    const initial: Theme = stored ?? "light";
     setThemeState(initial);
     apply(initial);
   }, []);
