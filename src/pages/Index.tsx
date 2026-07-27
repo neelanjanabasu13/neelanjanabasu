@@ -4,7 +4,6 @@ import { AmazonPeerTicker } from "@/components/AmazonPeerTicker";
 import { AIBuiltSection } from "@/components/AIBuiltSection";
 import { AmazonShippedSection } from "@/components/AmazonShippedSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
-import { SkillsSection } from "@/components/SkillsSection";
 import { EducationSection } from "@/components/EducationSection";
 import { ContactSection } from "@/components/ContactSection";
 
@@ -17,7 +16,6 @@ const Index = () => {
       <AIBuiltSection />
       <AmazonShippedSection />
       <ExperienceSection />
-      <SkillsSection />
       <EducationSection />
       <ContactSection />
     </main>
