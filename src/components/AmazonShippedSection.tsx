@@ -17,7 +17,8 @@ const portfolioItems = [
       "Revolutionary feature enabling customers to add products directly from search results, scaling to 93% worldwide impressions.",
     impact: "$2B Revenue Impact",
     image: addToCartImg,
-    focus: "center 65%",
+    focus: "right 60%",
+
 
     tags: ["E-commerce", "Search", "UX"],
     story:
