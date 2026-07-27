@@ -5,7 +5,6 @@ import { AIBuiltSection } from "@/components/AIBuiltSection";
 import { AmazonShippedSection } from "@/components/AmazonShippedSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { EducationSection } from "@/components/EducationSection";
-import { ContactSection } from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -17,7 +16,6 @@ const Index = () => {
       <AmazonShippedSection />
       <ExperienceSection />
       <EducationSection />
-      <ContactSection />
     </main>
   );
 };
