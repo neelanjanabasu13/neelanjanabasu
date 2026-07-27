@@ -64,7 +64,7 @@ export const HeroSection = () => {
             transition={{ delay: 0.35 }}
             className="text-2xl sm:text-3xl font-medium text-foreground mb-4"
           >
-            I ship AI products
+            I build AI products end to end.
           </motion.h2>
 
           {/* Subtitle */}
@@ -72,37 +72,39 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
+            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-4"
           >
-            I spent 10 years as an Amazon PM, shipping $2B+ in impact. Now I build AI products end to end, pressure-testing them in public hackathons and challenges. Sometimes I win.
+            Ten years in product before that, most of it at Amazon, most recently Senior Product Manager on Add to Cart in Search. I like problems where nobody has agreed on the question yet.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Availability signal */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45 }}
+            className="text-base text-foreground/80 max-w-2xl mx-auto mb-8"
+          >
+            Open to AI product roles. Permanently curious, reliably specific.
+          </motion.p>
+
+          {/* Jump links */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap justify-center gap-6 mb-12"
           >
             <a
-              href="https://neelanjana.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-foreground text-background font-medium hover:bg-foreground/90 transition-all duration-300"
+              href="#ai-products"
+              className="text-foreground font-medium underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors"
             >
-              <BookOpen className="w-4 h-4" />
-              Read my build logs
+              What I am building now
             </a>
-
             <a
-              href={resumePdf.url}
-              download="Neelanjana_Basu.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-border bg-card/50 text-foreground font-medium hover:bg-card transition-all duration-300"
+              href="#portfolio"
+              className="text-foreground font-medium underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors"
             >
-              <Download className="w-4 h-4" />
-              Download Resume
+              What I built at Amazon
             </a>
           </motion.div>
 
@@ -113,35 +115,89 @@ export const HeroSection = () => {
             transition={{ delay: 0.55 }}
             className="flex justify-center gap-4 mb-16"
           >
-            <a
-              href="https://github.com/neelanjanabasu13"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Neelanjana on GitHub"
-              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
-            >
-              <Github className="w-4 h-4" />
-            </a>
-            <a
-              href={resumeData.personal.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Neelanjana on LinkedIn"
-              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
-            >
-              <Linkedin className="w-4 h-4" />
-            </a>
-            <a
-              href={`mailto:${resumeData.personal.email}`}
-              aria-label="Email Neelanjana"
-              className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
-            >
-              <Mail className="w-4 h-4" />
-            </a>
-            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
-              <MapPin className="w-3.5 h-3.5" />
-              {resumeData.personal.location}
-            </span>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="https://github.com/neelanjanabasu13"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Neelanjana on GitHub"
+                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+                >
+                  <Github className="w-4 h-4" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>GitHub</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href={resumeData.personal.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Neelanjana on LinkedIn"
+                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>LinkedIn</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="https://neelanjana.substack.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Neelanjana on Substack"
+                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
+                    <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+                  </svg>
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>Substack</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href={`mailto:${resumeData.personal.email}`}
+                  aria-label="Email Neelanjana"
+                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+                >
+                  <Mail className="w-4 h-4" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>Email</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href={resumePdf.url}
+                  download="Neelanjana_Basu.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download Neelanjana's resume"
+                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+                >
+                  <Download className="w-4 h-4" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>Download resume</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span
+                  aria-label={`Location: ${resumeData.personal.location}`}
+                  className="flex items-center gap-1.5 text-sm text-muted-foreground"
+                >
+                  <MapPin className="w-4 h-4" />
+                  {resumeData.personal.location}
+                </span>
+              </TooltipTrigger>
+              <TooltipContent>{resumeData.personal.location}</TooltipContent>
+            </Tooltip>
           </motion.div>
 
           {/* Stats row - minimal style */}
