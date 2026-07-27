@@ -216,10 +216,10 @@ export const SectionDivider = ({ variant }: SectionDividerProps) => {
       style={{ height: HEIGHT }}
     >
       <svg
-        className="absolute inset-0 w-full h-full"
-        preserveAspectRatio="none"
-        viewBox={`0 0 ${tw} ${HEIGHT}`}
+        className="block w-full"
         width="100%"
+        height={HEIGHT}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
           <pattern
@@ -234,8 +234,8 @@ export const SectionDivider = ({ variant }: SectionDividerProps) => {
           </pattern>
         </defs>
         {/* top and bottom contour rails */}
-        <line x1="0" x2={tw} y1="4" y2="4" stroke={STROKE} strokeWidth={SW} />
-        <line x1="0" x2={tw} y1={HEIGHT - 4} y2={HEIGHT - 4} stroke={STROKE} strokeWidth={SW} />
+        <line x1="0" x2="100%" y1="4" y2="4" stroke={STROKE} strokeWidth={SW} />
+        <line x1="0" x2="100%" y1={HEIGHT - 4} y2={HEIGHT - 4} stroke={STROKE} strokeWidth={SW} />
         <rect width="100%" height={HEIGHT} fill={`url(#${patternId})`} />
       </svg>
     </div>
