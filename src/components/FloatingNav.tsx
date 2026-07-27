@@ -13,6 +13,7 @@ const navItems = [
 // Note: The labels above are placeholders to match the reference style. 
 // You can rename them to match your actual sections.
 const actualNavItems = [
+  { id: "ai-products", label: "AI builds" },
   { id: "experience", label: "Experience" },
   { id: "education", label: "Education" },
   { id: "portfolio", label: "Portfolio" },
