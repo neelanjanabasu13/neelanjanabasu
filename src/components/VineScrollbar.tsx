@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 // Leaves mark each section; the section currently in view blooms a flower.
 // Clicking a leaf/flower scrolls to that section.
 
-const STROKE = "#1A1A18";
+const STROKE = "var(--contour)";
 const STEM = "#C1272D";
 const SW = 1.5;
 

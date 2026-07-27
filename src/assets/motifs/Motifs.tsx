@@ -1,9 +1,9 @@
-// Hand-drawn folk-art motifs. Deliberately imperfect curves, single black contour.
-// All fills come from the brief palette; stroke is always contour black #1A1A18.
+// Hand-drawn folk-art motifs. Deliberately imperfect curves, single contour line.
+// Stroke follows the theme contour token so it stays visible in light and dark modes.
 
 import type { SVGProps } from "react";
 
-const STROKE = "#1A1A18";
+const STROKE = "var(--contour)";
 const SW = 1.25;
 
 type Props = SVGProps<SVGSVGElement> & { size?: number };
