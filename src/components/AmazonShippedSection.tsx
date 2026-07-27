@@ -69,10 +69,10 @@ export const AmazonShippedSection = () => {
           className="text-center mb-8"
         >
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
-            What I shipped at <span className="italic">Amazon</span>
+            What I built at <span className="italic">Amazon</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Key products and features I built and scaled across consumer and platform teams
+          <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
+            Some interesting stories of products I shipped and scaled.
           </p>
         </motion.div>
 
