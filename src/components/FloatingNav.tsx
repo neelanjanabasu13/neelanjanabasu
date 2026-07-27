@@ -110,7 +110,7 @@ export const FloatingNav = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-20 right-4 z-50 md:hidden bg-background rounded-2xl shadow-medium border border-border overflow-hidden"
+            className="fixed top-20 right-4 z-50 md:hidden bg-background rounded-2xl shadow-lg border border-border overflow-hidden"
           >
             <div className="p-2">
               {actualNavItems.map((item, index) => {
