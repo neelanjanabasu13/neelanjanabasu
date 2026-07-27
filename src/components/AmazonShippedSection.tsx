@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, ArrowLeft, Rocket } from "lucide-react";
+import { BookOpen, ArrowLeft } from "lucide-react";
 import addToCartImg from "@/assets/amazon-add-to-cart.jpg";
 import quantityImg from "@/assets/amazon-quantity.png";
 import pantryImg from "@/assets/amazon-pantry.png";
 import visualNavImg from "@/assets/amazon-visual-nav-coffee.jpeg";
+import { Peacock, VineTendril, LeafTrio, Sun } from "@/assets/motifs/Motifs";
 
 const portfolioItems = [
   {
@@ -16,8 +17,6 @@ const portfolioItems = [
     impact: "$2B Revenue Impact",
     image: addToCartImg,
     tags: ["E-commerce", "Search", "UX"],
-    objectFit: "object-contain",
-    objectPosition: "center",
     story:
       "Believe it or not, you couldn't add products to your cart directly from Amazon's search results until 2023. The idea felt almost too obvious to justify a PRFAQ, so imagine our surprise when the first A/B test came back negative even as customers bought more items and built bigger baskets. After many rabbit holes, the culprit was caught: measurement models trained on three decades of a single happy path had learned that fewer product-page visits meant fewer purchases. A textbook case of Goodhart's law. Once we fixed the measurement, the experiment alone generated over half a billion dollars, and the broader charter ultimately drove more than $2B.",
   },
@@ -63,7 +62,12 @@ export const AmazonShippedSection = () => {
   const [flippedId, setFlippedId] = useState<number | null>(null);
 
   return (
-    <section id="portfolio" className="py-12 bg-background">
+    <section id="portfolio" className="py-12 bg-background relative">
+      {/* Divider as motif */}
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 opacity-80">
+        <VineTendril size={20} />
+      </div>
+
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -72,22 +76,13 @@ export const AmazonShippedSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
+          <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
             What I built at <span className="italic">Amazon</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
             Some interesting stories of products I shipped and scaled.
           </p>
         </motion.div>
-
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-8 h-8 rounded-lg bg-foreground/10 flex items-center justify-center">
-            <Rocket className="w-4 h-4 text-foreground" />
-          </div>
-          <h3 className="text-2xl font-medium text-foreground font-serif">
-            Amazon <span className="italic">Products</span>
-          </h3>
-        </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
           {portfolioItems.map((item, index) => {
@@ -99,7 +94,7 @@ export const AmazonShippedSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card rounded-2xl border border-border overflow-hidden hover:border-foreground/20 transition-all flex flex-col"
+                className="folk-card hover:border-foreground/30 flex flex-col"
               >
                 <div className="relative aspect-video overflow-hidden bg-secondary">
                   <AnimatePresence mode="wait" initial={false}>
@@ -115,13 +110,13 @@ export const AmazonShippedSection = () => {
                         <img
                           src={item.image}
                           alt={item.title}
-                          className={`w-full h-full ${(item as any).objectFit || "object-cover"}`}
-                          style={{ objectPosition: (item as any).objectPosition || "0 -80px" }}
+                          className="w-full h-full object-contain"
+                          style={{ objectPosition: "0 -80px" }}
                         />
                         <button
                           onClick={() => setFlippedId(item.id)}
                           aria-label={`Read the story behind ${item.title}`}
-                          className="absolute bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold shadow-lg hover:bg-primary/90 hover:scale-105 transition-all"
+                          className="absolute bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold shadow-lg hover:bg-foreground/90 hover:scale-105 transition-all"
                         >
                           <BookOpen className="w-4 h-4" />
                           Read the story
@@ -144,7 +139,7 @@ export const AmazonShippedSection = () => {
                           <ArrowLeft className="w-3.5 h-3.5" />
                           Back
                         </button>
-                        <p className="text-sm text-foreground/85 leading-relaxed font-serif">
+                        <p className="text-sm text-foreground/85 leading-relaxed">
                           {item.story}
                         </p>
                       </motion.div>
@@ -161,7 +156,7 @@ export const AmazonShippedSection = () => {
                       {item.impact}
                     </span>
                   </div>
-                  <h3 className="text-lg font-medium text-foreground mb-2 font-serif">
+                  <h3 className="text-lg font-medium text-foreground mb-2">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground text-sm line-clamp-2">
@@ -181,6 +176,13 @@ export const AmazonShippedSection = () => {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Bottom motif cluster */}
+        <div className="flex items-center justify-center gap-6 opacity-80 mt-4">
+          <Peacock size={32} />
+          <LeafTrio size={24} />
+          <Sun size={20} />
         </div>
       </div>
     </section>

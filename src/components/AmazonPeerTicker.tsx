@@ -1,3 +1,5 @@
+import { Fish, LeafTrio } from "@/assets/motifs/Motifs";
+
 const fragments = [
   "never leaving any loose ends",
   "one of the most structured PMs I have worked with",
@@ -18,24 +20,29 @@ export const AmazonPeerTicker = () => {
 
   return (
     <div
-      className="py-6 bg-[hsl(var(--navy-deep))] border-y border-border overflow-hidden"
+      className="py-6 bg-background border-y border-border overflow-hidden"
       role="region"
       aria-label="Verbatim Amazon peer review quotes"
     >
+      <div className="flex justify-center mb-4 opacity-80">
+        <LeafTrio size={22} />
+      </div>
       <div className="ticker-track flex whitespace-nowrap animate-ticker will-change-transform hover:[animation-play-state:paused]">
         {items.map((text, index) => (
           <div key={index} className="inline-flex items-center shrink-0 mx-6">
-            <span className="text-base sm:text-lg font-medium text-white">
+            <span className="text-base sm:text-lg font-medium text-foreground">
               {text}
             </span>
             <span
-              className="ml-6 inline-block w-2 h-2 rotate-45 bg-[hsl(var(--amber-glow))]"
+              className="ml-6 inline-flex items-center"
               aria-hidden="true"
-            />
+            >
+              <Fish size={18} />
+            </span>
           </div>
         ))}
       </div>
-      <p className="text-center text-sm text-white/70 mt-4">
+      <p className="text-center text-sm text-muted-foreground mt-4">
         Verbatim, from anonymous Amazon peer reviews 2023–2025
       </p>
     </div>

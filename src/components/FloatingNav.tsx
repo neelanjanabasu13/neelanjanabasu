@@ -1,17 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { LeafTrio } from "@/assets/motifs/Motifs";
 
-const navItems = [
-  { id: "experience", label: "The Webinar" },
-  { id: "skills", label: "Elena's Story" },
-  { id: "education", label: "What They Look For" },
-  { id: "portfolio", label: "Love-abler Traits" },
-  { id: "contact", label: "Superpowers" },
-];
-
-// Note: The labels above are placeholders to match the reference style. 
-// You can rename them to match your actual sections.
 const actualNavItems = [
   { id: "ai-products", label: "AI builds" },
   { id: "experience", label: "Experience" },
@@ -55,38 +46,36 @@ export const FloatingNav = () => {
 
   return (
     <>
-      {/* Desktop Navigation - Clean minimal style like reference */}
+      {/* Desktop Navigation */}
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
         className="fixed top-0 left-0 right-0 z-50 hidden md:block"
       >
-        <div className="max-w-6xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+        <div className={`max-w-6xl mx-auto px-6 py-4 transition-all duration-300 ${isScrolled ? "pt-3" : "pt-4"}`}>
+          <div className={`flex items-center justify-between rounded-full px-6 py-3 border border-border transition-all duration-300 ${isScrolled ? "bg-background/95 shadow-md backdrop-blur-sm" : "bg-background/80"}`}>
             {/* Logo/Brand */}
             <button
               onClick={() => scrollToSection("hero")}
               className="flex items-center gap-2 text-foreground font-medium"
             >
-              <div className="w-8 h-8 rounded-lg bg-lime-300 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-foreground" />
-              </div>
-              <span className="font-semibold">Portfolio</span>
+              <LeafTrio size={22} />
+              <span className="font-medium">Portfolio</span>
             </button>
 
             {/* Nav Links */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2">
               {actualNavItems.map((item) => {
                 const isActive = activeSection === item.id;
                 return (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                       isActive
-                        ? "bg-primary text-primary-foreground shadow-md"
-                        : "bg-secondary text-secondary-foreground hover:bg-primary/20 hover:text-primary"
+                        ? "bg-foreground text-background"
+                        : "text-foreground hover:bg-secondary"
                     }`}
                   >
                     {item.label}
@@ -106,7 +95,7 @@ export const FloatingNav = () => {
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         aria-expanded={isMobileMenuOpen}
-        className="fixed top-4 right-4 z-50 md:hidden w-12 h-12 rounded-full bg-card shadow-lg border border-border flex items-center justify-center"
+        className="fixed top-4 right-4 z-50 md:hidden w-12 h-12 rounded-full bg-background border border-border flex items-center justify-center shadow-soft"
       >
         {isMobileMenuOpen ? (
           <X className="w-5 h-5 text-foreground" />
@@ -121,7 +110,7 @@ export const FloatingNav = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed top-20 right-4 z-50 md:hidden bg-card rounded-2xl shadow-xl border border-border overflow-hidden"
+            className="fixed top-20 right-4 z-50 md:hidden bg-background rounded-2xl shadow-lg border border-border overflow-hidden"
           >
             <div className="p-2">
               {actualNavItems.map((item, index) => {
@@ -136,8 +125,8 @@ export const FloatingNav = () => {
                     onClick={() => scrollToSection(item.id)}
                     className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-left transition-colors font-medium ${
                       isActive
-                        ? "bg-foreground/10 text-foreground"
-                        : "text-muted-foreground hover:bg-secondary"
+                        ? "bg-foreground text-background"
+                        : "text-foreground hover:bg-secondary"
                     }`}
                   >
                     <span>{item.label}</span>

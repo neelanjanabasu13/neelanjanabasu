@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ProjectCard } from "./ProjectCard";
 import { AICarousel } from "./AICarousel";
+import { TreeOfLife, VineTendril, LotusLeaves } from "@/assets/motifs/Motifs";
 
 export type Project = {
   id: number;
@@ -189,7 +190,16 @@ const aiProducts: Project[] = [
 
 export const AIBuiltSection = () => {
   return (
-    <section id="ai-products" className="py-12 bg-background">
+    <section id="ai-products" className="py-12 bg-background relative">
+      {/* Corner cluster */}
+      <div className="absolute top-8 right-4 sm:right-10 opacity-80">
+        <TreeOfLife size={48} />
+      </div>
+      {/* Margin punctuation */}
+      <div className="absolute left-4 sm:left-10 top-1/2 opacity-60">
+        <LotusLeaves size={28} />
+      </div>
+
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -198,12 +208,15 @@ export const AIBuiltSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
+          <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
             WHAT I&apos;M BUILDING
           </h2>
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto text-justify">
             After a decade at Amazon and the arrival of my second child, I took a career break. It turned out to be the most useful thing that could have happened to my curiosity. I spent it tinkering with every AI tool I could get my hands on! He is in nursery now and delighted about it, and the itch to build properly has come back. So has the appetite for a mission worth returning for.
           </p>
+          <div className="flex justify-center mt-6 opacity-80">
+            <VineTendril size={18} />
+          </div>
         </motion.div>
 
         <motion.div
@@ -217,4 +230,3 @@ export const AIBuiltSection = () => {
     </section>
   );
 };
-
