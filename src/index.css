@@ -52,6 +52,7 @@
     --folk-amber: 36 78% 56%;
     --folk-navy: 212 54% 24%;
     --folk-brown: 35 24% 28%;
+    --contour: #1A1A18;
 
     --shadow-soft: 0 4px 20px -4px hsl(60 6% 10% / 0.08);
     --shadow-medium: 0 8px 30px -8px hsl(60 6% 10% / 0.12);
@@ -94,6 +95,7 @@
     --border: 60 8% 22%;
     --input: 60 8% 22%;
     --ring: 192 66% 31%;
+    --contour: #F5F4EF;
   }
 }
 
@@ -138,8 +140,7 @@
   /* Section heading underline using motif rule */
   .section-heading::after {
     content: '';
-    @apply block w-16 h-0.5 mt-4 mx-auto rounded-full;
-    background-color: #1A1A18;
+    @apply block w-16 h-0.5 mt-4 mx-auto rounded-full bg-foreground;
   }
 
   /* Pill/tag styles */
@@ -152,19 +153,16 @@
   }
 
   .pill-filled {
-    @apply text-white;
-    background-color: hsl(var(--primary));
+    @apply bg-primary text-primary-foreground;
   }
 
   /* Timeline */
   .timeline-line {
-    @apply absolute left-4 md:left-8 top-0 bottom-0 w-px;
-    background-color: #1A1A18;
+    @apply absolute left-4 md:left-8 top-0 bottom-0 w-px bg-foreground;
   }
 
   .timeline-dot {
-    @apply w-3 h-3 rounded-full ring-4 ring-background;
-    background-color: #1A1A18;
+    @apply w-3 h-3 rounded-full ring-4 ring-background bg-foreground;
   }
 }
 
