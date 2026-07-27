@@ -8,6 +8,15 @@
     <meta name="author" content="Neelanjana Basu" />
     <meta name="google-site-verification" content="SMQWLXJU6Pfsvd3AbKvkhpLcXwq5A3QNUu_IJxhIrJc" />
     <link rel="canonical" href="https://neelanjanabasu.lovable.app/" />
+    <script>
+      (function () {
+        const stored = localStorage.getItem("nb-theme");
+        const hour = new Date().getHours();
+        const theme = stored ? stored : hour >= 6 && hour < 19 ? "light" : "dark";
+        if (theme === "dark") document.documentElement.classList.add("dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
 
     <meta property="og:title" content="Neelanjana Basu | AI Product Builder" />
     <meta property="og:description" content="Ex-Amazon senior product manager, now building award-winning AI products end to end." />

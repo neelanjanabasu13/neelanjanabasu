@@ -1,7 +1,7 @@
 // Reusable Madhubani border-band. Same tile vocabulary as SectionDivider,
 // exposed at any height so it can trim a plaque, header, or divider.
 
-const STROKE = "#1A1A18";
+const STROKE = "var(--contour)";
 const SW = 1.25;
 
 export type BandVariant =
