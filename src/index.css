@@ -1,115 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Lora:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Playful & Vibrant Portfolio Design System - Gradient Pinks & Purples */
-
+/* Folk-art gallery wall design system */
+/* Ground: off-white handmade paper. Contour: near-black. Accents from bright Indian folk palette. */
 
 @layer base {
   :root {
-    /* Core palette - Soft blue-gray with vibrant accents */
-    --background: 220 25% 95%;
-    --foreground: 230 25% 25%;
+    /* Paper ground and contour */
+    --background: 48 33% 97%;
+    --foreground: 60 6% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 230 25% 25%;
+    --card: 42 38% 96%;
+    --card-foreground: 60 6% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 230 25% 25%;
+    --popover: 48 33% 97%;
+    --popover-foreground: 60 6% 10%;
 
-    /* Primary - Vibrant Pink/Magenta */
-    --primary: 330 85% 60%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary accent: deep teal */
+    --primary: 192 66% 31%;
+    --primary-foreground: 48 33% 97%;
 
-    /* Secondary - Soft lavender */
-    --secondary: 250 30% 95%;
-    --secondary-foreground: 250 40% 40%;
+    /* Secondary: warm paper shadow */
+    --secondary: 42 30% 92%;
+    --secondary-foreground: 60 6% 10%;
 
-    --muted: 220 20% 92%;
-    --muted-foreground: 220 15% 50%;
+    --muted: 42 30% 92%;
+    --muted-foreground: 35 24% 28%;
 
-    /* Accent - Bright Orange */
-    --accent: 25 95% 55%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent: vermilion/red earth */
+    --accent: 356 70% 44%;
+    --accent-foreground: 48 33% 97%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 356 70% 44%;
+    --destructive-foreground: 48 33% 97%;
 
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 330 85% 60%;
+    --border: 42 25% 88%;
+    --input: 42 25% 88%;
+    --ring: 192 66% 31%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* Custom design tokens - Playful & Vibrant */
-    --navy-deep: 250 50% 30%;
-    --navy-medium: 250 40% 45%;
-    --teal-dark: 180 60% 35%;
-    --teal-primary: 180 70% 45%;
-    --teal-light: 180 65% 55%;
-    --coral-warm: 25 95% 55%;
-    --coral-light: 15 90% 65%;
-    --amber-glow: 35 95% 60%;
-    --sage-subtle: 220 25% 95%;
+    /* Folk palette tokens */
+    --folk-pink: 340 55% 66%;
+    --folk-red: 356 70% 44%;
+    --folk-teal: 192 66% 31%;
+    --folk-green: 100 38% 31%;
+    --folk-light-green: 95 45% 45%;
+    --folk-amber: 36 78% 56%;
+    --folk-navy: 212 54% 24%;
+    --folk-brown: 35 24% 28%;
 
-    /* Gradient tokens for text and backgrounds */
-    --gradient-start: 25 95% 55%;
-    --gradient-mid: 340 85% 60%;
-    --gradient-end: 280 70% 55%;
+    --shadow-soft: 0 4px 20px -4px hsl(60 6% 10% / 0.08);
+    --shadow-medium: 0 8px 30px -8px hsl(60 6% 10% / 0.12);
 
-    /* Gradients - Playful & Vibrant */
-    --gradient-hero: linear-gradient(135deg, hsl(250 50% 30%) 0%, hsl(280 50% 35%) 50%, hsl(250 40% 45%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(25 95% 55%) 0%, hsl(340 85% 60%) 50%, hsl(280 70% 55%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 25% 98%) 100%);
-    --gradient-skill: linear-gradient(90deg, hsl(180 70% 45%) 0%, hsl(200 80% 50%) 100%);
-    --gradient-button: linear-gradient(135deg, hsl(180 70% 45%) 0%, hsl(280 70% 55%) 100%);
-
-    /* Shadows - Soft and playful */
-    --shadow-soft: 0 4px 20px -4px hsl(230 30% 50% / 0.1);
-    --shadow-medium: 0 8px 30px -8px hsl(230 30% 50% / 0.15);
-    --shadow-glow: 0 0 40px hsl(330 85% 60% / 0.25);
-    --shadow-accent: 0 8px 25px hsl(180 70% 45% / 0.35);
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 230 25% 25%;
-    --sidebar-primary: 330 85% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 25% 95%;
-    --sidebar-accent-foreground: 230 25% 25%;
-    --sidebar-border: 220 15% 90%;
-    --sidebar-ring: 330 85% 60%;
+    --sidebar-background: 48 33% 97%;
+    --sidebar-foreground: 60 6% 10%;
+    --sidebar-primary: 192 66% 31%;
+    --sidebar-primary-foreground: 48 33% 97%;
+    --sidebar-accent: 42 30% 92%;
+    --sidebar-accent-foreground: 60 6% 10%;
+    --sidebar-border: 42 25% 88%;
+    --sidebar-ring: 192 66% 31%;
   }
 
   .dark {
-    --background: 230 30% 12%;
-    --foreground: 220 20% 95%;
+    --background: 60 6% 10%;
+    --foreground: 48 33% 97%;
 
-    --card: 230 25% 16%;
-    --card-foreground: 220 20% 95%;
+    --card: 60 8% 14%;
+    --card-foreground: 48 33% 97%;
 
-    --popover: 230 25% 16%;
-    --popover-foreground: 220 20% 95%;
+    --popover: 60 8% 14%;
+    --popover-foreground: 48 33% 97%;
 
-    --primary: 330 80% 65%;
-    --primary-foreground: 230 30% 12%;
+    --primary: 192 66% 31%;
+    --primary-foreground: 48 33% 97%;
 
-    --secondary: 250 25% 22%;
-    --secondary-foreground: 220 15% 85%;
+    --secondary: 60 8% 18%;
+    --secondary-foreground: 48 33% 97%;
 
-    --muted: 230 20% 20%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 60 8% 18%;
+    --muted-foreground: 42 20% 70%;
 
-    --accent: 25 90% 60%;
-    --accent-foreground: 230 30% 12%;
+    --accent: 356 70% 44%;
+    --accent-foreground: 48 33% 97%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 356 70% 44%;
+    --destructive-foreground: 48 33% 97%;
 
-    --border: 230 20% 22%;
-    --input: 230 20% 22%;
-    --ring: 330 80% 65%;
+    --border: 60 8% 22%;
+    --input: 60 8% 22%;
+    --ring: 192 66% 31%;
   }
 }
 
@@ -124,154 +108,63 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.72;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Fraunces', Georgia, serif;
+    font-variation-settings: 'SOFT' 40, 'WONK' 1;
     font-weight: 500;
   }
 }
 
 @layer components {
-  /* Hero Section Styles */
-  .hero-gradient {
-    background: var(--gradient-hero);
-  }
-
-  .accent-gradient {
-    background: var(--gradient-accent);
-  }
-
-  .skill-gradient {
-    background: var(--gradient-skill);
-  }
-
-  /* Gradient text effect */
-  .gradient-text {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Glass morphism effect - softer */
-  .glass {
-    @apply bg-white/90 backdrop-blur-xl border border-white/50 shadow-lg;
-    border-radius: var(--radius);
-  }
-
-  .glass-dark {
-    @apply bg-card/95 backdrop-blur-xl border border-border/50 shadow-lg;
-    border-radius: var(--radius);
-  }
-
-  /* Floating nav styles */
-  .nav-floating {
-    @apply glass shadow-xl;
-  }
-
-  /* Card hover effects - playful */
-  .card-interactive {
-    @apply transition-all duration-300 ease-out bg-card rounded-2xl;
-    box-shadow: var(--shadow-soft);
-  }
-
-  .card-interactive:hover {
-    @apply -translate-y-2;
-    box-shadow: var(--shadow-medium);
-  }
-
-  /* Skill bar animation - vibrant */
-  .skill-bar {
-    @apply h-3 rounded-full overflow-hidden bg-secondary;
-  }
-
-  .skill-bar-fill {
-    @apply h-full rounded-full;
-    background: var(--gradient-skill);
-  }
-
-  /* Section containers */
   .section-container {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Timeline styles - colorful */
-  .timeline-line {
-    @apply absolute left-4 md:left-1/2 top-0 bottom-0 w-1;
-    background: var(--gradient-button);
-    border-radius: 999px;
+  /* Folk card: paper ground, thin contour border */
+  .folk-card {
+    @apply bg-card rounded-2xl border border-border overflow-hidden transition-all;
+    box-shadow: var(--shadow-soft);
   }
 
-  .timeline-dot {
-    @apply w-4 h-4 rounded-full ring-4 ring-background shadow-lg;
-    background: var(--gradient-accent);
+  .folk-card:hover {
+    box-shadow: var(--shadow-medium);
   }
 
-  /* Text gradient - vibrant */
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-accent);
-  }
-
-  /* Button variants - playful gradients */
-  .btn-accent {
-    @apply relative overflow-hidden font-bold text-white rounded-full;
-    background: var(--gradient-button);
-    box-shadow: var(--shadow-accent);
-  }
-
-  .btn-accent:hover {
-    @apply scale-105;
-    box-shadow: 0 12px 35px hsl(180 70% 45% / 0.4);
-  }
-
-  .btn-gradient {
-    @apply relative overflow-hidden font-bold text-white rounded-full;
-    background: var(--gradient-accent);
-    box-shadow: 0 8px 25px hsl(330 85% 60% / 0.35);
-  }
-
-  .btn-gradient:hover {
-    @apply scale-105;
-    box-shadow: 0 12px 35px hsl(330 85% 60% / 0.45);
-  }
-
-  /* Section heading underline - gradient */
+  /* Section heading underline using motif rule */
   .section-heading::after {
     content: '';
-    @apply block w-20 h-1.5 mt-4 rounded-full mx-auto;
-    background: var(--gradient-accent);
-  }
-
-  /* Animated underline for links */
-  .link-underline {
-    @apply relative;
-  }
-
-  .link-underline::after {
-    content: '';
-    @apply absolute left-0 bottom-0 w-0 h-0.5 transition-all duration-300 rounded-full;
-    background: var(--gradient-accent);
-  }
-
-  .link-underline:hover::after {
-    @apply w-full;
+    @apply block w-16 h-0.5 mt-4 mx-auto rounded-full;
+    background-color: #1A1A18;
   }
 
   /* Pill/tag styles */
   .pill {
-    @apply px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200;
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-200;
   }
 
   .pill-outline {
-    @apply border-2 border-border hover:border-primary hover:text-primary;
+    @apply border border-border hover:border-foreground hover:text-foreground;
   }
 
   .pill-filled {
     @apply text-white;
-    background: var(--gradient-button);
+    background-color: hsl(var(--primary));
+  }
+
+  /* Timeline */
+  .timeline-line {
+    @apply absolute left-4 md:left-8 top-0 bottom-0 w-px;
+    background-color: #1A1A18;
+  }
+
+  .timeline-dot {
+    @apply w-3 h-3 rounded-full ring-4 ring-background;
+    background-color: #1A1A18;
   }
 }
 
@@ -285,11 +178,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary/30 rounded-full;
+  @apply bg-foreground/20 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/50;
+  @apply bg-foreground/40;
 }
 
 /* Animations */
@@ -337,15 +230,6 @@
   }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(24 95% 55% / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px hsl(24 95% 55% / 0.5);
-  }
-}
-
 .animate-fade-up {
   animation: fade-up 0.6s ease-out forwards;
 }
@@ -360,10 +244,6 @@
 
 .animate-scale-in {
   animation: scale-in 0.4s ease-out forwards;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
 }
 
 @keyframes ticker {
