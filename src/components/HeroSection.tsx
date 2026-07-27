@@ -22,7 +22,8 @@ export const HeroSection = () => {
       </div>
 
       {/* Margin punctuation: left side */}
-      <div className="absolute left-4 sm:left-16 top-1/3 opacity-80">
+      {/* Margin punctuation: left side, tucked into whitespace below the stats */}
+      <div className="hidden md:block absolute left-4 sm:left-10 bottom-24 opacity-80">
         <MotifReveal><LotusLeaves size={40} /></MotifReveal>
       </div>
 
