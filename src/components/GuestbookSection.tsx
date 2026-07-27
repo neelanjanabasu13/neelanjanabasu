@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -11,21 +11,67 @@ import {
 import { resumeData } from "@/data/resumeData";
 import { TreeOfLife, VineTendril } from "@/assets/motifs/Motifs";
 import { PanelLabel } from "./PanelLabel";
+import { MotifBand, type BandVariant } from "./MotifBand";
+import { MotifReveal } from "./MotifReveal";
+
+const BAND_ROTATION: BandVariant[] = [
+  "lotus",
+  "wave",
+  "fish",
+  "peacock",
+  "zigzag",
+  "dotline",
+];
+
+const STORAGE_KEY = "guestbook.notes.v1";
+
+type Note = { text: string; at: number };
+
+const loadNotes = (): Note[] => {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed.slice(0, 60) : [];
+  } catch {
+    return [];
+  }
+};
 
 export const GuestbookSection = () => {
   const [message, setMessage] = useState("");
+  const [notes, setNotes] = useState<Note[]>([]);
+
+  useEffect(() => {
+    setNotes(loadNotes());
+  }, []);
+
+  const pickBand = (i: number): BandVariant => {
+    // deterministic rotation, avoids repeating within any run of three
+    return BAND_ROTATION[i % BAND_ROTATION.length];
+  };
 
   const handlePinItUp = () => {
+    const text = message.trim();
+    if (!text) return;
+    const next: Note[] = [{ text, at: Date.now() }, ...notes].slice(0, 60);
+    setNotes(next);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    } catch {
+      // ignore
+    }
+    setMessage("");
     const subject = encodeURIComponent("Hello from your guestbook");
-    const body = encodeURIComponent(message);
+    const body = encodeURIComponent(text);
     window.location.href = `mailto:${resumeData.personal.email}?subject=${subject}&body=${body}`;
   };
 
   return (
     <section id="guestbook" className="py-12 bg-background relative">
-      {/* Corner cluster */}
       <div className="absolute top-8 right-4 sm:right-10 opacity-80">
-        <TreeOfLife size={48} />
+        <MotifReveal><TreeOfLife size={48} /></MotifReveal>
       </div>
 
       <div className="section-container">
@@ -44,7 +90,7 @@ export const GuestbookSection = () => {
             No contact form, because everything you need to reach me is at the top of this page. This is for the other thing: tell me what you are building, what you disagreed with, or what this page reminded you of. I read all of it.
           </p>
           <div className="flex justify-center mt-4 opacity-80">
-            <VineTendril size={16} />
+            <MotifReveal><VineTendril size={16} /></MotifReveal>
           </div>
         </motion.div>
 
@@ -81,6 +127,30 @@ export const GuestbookSection = () => {
             </Button>
           </div>
         </motion.div>
+
+        {notes.length > 0 && (
+          <div className="mt-12 max-w-4xl mx-auto grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {notes.map((n, i) => (
+              <motion.article
+                key={`${n.at}-${i}`}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: i * 0.03 }}
+                className="bg-card border border-border rounded-md overflow-hidden shadow-sm"
+              >
+                <MotifBand variant={pickBand(i)} height={18} withRails={false} />
+                <div className="p-4">
+                  <p className="text-sm text-foreground whitespace-pre-wrap">
+                    {n.text}
+                  </p>
+                  <p className="mt-3 text-[11px] uppercase tracking-widest text-muted-foreground">
+                    Pinned {new Date(n.at).toLocaleDateString()}
+                  </p>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

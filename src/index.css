@@ -264,3 +264,46 @@
     animation: none;
   }
 }
+
+/* Motif reveal: outline draws in first, colour fills after. */
+.motif-reveal svg path,
+.motif-reveal svg polygon,
+.motif-reveal svg polyline,
+.motif-reveal svg line,
+.motif-reveal svg circle,
+.motif-reveal svg ellipse {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: stroke-dashoffset 700ms ease-out;
+}
+.motif-reveal svg [fill]:not([fill="none"]) {
+  fill-opacity: 0;
+  transition: fill-opacity 500ms ease-in 550ms;
+}
+.motif-reveal.in-view svg path,
+.motif-reveal.in-view svg polygon,
+.motif-reveal.in-view svg polyline,
+.motif-reveal.in-view svg line,
+.motif-reveal.in-view svg circle,
+.motif-reveal.in-view svg ellipse {
+  stroke-dashoffset: 0;
+}
+.motif-reveal.in-view svg [fill]:not([fill="none"]) {
+  fill-opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .motif-reveal svg path,
+  .motif-reveal svg polygon,
+  .motif-reveal svg polyline,
+  .motif-reveal svg line,
+  .motif-reveal svg circle,
+  .motif-reveal svg ellipse {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+  .motif-reveal svg [fill]:not([fill="none"]) {
+    fill-opacity: 1;
+    transition: none;
+  }
+}

@@ -1,61 +1,76 @@
-# Add squiggly borders and bolder folk-art accents
+# Motif fix + quiet interactivity
 
-The current site has the paper ground, typography, and small motifs, but it is missing the loud gallery-wall furniture from the reference: the vertical squiggle rails running down both page edges, the bold Madhubani-style border bands between sections, the "◆ PANEL X · NAME" labels above each section title, the diamond scroll rail on the right, and the strong colored top-bars on cards. This plan adds only those decorative layers, drawn in the Madhubani border vocabulary from the Pinterest/Udaan Creation reference (lotus row, peacock feather, fish, wave-with-dots, dot-and-line, floral vine, zigzag, spiral). No content, no copy, no data changes.
+Motifs stay small, at the edges, and reward attention. Nothing full-screen, nothing on load, nothing that delays reading. One reveal per element, never repeats.
 
-## What to add
+## 1. Redraw the lotus
 
-**1. Vertical squiggle rails on the page edges**
-- Two thin fixed-position SVGs anchored to the left and right viewport edges, running full page height, drawn as a continuous vertical wavy contour line in vermilion (`#C1272D`) at roughly 1.25px stroke, echoing the black contour convention.
-- Single `PageEdgeRails` component mounted once in `src/pages/Index.tsx`, `position: fixed`, `pointer-events: none`, below the floating nav.
-- Hidden below `md` so mobile stays clean.
+The current `LotusLeaves` reads as a lumpy blob because the two outer petal paths overlap the inner ones and the leaves stick out sideways. Redraw as a proper Madhubani lotus, symmetric, tiered:
 
-**2. Diamond scroll-position rail (right side)**
-- A vertical stack of 5 small diamonds fixed to the right edge, mid-viewport, matching the reference. The active section's diamond fills vermilion; the others stay as amber outlines.
-- New `SectionRail` component using `IntersectionObserver` on the 5 section IDs (`ai-products`, `portfolio`, `experience`, `work-with-me`, `guestbook`).
+- Five outer petals arcing outward from a base.
+- Three inner petals, narrower, nested inside.
+- A pointed bud tip at the centre with two dot stamens.
+- Two curved leaves at the base, tips outward.
+- Every stroke black `#1A1A18`, fills from the existing palette (vermilion `#C1272D`, pink `#E38FA8`, greens for leaves).
 
-**3. Panel labels above each section heading**
-- Small caps label with a leading filled diamond, e.g. `◆ PANEL ONE · NOW`, in vermilion, Fraunces small caps, letter-spaced.
-- Add to AI Built (PANEL ONE · NOW), Amazon Shipped (PANEL TWO · AMAZON), Experience (PANEL THREE · TIMELINE), Work With Me (PANEL FOUR · REFERENCES), Education (PANEL FIVE · SCHOOL), Guestbook (PANEL SIX · GUESTBOOK).
-- Rendered via a shared `PanelLabel` component.
+Same export name and props so every existing consumer keeps working. Also tighten `LotusBand` inside `SectionDivider.tsx` to use the new geometry so the divider bands stop looking scribbled.
 
-**4. Madhubani border bands between sections**
-- New `SectionDivider` component drawn as authored inline SVG tiles bounded top and bottom by two parallel contour lines (the reference convention), tiling edge-to-edge, in the folk palette (vermilion, teal, amber, black contour).
-- Variants, each based on a specific border from the Udaan Creation reference:
-  - `lotus`: pink lotus buds with green leaves on a baseline. Used at the bottom of Hero and bottom of Work With Me.
-  - `wave`: undulating double wave with amber dots in the loops. Used under AI Built.
-  - `fish`: alternating fish facing left and right with dot clusters between. Used under Amazon Shipped.
-  - `peacock`: peacock-feather eyes in teal and amber. Used under Experience.
-  - `zigzag`: filled triangles alternating teal, vermilion, amber. Used under Education.
-  - `dotline`: vertical strokes with periodic dot clusters. Used under Guestbook.
-- Each variant sits on a paper-tone strip so it reads as a distinct band. Height ~44px.
+## 2. Outline-first, then colour on scroll-in
 
-**5. Corner cluster upgrade**
-- Add two authored corner-cluster SVGs (top-left and bottom-right of the hero, top-right of Guestbook) built from the same lotus-and-vine vocabulary as the reference, at ~140px, roughly 25% opacity behind text so they punctuate without competing.
-- Added inside `HeroSection.tsx` and `GuestbookSection.tsx` only.
+New tiny hook `useDrawIn` using `IntersectionObserver` (threshold ~0.4, `once: true`). When a motif enters view:
 
-**6. Strengthen card top-accents**
-- The reference shows each "What I'm building" card with a bold 6px colored top bar (magenta, amber, teal, vermilion). Add `border-top: 6px solid` in the card's existing accent color inside `AIBuiltSection`, without touching card content or layout.
+- t=0: `fill="none"`, stroke visible, `stroke-dasharray` animated so the contour draws in over ~700ms.
+- t=700ms: fills fade in over ~500ms via CSS `fill-opacity` transition.
 
-## Files to change
+Wrap the existing motifs with a `<MotifReveal>` component that clones the SVG children and applies the two-phase animation. Runs once per element, honours `prefers-reduced-motion` by skipping straight to filled state. No repeat on re-entry.
 
-- `src/assets/motifs/Motifs.tsx` — add `SquiggleVertical`, `LotusBand`, `WaveBand`, `FishBand`, `PeacockBand`, `ZigzagBand`, `DotLineBand`, `CornerClusterLotus` SVGs.
-- `src/components/PageEdgeRails.tsx` — new, fixed left/right squiggle rails.
-- `src/components/SectionRail.tsx` — new, right-edge diamond scroll indicator.
-- `src/components/PanelLabel.tsx` — new, shared `◆ PANEL X · NAME` label.
-- `src/components/SectionDivider.tsx` — new, `lotus | wave | fish | peacock | zigzag | dotline` variants.
-- `src/pages/Index.tsx` — mount `PageEdgeRails` and `SectionRail`, insert `SectionDivider` between sections.
-- `src/components/HeroSection.tsx` — add corner clusters and a lotus band at the bottom edge.
-- `src/components/AIBuiltSection.tsx` — add `PanelLabel`, wave band below, 6px colored top-bar on each card.
-- `src/components/AmazonShippedSection.tsx` — add `PanelLabel`, fish band below.
-- `src/components/ExperienceSection.tsx` — add `PanelLabel`, peacock band below.
-- `src/components/WorkWithMeSection.tsx` — add `PanelLabel`, lotus band below.
-- `src/components/EducationSection.tsx` — add `PanelLabel`, zigzag band below.
-- `src/components/GuestbookSection.tsx` — add `PanelLabel`, dot-line band below, corner cluster.
+## 3. Vine scrollbar down the left margin
 
-## What will not change
+New `VineScrollbar.tsx` replacing the left `PageEdgeRails` squiggle (right rail stays as-is):
 
-All copy, all 12 vibe-coded product cards, all 4 Amazon cards, Experience, Education, Guestbook, headshot, floating nav items, resume link, section order, and the existing small motifs stay exactly as they are. No color-token changes beyond the accent border-top on AI cards. No new dependencies.
+- Fixed-position SVG, full viewport height, ~28px wide, sits in the existing left gutter.
+- A single stem path with `pathLength=1` and `stroke-dashoffset` bound to `window.scrollY / (scrollHeight - innerHeight)` so the vine grows as the reader descends.
+- One leaf anchored at each section's y-offset (measured from section ids: `#ai-products`, `#portfolio`, `#experience`, `#work-with-me`, `#education`, `#guestbook`). Leaves unfurl (scale + rotate from 0 to 1) as the stem tip passes them.
+- The section currently in view (tracked via the same IntersectionObserver `SectionRail` already uses) gets a bloomed flower instead of a leaf. Only one flower at a time.
+- Clicking a leaf/flower scrolls to that section, giving it a real navigational job. `aria-label` on each.
+- Hidden on viewports narrower than the gutter (`< lg`), site falls back to native scroll.
+- `prefers-reduced-motion`: vine renders fully drawn, no growth animation, still clickable.
 
-## Verification
+Removes the redundant left squiggle from `PageEdgeRails` and keeps the right rail. `SectionRail`'s diamond indicator stays.
 
-After building, screenshot the homepage at 1280px wide with Playwright and compare the hero, AI Built, Amazon, Work With Me, and Guestbook sections against the cream reference images plus the Madhubani border sheet. Iterate on stroke weight, band height, and corner-cluster opacity only if they read thinner than the reference.
+## 4. Sun and moon by visitor clock
+
+New `SkyMark.tsx` mounted once in `HeroSection` upper corners:
+
+- Read `new Date().getHours()` on mount.
+- 6:00 to 18:59: render `Sun` in the upper-right of the hero.
+- Otherwise: render a new `Moon` motif (crescent, black contour, cream fill, one dot) in the same slot.
+- Sun is already in `Motifs.tsx`, add `Moon` alongside it in the same file.
+- Sized ~28px, positioned absolutely so it sits inside the hero corner, does not shift on scroll, has an `aria-label` of "Daytime here" or "Nighttime here".
+
+## 5. Guestbook plaques with random borders
+
+In `GuestbookSection.tsx`:
+
+- Each rendered note becomes a small "plaque" card with a thin folk border assigned deterministically from its index: pick one of `lotus`, `wave`, `fish`, `peacock`, `zigzag`, `dotline` (the six band variants already in `SectionDivider`).
+- Extract the band SVGs from `SectionDivider` into a shared `MotifBand` component so both the section dividers and the plaques can reuse them at small size (~16px tall).
+- Border sits along the top edge of each plaque only, so notes stack cleanly.
+- New notes appended by the existing form pick up the next variant in rotation. No repeats within a row of three.
+
+## Explicitly not doing
+
+Hover-bloom links, drifting fish, email copy leaf, anything full-screen or on-load. Deferred until after these five land.
+
+## Files touched
+
+- Edit: `src/assets/motifs/Motifs.tsx` (redraw lotus, add `Moon`)
+- Edit: `src/components/SectionDivider.tsx` (extract bands into `MotifBand`, use new lotus)
+- Edit: `src/components/PageEdgeRails.tsx` (drop left rail)
+- Edit: `src/components/HeroSection.tsx` (mount `SkyMark`)
+- Edit: `src/components/GuestbookSection.tsx` (plaque borders)
+- Edit: `src/pages/Index.tsx` (mount `VineScrollbar`)
+- New: `src/components/MotifReveal.tsx`, `src/hooks/useDrawIn.ts`
+- New: `src/components/VineScrollbar.tsx`
+- New: `src/components/SkyMark.tsx`
+- New: `src/components/MotifBand.tsx`
+
+No content deleted. All 12 vibe-coded products, 4 Amazon projects, Experience, Education, Work With Me, Guestbook, headshot stay intact.
