@@ -120,8 +120,10 @@ export const AmazonShippedSection = () => {
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-cover"
+                          style={{ objectPosition: item.focus }}
                         />
+
 
                         <button
                           onClick={() => setFlippedId(item.id)}
