@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ProjectCard } from "./ProjectCard";
 import { AICarousel } from "./AICarousel";
 import { TreeOfLife, VineTendril, LotusLeaves } from "@/assets/motifs/Motifs";
+import { PanelLabel } from "./PanelLabel";
 
 export type Project = {
   id: number;
@@ -208,6 +209,7 @@ export const AIBuiltSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
+          <PanelLabel panel="One" name="Now" />
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
             WHAT I&apos;M BUILDING
           </h2>

@@ -5,6 +5,7 @@ import { resumeData } from "@/data/resumeData";
 import amazonLogo from "@/assets/amazon-logo.png";
 import meruLogo from "@/assets/meru-logo.png";
 import { VineTendril, LotusLeaves, Fish } from "@/assets/motifs/Motifs";
+import { PanelLabel } from "./PanelLabel";
 
 const companyLogoMap: Record<string, string> = {
   Amazon: amazonLogo,
@@ -29,6 +30,7 @@ export const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
+          <PanelLabel panel="Three" name="Timeline" />
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
             Work <span className="italic">Experience</span>
           </h2>

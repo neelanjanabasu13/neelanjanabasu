@@ -6,6 +6,7 @@ import quantityImg from "@/assets/amazon-quantity.png";
 import pantryImg from "@/assets/amazon-pantry.png";
 import visualNavImg from "@/assets/amazon-visual-nav-coffee.jpeg";
 import { Peacock, VineTendril, LeafTrio, Sun } from "@/assets/motifs/Motifs";
+import { PanelLabel } from "./PanelLabel";
 
 const portfolioItems = [
   {
@@ -76,6 +77,7 @@ export const AmazonShippedSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
+          <PanelLabel panel="Two" name="Amazon" />
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
             What I built at <span className="italic">Amazon</span>
           </h2>

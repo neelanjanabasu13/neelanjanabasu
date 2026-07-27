@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import { resumeData } from "@/data/resumeData";
 import { TreeOfLife, VineTendril } from "@/assets/motifs/Motifs";
+import { PanelLabel } from "./PanelLabel";
 
 export const GuestbookSection = () => {
   const [message, setMessage] = useState("");
@@ -35,6 +36,7 @@ export const GuestbookSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
+          <PanelLabel panel="Six" name="Guestbook" />
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
             <span className="italic">Sign the wall</span>
           </h2>

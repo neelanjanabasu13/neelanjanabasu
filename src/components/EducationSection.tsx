@@ -4,6 +4,7 @@ import { resumeData } from "@/data/resumeData";
 import gimLogo from "@/assets/gim-logo.png";
 import guLogo from "@/assets/gujarat-university-logo.png";
 import { VineTendril, Sun, Fish } from "@/assets/motifs/Motifs";
+import { PanelLabel } from "./PanelLabel";
 
 const logoMap: Record<string, string> = {
   gim: gimLogo,
@@ -26,6 +27,7 @@ export const EducationSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
+          <PanelLabel panel="Five" name="School" />
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
             <span className="italic">Education</span>
           </h2>

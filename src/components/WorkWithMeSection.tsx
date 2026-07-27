@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Peacock, LeafTrio, Sun, LotusLeaves, Fish, TreeOfLife } from "@/assets/motifs/Motifs";
+import { PanelLabel } from "./PanelLabel";
 
 const testimonials = [
   {
@@ -52,6 +53,7 @@ export const WorkWithMeSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
+          <PanelLabel panel="Four" name="References" />
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
             What it&apos;s like to work with{" "}
             <span className="italic">me</span>

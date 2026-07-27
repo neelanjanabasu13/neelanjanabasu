@@ -1,52 +1,61 @@
-## What I understand from your brief
+# Add squiggly borders and bolder folk-art accents
 
-The site should look like it was made by someone who actually paints Madhubani and Pattachitra, not someone who applied an "Indian theme." The rules I am reading:
+The current site has the paper ground, typography, and small motifs, but it is missing the loud gallery-wall furniture from the reference: the vertical squiggle rails running down both page edges, the bold Madhubani-style border bands between sections, the "◆ PANEL X · NAME" labels above each section title, the diamond scroll rail on the right, and the strong colored top-bars on cards. This plan adds only those decorative layers, drawn in the Madhubani border vocabulary from the Pinterest/Udaan Creation reference (lotus row, peacock feather, fish, wave-with-dots, dot-and-line, floral vine, zigzag, spiral). No content, no copy, no data changes.
 
-**Ground.** True paper off-white (#FAF9F6 to #FAF7F1, L 96–97%, S under 15%). Not beige, not cream, not tan. The ground never changes anywhere on the page. No tinted sections, no dark hero, no inverted panels, no full-width coloured bands.
+## What to add
 
-**Colour lives only in the motifs.** Palette is bright and unapologetic (madder, terracotta, marigold, forest, parrot, indigo, peacock, soft pink), and every motif carries a hand-drawn black contour line (#1A1A18). Coloured shapes without an outline read as clipart and are wrong.
+**1. Vertical squiggle rails on the page edges**
+- Two thin fixed-position SVGs anchored to the left and right viewport edges, running full page height, drawn as a continuous vertical wavy contour line in vermilion (`#C1272D`) at roughly 1.25px stroke, echoing the black contour convention.
+- Single `PageEdgeRails` component mounted once in `src/pages/Index.tsx`, `position: fixed`, `pointer-events: none`, below the floating nav.
+- Hidden below `md` so mobile stays clean.
 
-**Motifs are punctuation, not architecture.** 16 to 40 px, sparse, placed beside a heading, between stats, as a divider, in a margin. Subjects are figurative: lotus, vine, leaves, fish, birds, peacocks, parrots, elephants, sun, moon. Flowers always come with leaves or a tendril. Line is slightly irregular, drawn in one pass. No big mihrab arch, no full-width architectural frame, no dense pattern behind body text.
+**2. Diamond scroll-position rail (right side)**
+- A vertical stack of 5 small diamonds fixed to the right edge, mid-viewport, matching the reference. The active section's diamond fills vermilion; the others stay as amber outlines.
+- New `SectionRail` component using `IntersectionObserver` on the 5 section IDs (`ai-products`, `portfolio`, `experience`, `work-with-me`, `guestbook`).
 
-**Shape language is soft and rounded.** No rectangular containers, no bordered cards, no pill chips with hard edges, no boxed badges, no square icon buttons. If contrast can do the job, do not draw a box.
+**3. Panel labels above each section heading**
+- Small caps label with a leading filled diamond, e.g. `◆ PANEL ONE · NOW`, in vermilion, Fraunces small caps, letter-spaced.
+- Add to AI Built (PANEL ONE · NOW), Amazon Shipped (PANEL TWO · AMAZON), Experience (PANEL THREE · TIMELINE), Work With Me (PANEL FOUR · REFERENCES), Education (PANEL FIVE · SCHOOL), Guestbook (PANEL SIX · GUESTBOOK).
+- Rendered via a shared `PanelLabel` component.
 
-**Type.** Fraunces (with `font-variation-settings: 'SOFT' 40, 'WONK' 1`) for headings, labels and numbers. Lora for body.
+**4. Madhubani border bands between sections**
+- New `SectionDivider` component drawn as authored inline SVG tiles bounded top and bottom by two parallel contour lines (the reference convention), tiling edge-to-edge, in the folk palette (vermilion, teal, amber, black contour).
+- Variants, each based on a specific border from the Udaan Creation reference:
+  - `lotus`: pink lotus buds with green leaves on a baseline. Used at the bottom of Hero and bottom of Work With Me.
+  - `wave`: undulating double wave with amber dots in the loops. Used under AI Built.
+  - `fish`: alternating fish facing left and right with dot clusters between. Used under Amazon Shipped.
+  - `peacock`: peacock-feather eyes in teal and amber. Used under Experience.
+  - `zigzag`: filled triangles alternating teal, vermilion, amber. Used under Education.
+  - `dotline`: vertical strokes with periodic dot clusters. Used under Guestbook.
+- Each variant sits on a paper-tone strip so it reads as a distinct band. Height ~44px.
 
-**Space.** Gallery-wall generous. Bare is usually correct.
+**5. Corner cluster upgrade**
+- Add two authored corner-cluster SVGs (top-left and bottom-right of the hero, top-right of Guestbook) built from the same lotus-and-vine vocabulary as the reference, at ~140px, roughly 25% opacity behind text so they punctuate without competing.
+- Added inside `HeroSection.tsx` and `GuestbookSection.tsx` only.
 
-**Icons only** for email, Substack, GitHub, LinkedIn, X, each with aria-label and tooltip. Never icon plus name.
+**6. Strengthen card top-accents**
+- The reference shows each "What I'm building" card with a bold 6px colored top bar (magenta, amber, teal, vermilion). Add `border-top: 6px solid` in the card's existing accent color inside `AIBuiltSection`, without touching card content or layout.
 
-**Already tried and forbidden:** #F4E8D2 or any beige ground, saturated page grounds, alternating panel grounds, big architectural frames around the hero, tiled patterns behind body text, hard offset shadows, 2px black borders, Devanagari/Sanskrit/Bengali script, multiple city names, text rows of social links, duplicated contact details in a footer or contact section.
+## Files to change
 
-**Copy.** No em-dashes, no staccato stacks, no rewriting my copy, no invented placeholders, no deletions without asking.
+- `src/assets/motifs/Motifs.tsx` — add `SquiggleVertical`, `LotusBand`, `WaveBand`, `FishBand`, `PeacockBand`, `ZigzagBand`, `DotLineBand`, `CornerClusterLotus` SVGs.
+- `src/components/PageEdgeRails.tsx` — new, fixed left/right squiggle rails.
+- `src/components/SectionRail.tsx` — new, right-edge diamond scroll indicator.
+- `src/components/PanelLabel.tsx` — new, shared `◆ PANEL X · NAME` label.
+- `src/components/SectionDivider.tsx` — new, `lotus | wave | fish | peacock | zigzag | dotline` variants.
+- `src/pages/Index.tsx` — mount `PageEdgeRails` and `SectionRail`, insert `SectionDivider` between sections.
+- `src/components/HeroSection.tsx` — add corner clusters and a lotus band at the bottom edge.
+- `src/components/AIBuiltSection.tsx` — add `PanelLabel`, wave band below, 6px colored top-bar on each card.
+- `src/components/AmazonShippedSection.tsx` — add `PanelLabel`, fish band below.
+- `src/components/ExperienceSection.tsx` — add `PanelLabel`, peacock band below.
+- `src/components/WorkWithMeSection.tsx` — add `PanelLabel`, lotus band below.
+- `src/components/EducationSection.tsx` — add `PanelLabel`, zigzag band below.
+- `src/components/GuestbookSection.tsx` — add `PanelLabel`, dot-line band below, corner cluster.
 
-## Proposed next step: a sandbox, not the live site
+## What will not change
 
-You asked to see samples before any change. I will not touch the live site yet. Instead, I will build one throwaway route, `/sandbox`, that renders the **same hero content you already have** on the paper ground, with three side-by-side treatments of the motif language so you can point at what works and what does not.
+All copy, all 12 vibe-coded product cards, all 4 Amazon cards, Experience, Education, Guestbook, headshot, floating nav items, resume link, section order, and the existing small motifs stay exactly as they are. No color-token changes beyond the accent border-top on AI cards. No new dependencies.
 
-### Sandbox contents
+## Verification
 
-1. Global sandbox styles: paper ground `#FAF9F6`, Fraunces headings with SOFT 40 / WONK 1, Lora body. No component in the sandbox uses rectangles, borders or pill chips, so you can judge the shape language honestly.
-
-2. Three motif treatments of the hero, stacked vertically, each labelled with a small Fraunces caption:
-
-   **A. Margin punctuation.** A single 28 px lotus-with-leaves at the top-left of the headline, a small vine tendril breaking the line between the headline and the sub, one 20 px fish beside the availability sentence. Icons row underneath, no boxes, no tooltips shown but wired.
-
-   **B. Divider as motif.** No motifs beside text. Between hero and the next section, a hand-drawn horizontal vine of ~24 px height runs across roughly a third of the column width, off-centre, with a peacock at one end and three leaves at the other. Everything else is empty paper.
-
-   **C. Corner cluster.** A small Pattachitra-style tree-of-life cluster (~40 px tall) tucked into the top-right margin of the hero block, with the sun as a 16 px motif near the availability line. Nothing else decorated.
-
-3. Motif assets: I will hand-author the motifs as inline SVG with a single 1.25 px black contour stroke, deliberately imperfect Bézier curves (no perfect circles, no uniform radii), filled with the palette hexes you gave. No raster, no generated art. Roughly 6 to 8 small SVGs total for the sandbox: lotus-with-leaves, vine tendril, fish, peacock, leaf trio, sun, tree-of-life cluster.
-
-4. Icons row (email, Substack, GitHub, LinkedIn, X) rendered without backgrounds or borders, aria-labelled, with tooltips on hover. Same set in all three treatments so you are only judging the motif logic.
-
-### Out of scope for this step
-
-No changes to the live homepage, no changes to any existing section, no route removed, no content edited. The sandbox is additive and lives at `/sandbox` until you pick a direction. Once you tell me which treatment (or which mix) is right, I will plan the real rollout section by section, one change at a time, per your rules.
-
-### Technical notes
-
-- New file `src/pages/Sandbox.tsx`, new route in `src/App.tsx`, new folder `src/assets/motifs/` for the inline SVG components (`LotusLeaves.tsx`, `VineTendril.tsx`, `Fish.tsx`, `Peacock.tsx`, `LeafTrio.tsx`, `Sun.tsx`, `TreeOfLife.tsx`).
-- Sandbox scopes its own styles inline or via a local wrapper class so it cannot leak into the rest of the site.
-- Fraunces and Lora are loaded via Google Fonts `@import` at the top of `src/index.css` (before Tailwind directives, to avoid the regression we hit before). Variation settings applied only inside the sandbox wrapper for now.
-- No changes to `tailwind.config.ts`, no changes to the design tokens in `:root`, until you approve a direction.
+After building, screenshot the homepage at 1280px wide with Playwright and compare the hero, AI Built, Amazon, Work With Me, and Guestbook sections against the cream reference images plus the Madhubani border sheet. Iterate on stroke weight, band height, and corner-cluster opacity only if they read thinner than the reference.
