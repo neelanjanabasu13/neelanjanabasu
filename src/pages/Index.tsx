@@ -7,10 +7,12 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 import { WorkWithMeSection } from "@/components/WorkWithMeSection";
 import { EducationSection } from "@/components/EducationSection";
 import { GuestbookSection } from "@/components/GuestbookSection";
+import { PostscriptSection } from "@/components/PostscriptSection";
 import { PageEdgeRails } from "@/components/PageEdgeRails";
 import { SectionRail } from "@/components/SectionRail";
 import { SectionDivider } from "@/components/SectionDivider";
 import { VineScrollbar } from "@/components/VineScrollbar";
+
 
 const Index = () => {
   return (
@@ -34,7 +36,9 @@ const Index = () => {
       <SectionDivider variant="zigzag" />
       <GuestbookSection />
       <SectionDivider variant="dotline" />
+      <PostscriptSection />
     </main>
+
   );
 };
 
