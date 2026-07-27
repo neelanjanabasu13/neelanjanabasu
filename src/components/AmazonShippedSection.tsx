@@ -17,7 +17,8 @@ const portfolioItems = [
       "Revolutionary feature enabling customers to add products directly from search results, scaling to 93% worldwide impressions.",
     impact: "$2B Revenue Impact",
     image: addToCartImg,
-    focus: "center 65%",
+    focus: "right 60%",
+
 
     tags: ["E-commerce", "Search", "UX"],
     story:
@@ -31,7 +32,8 @@ const portfolioItems = [
       "Redesigned how quantity data is surfaced across 5M+ products, improving customer decision clarity.",
     impact: "$250M Revenue Impact",
     image: quantityImg,
-    focus: "center 40%",
+    focus: "center 20%",
+
 
     tags: ["Data Systems", "ML", "UX"],
     story:
@@ -123,17 +125,8 @@ export const AmazonShippedSection = () => {
                           className="w-full h-full object-cover"
                           style={{ objectPosition: item.focus }}
                         />
-
-
-                        <button
-                          onClick={() => setFlippedId(item.id)}
-                          aria-label={`Read the story behind ${item.title}`}
-                          className="absolute bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold shadow-lg hover:bg-foreground/90 hover:scale-105 transition-all"
-                        >
-                          <BookOpen className="w-4 h-4" />
-                          Read the story
-                        </button>
                       </motion.div>
+
                     ) : (
                       <motion.div
                         key="story"
@@ -174,16 +167,29 @@ export const AmazonShippedSection = () => {
                   <p className="text-muted-foreground text-sm line-clamp-2">
                     {item.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-medium"
+                  <div className="flex items-end justify-between gap-3 mt-4">
+                    <div className="flex flex-wrap gap-2">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    {!isFlipped && (
+                      <button
+                        onClick={() => setFlippedId(item.id)}
+                        aria-label={`Read the story behind ${item.title}`}
+                        className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-foreground text-background text-xs font-semibold shadow hover:bg-foreground/90 hover:scale-105 transition-all"
                       >
-                        {tag}
-                      </span>
-                    ))}
+                        <BookOpen className="w-3.5 h-3.5" />
+                        Read the story
+                      </button>
+                    )}
                   </div>
+
                 </div>
               </motion.div>
             );
