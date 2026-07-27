@@ -21,8 +21,7 @@ export const PostscriptSection = () => {
         >
           <p className="text-xl sm:text-2xl font-body text-foreground leading-relaxed text-justify">
             <span className="font-heading text-3xl sm:text-4xl text-primary mr-2">P.S.</span>
-            The colours and borders on this page come from my love of Indian folk art: Madhubani, Pattachitra, Pichwai and more.<br className="hidden sm:block" />
-            It is a practice I keep up badly and love anyway.<br className="hidden sm:block" />
+            The colours and borders on this page come from my love of Indian folk art: Madhubani, Pattachitra, Pichwai and more. It is a practice I keep up badly and love anyway.<br className="hidden sm:block" />
             That love is the reason this site looks like this rather than like a template.
           </p>
         </motion.div>
