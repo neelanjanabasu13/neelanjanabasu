@@ -19,6 +19,7 @@ const Index = () => {
       <ExperienceSection />
       <WorkWithMeSection />
       <EducationSection />
+      <GuestbookSection />
     </main>
   );
 };
