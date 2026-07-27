@@ -21,11 +21,6 @@ export const HeroSection = () => {
         <MotifReveal><TreeOfLife size={56} /></MotifReveal>
       </div>
 
-      {/* Margin punctuation: left side */}
-      {/* Margin punctuation: left side, tucked into whitespace below the stats */}
-      <div className="hidden md:block absolute left-4 sm:left-10 bottom-24 opacity-80">
-        <MotifReveal><LotusLeaves size={40} /></MotifReveal>
-      </div>
 
       <div className="relative z-10 section-container flex flex-col justify-center py-16">
         <div className="max-w-4xl mx-auto text-center">
