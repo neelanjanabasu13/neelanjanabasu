@@ -42,15 +42,21 @@ export const HeroSection = () => {
           </motion.div>
 
           {/* Main heading */}
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-medium text-foreground mb-4 leading-tight"
+            className="relative inline-block mb-4"
           >
-            {resumeData.personal.name.split(" ")[0]}{" "}
-            <span className="italic">{resumeData.personal.name.split(" ").slice(1).join(" ")}</span>
-          </motion.h1>
+            <div className="hidden sm:block absolute -left-10 sm:-left-14 lg:-left-20 top-1/2 -translate-y-1/2 opacity-90">
+              <MotifReveal><LotusLeaves size={36} /></MotifReveal>
+            </div>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-medium text-foreground leading-tight">
+              {resumeData.personal.name.split(" ")[0]}{" "}
+              <span className="italic">{resumeData.personal.name.split(" ").slice(1).join(" ")}</span>
+            </h1>
+          </motion.div>
+
 
           {/* Title */}
           <motion.h2
