@@ -9,6 +9,21 @@
 
 @layer base {
   :root {
+    /* Editorial theme tokens - exact hex values */
+    --paper: #F4E8D2;
+    --paper-2: #EBDBBD;
+    --paper-3: #E0CBA4;
+    --ink: #1E1A16;
+    --ink-soft: #463726;
+    --blue-deep: #123D55;
+    --blue: #1B5E80;
+    --blue-br: #2F8FBF;
+    --blue-pale: #8FBBD1;
+    --rose: #B93A63;
+    --madder: #B0432A;
+    --gold: #C08A2E;
+    --gold-lt: #E4B349;
+    --teal: #2F7A72;
     /* Core palette - Soft blue-gray with vibrant accents */
     --background: 220 25% 95%;
     --foreground: 230 25% 25%;
