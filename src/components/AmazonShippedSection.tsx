@@ -112,9 +112,9 @@ export const AmazonShippedSection = () => {
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="w-full h-full object-contain"
-                          style={{ objectPosition: "0 -80px" }}
+                          className="w-full h-full object-cover object-top"
                         />
+
                         <button
                           onClick={() => setFlippedId(item.id)}
                           aria-label={`Read the story behind ${item.title}`}
