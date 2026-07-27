@@ -4,6 +4,7 @@ import { AmazonPeerTicker } from "@/components/AmazonPeerTicker";
 import { AIBuiltSection } from "@/components/AIBuiltSection";
 import { AmazonShippedSection } from "@/components/AmazonShippedSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
+import { WorkWithMeSection } from "@/components/WorkWithMeSection";
 import { EducationSection } from "@/components/EducationSection";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <AIBuiltSection />
       <AmazonShippedSection />
       <ExperienceSection />
+      <WorkWithMeSection />
       <EducationSection />
     </main>
   );
