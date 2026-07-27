@@ -31,6 +31,8 @@ const portfolioItems = [
       "Redesigned how quantity data is surfaced across 5M+ products, improving customer decision clarity.",
     impact: "$250M Revenue Impact",
     image: quantityImg,
+    focus: "center 40%",
+
     tags: ["Data Systems", "ML", "UX"],
     story:
       "Customers kept receiving different quantities from what they ordered. In consumables, that is the end of a shopping habit, and habit is the whole business. The obvious fix was to make quantity bigger and bolder on the page, but the real problem ran deeper: only 1% of search results had structured quantity data, while the other 99% lived in free text written by hundreds of thousands of sellers across dozens of languages. A prettier label would have been a very confident lie. Instead, I rebuilt the foundation: a new ML model, quantity published as a derived attribute on its own API so seller content was never overwritten, and new listing templates so the catalog couldn't quietly decay again. Accuracy improved from 1% to 95% across 5M products, unlocked $250M in incremental revenue, and became the data layer for unit pricing, recommendations, and fraud detection.",
