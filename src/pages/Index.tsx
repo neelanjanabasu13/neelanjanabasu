@@ -18,6 +18,7 @@ import { VineScrollbar } from "@/components/VineScrollbar";
 const Index = () => {
   return (
     <main className="relative min-h-screen">
+      <CursorTrail />
       <PageEdgeRails />
       <VineScrollbar />
       <SectionRail />
