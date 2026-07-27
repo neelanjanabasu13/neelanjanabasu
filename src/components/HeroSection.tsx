@@ -75,7 +75,7 @@ export const HeroSection = () => {
             transition={{ delay: 0.4 }}
             className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto mb-8 text-justify"
           >
-            Ten years in product before that, most of it at Amazon, most recently Senior Product Manager on Add to Cart in Search. I like problems where nobody has agreed on the question yet. Open to AI product roles. Permanently curious, reliably specific.
+            Ten years in product before that, most of it at Amazon, most recently Senior Product Manager on Add to Cart in Search. I like problems where nobody has agreed on the question yet. Permanently curious, reliably specific. Open to AI product roles.
             <span className="inline-block align-middle ml-2">
               <Fish size={20} />
             </span>
