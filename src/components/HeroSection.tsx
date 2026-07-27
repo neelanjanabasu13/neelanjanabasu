@@ -72,19 +72,9 @@ export const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-4"
+            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
           >
-            Ten years in product before that, most of it at Amazon, most recently Senior Product Manager on Add to Cart in Search. I like problems where nobody has agreed on the question yet.
-          </motion.p>
-
-          {/* Availability signal */}
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-            className="text-base text-foreground/80 max-w-2xl mx-auto mb-8"
-          >
-            Open to AI product roles. Permanently curious, reliably specific.
+            Ten years in product before that, most of it at Amazon, most recently Senior Product Manager on Add to Cart in Search. I like problems where nobody has agreed on the question yet. Open to AI product roles. Permanently curious, reliably specific.
           </motion.p>
 
           {/* Jump links */}
