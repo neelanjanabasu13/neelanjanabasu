@@ -138,13 +138,19 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    @apply antialiased;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    line-height: 1.72;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
+    color: var(--blue-deep);
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-variation-settings: 'SOFT' 40, 'WONK' 1;
   }
 }
 
