@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Peacock, LeafTrio, Sun, LotusLeaves, Fish, TreeOfLife } from "@/assets/motifs/Motifs";
 
 const testimonials = [
   {
@@ -33,9 +34,16 @@ const testimonials = [
   },
 ];
 
+const cornerMotifs = [Peacock, LeafTrio, Sun, LotusLeaves, Fish, TreeOfLife];
+
 export const WorkWithMeSection = () => {
   return (
-    <section id="work-with-me" className="py-12 bg-background">
+    <section id="work-with-me" className="py-12 bg-background relative">
+      {/* Divider as motif */}
+      <div className="absolute top-6 left-1/2 -translate-x-1/2 opacity-80">
+        <LeafTrio size={22} />
+      </div>
+
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -44,7 +52,7 @@ export const WorkWithMeSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
+          <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
             What it&apos;s like to work with{" "}
             <span className="italic">me</span>
           </h2>
@@ -58,29 +66,30 @@ export const WorkWithMeSection = () => {
         </motion.div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {testimonials.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card rounded-2xl border border-border p-6 sm:p-8 hover:border-foreground/20 transition-colors relative"
-            >
-              <span
-                className="absolute top-4 left-4 text-6xl leading-none text-primary/10 font-serif select-none"
-                aria-hidden="true"
+          {testimonials.map((item, index) => {
+            const Motif = cornerMotifs[index % cornerMotifs.length];
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="folk-card p-6 sm:p-8 hover:border-foreground/30 relative"
               >
-                &ldquo;
-              </span>
-              <blockquote className="relative z-10 text-foreground text-lg leading-relaxed mb-4 pt-6">
-                {item.quote}
-              </blockquote>
-              <footer className="relative z-10 text-muted-foreground text-sm font-medium">
-                {item.source}
-              </footer>
-            </motion.div>
-          ))}
+                {/* Corner cluster per card */}
+                <span className="absolute top-4 right-4 opacity-70">
+                  <Motif size={28} />
+                </span>
+                <blockquote className="relative z-10 text-foreground text-lg leading-relaxed mb-4 pt-6">
+                  {item.quote}
+                </blockquote>
+                <footer className="relative z-10 text-muted-foreground text-sm font-medium">
+                  {item.source}
+                </footer>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

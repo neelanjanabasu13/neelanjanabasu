@@ -14,26 +14,26 @@ export const ProjectCard = ({ item, index = 0 }: ProjectCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      whileHover={{ y: -6 }}
-      className="bg-card rounded-2xl border border-border overflow-hidden group hover:border-foreground/20 transition-all flex flex-col"
+      whileHover={{ y: -4 }}
+      className="folk-card group hover:border-foreground/30 flex flex-col"
     >
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2 mb-3">
           {item.award && (
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-lime-300/80 text-foreground text-xs font-medium">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary text-foreground text-xs font-medium border border-border">
               <Trophy className="w-3.5 h-3.5" />
               {item.award}
             </div>
           )}
           <span
-            className={`inline-flex items-center px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium ${
+            className={`inline-flex items-center px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium border border-border ${
               item.award ? "" : "ml-auto"
             }`}
           >
             {item.platform}
           </span>
         </div>
-        <h4 className="text-lg font-medium text-foreground mb-2 font-serif group-hover:text-foreground/80 transition-colors">
+        <h4 className="text-lg font-medium text-foreground mb-2 group-hover:text-foreground/80 transition-colors">
           {item.title}
         </h4>
         <p className="text-muted-foreground text-sm mb-4 flex-1">

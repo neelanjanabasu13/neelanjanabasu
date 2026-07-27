@@ -69,10 +69,10 @@ export const AICarousel = ({ projects }: AICarouselProps) => {
               key={i}
               onClick={() => setPage(i)}
               aria-label={`Go to project page ${i + 1}`}
-              className={`w-2 h-2 rounded-full transition-all ${
+              className={`h-2 rounded-full transition-all ${
                 i === page
                   ? "bg-foreground w-4"
-                  : "bg-foreground/25 hover:bg-foreground/40"
+                  : "w-2 bg-foreground/25 hover:bg-foreground/40"
               }`}
             />
           ))}
