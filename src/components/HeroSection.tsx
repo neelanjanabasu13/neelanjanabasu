@@ -118,7 +118,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Neelanjana on GitHub"
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/80 hover:text-foreground hover:border-foreground/40 transition-all duration-300"
                 >
                   <Github className="w-4 h-4" />
                 </a>
@@ -132,7 +132,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Neelanjana on LinkedIn"
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/80 hover:text-foreground hover:border-foreground/40 transition-all duration-300"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
@@ -146,7 +146,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Neelanjana on Substack"
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/80 hover:text-foreground hover:border-foreground/40 transition-all duration-300"
                 >
                   <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
                     <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
@@ -160,7 +160,7 @@ export const HeroSection = () => {
                 <a
                   href={`mailto:${resumeData.personal.email}`}
                   aria-label="Email Neelanjana"
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/80 hover:text-foreground hover:border-foreground/40 transition-all duration-300"
                 >
                   <Mail className="w-4 h-4" />
                 </a>
@@ -175,7 +175,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Download Neelanjana's resume"
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/80 hover:text-foreground hover:border-foreground/40 transition-all duration-300"
                 >
                   <Download className="w-4 h-4" />
                 </a>
@@ -186,7 +186,7 @@ export const HeroSection = () => {
               <TooltipTrigger asChild>
                 <span
                   aria-label={`Location: ${resumeData.personal.location}`}
-                  className="flex items-center gap-1.5 text-sm text-muted-foreground"
+                  className="flex items-center gap-1.5 text-sm text-foreground/80"
                 >
                   <MapPin className="w-4 h-4" />
                   {resumeData.personal.location}
