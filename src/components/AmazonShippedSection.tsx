@@ -45,6 +45,8 @@ const portfolioItems = [
       "Visual category navigation on Amazon search, horizontal image carousels enabling customers to filter by product type at a glance.",
     impact: "Search UX",
     image: visualNavImg,
+    focus: "center 22%",
+
     tags: ["Search", "Navigation", "UX"],
     story:
       "Most consumables searches were broad ones like cleaning products or healthy snacks, and customers kept telling us the same thing: they didn't know where to start because everything looked the same. We had taken the visual ease of walking a supermarket aisle and replaced it with a wall of text. My first attempt at fixing it failed within days, but the instrumentation I had insisted on made the problem obvious: we had chosen the right attribute, but many of its values led to dead ends that almost nobody clicked. Two weeks later we relaunched with image carousels built around what customers actually clicked across multiple attributes, rolled it out carefully while monitoring guardrails, and it delivered a $71M annualised uplift globally.",
