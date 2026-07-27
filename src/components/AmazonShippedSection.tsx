@@ -17,6 +17,8 @@ const portfolioItems = [
       "Revolutionary feature enabling customers to add products directly from search results, scaling to 93% worldwide impressions.",
     impact: "$2B Revenue Impact",
     image: addToCartImg,
+    focus: "center 65%",
+
     tags: ["E-commerce", "Search", "UX"],
     story:
       "Believe it or not, you couldn't add products to your cart directly from Amazon's search results until 2023. The idea felt almost too obvious to justify a PRFAQ, so imagine our surprise when the first A/B test came back negative even as customers bought more items and built bigger baskets. After many rabbit holes, the culprit was caught: measurement models trained on three decades of a single happy path had learned that fewer product-page visits meant fewer purchases. A textbook case of Goodhart's law. Once we fixed the measurement, the experiment alone generated over half a billion dollars, and the broader charter ultimately drove more than $2B.",
