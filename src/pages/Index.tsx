@@ -10,11 +10,13 @@ import { GuestbookSection } from "@/components/GuestbookSection";
 import { PageEdgeRails } from "@/components/PageEdgeRails";
 import { SectionRail } from "@/components/SectionRail";
 import { SectionDivider } from "@/components/SectionDivider";
+import { VineScrollbar } from "@/components/VineScrollbar";
 
 const Index = () => {
   return (
     <main className="relative min-h-screen">
       <PageEdgeRails />
+      <VineScrollbar />
       <SectionRail />
       <FloatingNav />
       <HeroSection />
