@@ -16,6 +16,7 @@ const Index = () => {
       <AIBuiltSection />
       <AmazonShippedSection />
       <ExperienceSection />
+      <WorkWithMeSection />
       <EducationSection />
     </main>
   );
