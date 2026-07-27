@@ -4,6 +4,7 @@ import { MapPin, Calendar, ChevronDown, TrendingUp } from "lucide-react";
 import { resumeData } from "@/data/resumeData";
 import amazonLogo from "@/assets/amazon-logo.png";
 import meruLogo from "@/assets/meru-logo.png";
+import { VineTendril, LotusLeaves, Fish } from "@/assets/motifs/Motifs";
 
 const companyLogoMap: Record<string, string> = {
   Amazon: amazonLogo,
@@ -14,7 +15,12 @@ export const ExperienceSection = () => {
   const [expandedRole, setExpandedRole] = useState<string | null>("amazon-0");
 
   return (
-    <section id="experience" className="py-12 bg-background">
+    <section id="experience" className="py-12 bg-background relative">
+      {/* Margin punctuation */}
+      <div className="absolute right-4 sm:right-10 top-20 opacity-60">
+        <LotusLeaves size={32} />
+      </div>
+
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -23,17 +29,20 @@ export const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
+          <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
             Work <span className="italic">Experience</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A decade of product leadership across consumer and platform products
           </p>
+          <div className="flex justify-center mt-4 opacity-80">
+            <VineTendril size={16} />
+          </div>
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-0.5 bg-border" />
+          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-border" />
 
           {resumeData.experience.map((company, companyIndex) => (
             <motion.div
@@ -61,7 +70,7 @@ export const ExperienceSection = () => {
                         />
                       </div>
                     )}
-                    <h3 className="text-2xl font-medium text-foreground font-serif">
+                    <h3 className="text-2xl font-medium text-foreground">
                       {company.company}
                     </h3>
                   </div>
@@ -82,7 +91,7 @@ export const ExperienceSection = () => {
                     <motion.div
                       key={roleId}
                       layout
-                      className="bg-card rounded-2xl border border-border overflow-hidden hover:border-foreground/20 transition-colors"
+                      className="folk-card hover:border-foreground/30"
                     >
                       <button
                         onClick={() => setExpandedRole(isExpanded ? null : roleId)}
@@ -131,11 +140,11 @@ export const ExperienceSection = () => {
                                 transition={{ delay: achIndex * 0.1 }}
                                 className="flex items-start gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors"
                               >
-                                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
+                                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-background border border-border flex items-center justify-center">
                                   <TrendingUp className="w-5 h-5 text-foreground" />
                                 </div>
                                 <div>
-                                  <span className="text-xl font-serif font-medium text-foreground">
+                                  <span className="text-xl font-medium text-foreground">
                                     {achievement.metric}
                                   </span>
                                   <p className="text-muted-foreground text-sm mt-1">
@@ -153,6 +162,11 @@ export const ExperienceSection = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Bottom motif */}
+        <div className="flex justify-center mt-8 opacity-80">
+          <Fish size={22} />
         </div>
       </div>
     </section>
