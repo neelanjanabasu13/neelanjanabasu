@@ -200,10 +200,10 @@ export const AIBuiltSection = () => {
           className="text-center mb-8"
         >
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
-            AI products <span className="italic">I&apos;ve built</span>
+            WHAT I&apos;M BUILDING
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Shipping AI products end to end — from idea to live app
+            After a decade at Amazon and the arrival of my second child, I took a career break. It turned out to be the most useful thing that could have happened to my curiosity. I spent it tinkering with every AI tool I could get my hands on! He is in nursery now and delighted about it, and the itch to build properly has come back. So has the appetite for a mission worth returning for.
           </p>
         </motion.div>
 
