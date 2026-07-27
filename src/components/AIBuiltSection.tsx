@@ -202,7 +202,7 @@ export const AIBuiltSection = () => {
           <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4 font-serif">
             WHAT I&apos;M BUILDING
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-4xl mx-auto text-justify">
             After a decade at Amazon and the arrival of my second child, I took a career break. It turned out to be the most useful thing that could have happened to my curiosity. I spent it tinkering with every AI tool I could get my hands on! He is in nursery now and delighted about it, and the itch to build properly has come back. So has the appetite for a mission worth returning for.
           </p>
         </motion.div>
@@ -212,18 +212,6 @@ export const AIBuiltSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-8 h-8 rounded-lg bg-lime-300 flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-foreground" />
-            </div>
-            <h3 className="text-2xl font-medium text-foreground font-serif">
-              Vibe Coded <span className="italic">Products</span>
-            </h3>
-            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider bg-secondary px-3 py-1 rounded-full">
-              Built with AI
-            </span>
-          </div>
-
           <AICarousel projects={aiProducts} />
         </motion.div>
       </div>
