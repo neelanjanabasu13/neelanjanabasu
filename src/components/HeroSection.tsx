@@ -12,7 +12,7 @@ export const HeroSection = () => {
   return (
     <section id="hero" className="relative bg-background overflow-hidden">
       {/* Sky mark: sun by day, moon by night, top-left corner */}
-      <div className="absolute top-6 left-6 sm:top-10 sm:left-14 z-10">
+      <div className="absolute top-20 left-6 sm:top-24 sm:left-14 z-[60] pointer-events-auto">
         <SkyMark size={30} />
       </div>
 
