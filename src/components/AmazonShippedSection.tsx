@@ -165,16 +165,29 @@ export const AmazonShippedSection = () => {
                   <p className="text-muted-foreground text-sm line-clamp-2">
                     {item.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-medium"
+                  <div className="flex items-end justify-between gap-3 mt-4">
+                    <div className="flex flex-wrap gap-2">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    {!isFlipped && (
+                      <button
+                        onClick={() => setFlippedId(item.id)}
+                        aria-label={`Read the story behind ${item.title}`}
+                        className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-foreground text-background text-xs font-semibold shadow hover:bg-foreground/90 hover:scale-105 transition-all"
                       >
-                        {tag}
-                      </span>
-                    ))}
+                        <BookOpen className="w-3.5 h-3.5" />
+                        Read the story
+                      </button>
+                    )}
                   </div>
+
                 </div>
               </motion.div>
             );
