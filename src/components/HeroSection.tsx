@@ -5,18 +5,25 @@ import { resumeData } from "@/data/resumeData";
 import profilePhoto from "@/assets/profile-photo.png";
 import resumePdf from "@/assets/Neelanjana_Basu.pdf.asset.json";
 import { LotusLeaves, VineTendril, Fish, TreeOfLife } from "@/assets/motifs/Motifs";
+import { MotifReveal } from "@/components/MotifReveal";
+import { SkyMark } from "@/components/SkyMark";
 
 export const HeroSection = () => {
   return (
     <section id="hero" className="relative bg-background overflow-hidden">
+      {/* Sky mark: sun by day, moon by night, top-left corner */}
+      <div className="absolute top-6 left-6 sm:top-10 sm:left-14 z-10">
+        <SkyMark size={30} />
+      </div>
+
       {/* Corner cluster: top-right */}
       <div className="absolute top-6 right-4 sm:top-10 sm:right-10 opacity-90">
-        <TreeOfLife size={56} />
+        <MotifReveal><TreeOfLife size={56} /></MotifReveal>
       </div>
 
       {/* Margin punctuation: left side */}
-      <div className="absolute left-4 sm:left-10 top-1/3 opacity-80">
-        <LotusLeaves size={32} />
+      <div className="absolute left-4 sm:left-16 top-1/3 opacity-80">
+        <MotifReveal><LotusLeaves size={40} /></MotifReveal>
       </div>
 
       <div className="relative z-10 section-container flex flex-col justify-center py-16">
