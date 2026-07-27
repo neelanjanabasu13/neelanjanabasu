@@ -121,9 +121,9 @@ export const AmazonShippedSection = () => {
                         <button
                           onClick={() => setFlippedId(item.id)}
                           aria-label={`Read the story behind ${item.title}`}
-                          className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/95 backdrop-blur border border-border text-xs font-medium text-foreground shadow-sm hover:bg-card transition-colors"
+                          className="absolute bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold shadow-lg hover:bg-primary/90 hover:scale-105 transition-all"
                         >
-                          <BookOpen className="w-3.5 h-3.5" />
+                          <BookOpen className="w-4 h-4" />
                           Read the story
                         </button>
                       </motion.div>
