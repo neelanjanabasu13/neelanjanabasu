@@ -61,6 +61,23 @@ const aiProducts: Project[] = [
     ],
   },
   {
+    id: 10,
+    title: "It's Day 1",
+    platform: "Lovable",
+    hook: "Turn the thing you just shipped into real distribution picks, with links, specific actions, and honest guidance on where to show up first.",
+    links: [
+      {
+        label: "Live",
+        url: "https://it-is-day1.lovable.app/",
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/neelanjanabasu13/it-is-day1",
+        icon: "github",
+      },
+    ],
+  },
+  {
     id: 6,
     title: "Email Agent",
     platform: "Codex",
