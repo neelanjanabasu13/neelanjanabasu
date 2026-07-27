@@ -32,7 +32,8 @@ const portfolioItems = [
       "Redesigned how quantity data is surfaced across 5M+ products, improving customer decision clarity.",
     impact: "$250M Revenue Impact",
     image: quantityImg,
-    focus: "center 40%",
+    focus: "center 20%",
+
 
     tags: ["Data Systems", "ML", "UX"],
     story:
