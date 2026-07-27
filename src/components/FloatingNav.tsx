@@ -14,7 +14,6 @@ const navItems = [
 // You can rename them to match your actual sections.
 const actualNavItems = [
   { id: "experience", label: "Experience" },
-  { id: "skills", label: "Skills" },
   { id: "education", label: "Education" },
   { id: "portfolio", label: "Portfolio" },
   { id: "contact", label: "Contact" },
