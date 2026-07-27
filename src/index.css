@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..700,0..100,0..1&family=Lora:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,6 +9,21 @@
 
 @layer base {
   :root {
+    /* Editorial theme tokens - exact hex values */
+    --paper: #F4E8D2;
+    --paper-2: #EBDBBD;
+    --paper-3: #E0CBA4;
+    --ink: #1E1A16;
+    --ink-soft: #463726;
+    --blue-deep: #123D55;
+    --blue: #1B5E80;
+    --blue-br: #2F8FBF;
+    --blue-pale: #8FBBD1;
+    --rose: #B93A63;
+    --madder: #B0432A;
+    --gold: #C08A2E;
+    --gold-lt: #E4B349;
+    --teal: #2F7A72;
     /* Core palette - Soft blue-gray with vibrant accents */
     --background: 220 25% 95%;
     --foreground: 230 25% 25%;
@@ -123,13 +138,19 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    @apply antialiased;
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    line-height: 1.72;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
+    color: var(--blue-deep);
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-variation-settings: 'SOFT' 40, 'WONK' 1;
   }
 }
 

@@ -1,23 +1,53 @@
-## SEO check — 3 findings
+## Plan: Add new visual theme
 
-### 1. Accessibility: low text contrast (low)
-Audit color usage for muted/placeholder text on light backgrounds and swap arbitrary Tailwind grays for design-system tokens (`text-foreground`, `text-muted-foreground`). Likely suspects: hero subtitle/scroll indicator, contact section (`text-background/40`, `text-background/60` on dark), muted labels.
-- Review `HeroSection.tsx`, `ContactSection.tsx`, `AIBuiltSection.tsx`, `AmazonShippedSection.tsx` and bump any `/40`–`/60` opacity text to `/70`+ or full token.
-- Note: finding reflects last **published** version, so must re-publish to clear.
+### Scope
+Only global styles and fonts change. No layout, content, images, links, or component logic will be touched.
 
-### 2. Content: add "AI tools for product managers" guide (low)
-Add a new section on `/` (or a dedicated route) titled "The AI Product Manager's Toolkit" listing the AI tools used to build the portfolio projects (ElevenLabs, Bolt, Lovable, Codex, Figma Make, Omma, Replit, Slack). Target keyword `ai tools for product managers`. Group by category: prototyping, PRD generation, agentic workflows.
-- **Question for you:** want this added? If yes, section on homepage or separate `/ai-toolkit` route with its own Helmet meta?
+### Changes
 
-### 3. Google Search Console not connected (mid)
-Connect GSC so search performance + sitemap submission work:
-1. Trigger the `google_search_console` connector — you'll authorize via inline OAuth card.
-2. Verify ownership of `https://neelanjanabasu.lovable.app/` via META tag (auto-injected into `index.html`).
-3. Submit `sitemap.xml`.
-- Requires your approval on the connect card.
+1. **`src/index.css`**
+   - Replace the Google Fonts `@import` with Fraunces (weights 400–700) and Lora (weights 400–700).
+   - Add the exact CSS custom properties to `:root`:
+     - `--paper #F4E8D2`
+     - `--paper-2 #EBDBBD`
+     - `--paper-3 #E0CBA4`
+     - `--ink #1E1A16`
+     - `--ink-soft #463726`
+     - `--blue-deep #123D55`
+     - `--blue #1B5E80`
+     - `--blue-br #2F8FBF`
+     - `--blue-pale #8FBBD1`
+     - `--rose #B93A63`
+     - `--madder #B0432A`
+     - `--gold #C08A2E`
+     - `--gold-lt #E4B349`
+     - `--teal #2F7A72`
+   - Update `body` styles:
+     - `background-color: var(--paper)`
+     - `color: var(--ink)`
+     - `font-family: 'Lora', serif`
+     - `font-size: 17px`
+     - `line-height: 1.72`
+   - Update `h1`–`h5` styles:
+     - `font-family: 'Fraunces', serif`
+     - `font-weight: 700`
+     - `color: var(--blue-deep)`
+     - `font-variation-settings: 'SOFT' 40, 'WONK' 1`
 
----
+2. **`tailwind.config.ts`**
+   - Replace `fontFamily.sans` and `fontFamily.serif` with:
+     - `heading: ['Fraunces', 'serif']`
+     - `body: ['Lora', 'serif']`
+   - Remove `Inter` and `Playfair Display` references entirely.
 
-**Suggested order:** fix #1 (quick), do #3 (needs your OAuth), decide on #2.
+3. **`index.html`**
+   - No font `<link>` changes needed because fonts load via the CSS `@import`.
 
-Want me to proceed with all three, or skip #2?
+### Verification
+- Run type-check to confirm Tailwind config remains valid.
+- Visually confirm the page background is `--paper`, body text is `--ink` at 17px/1.72, and headings render in Fraunces 700 `--blue-deep` with the requested variation settings.
+
+### Out of scope
+- No component markup changes.
+- No color mapping of existing Tailwind/shadcn tokens (this is a theme-only foundation step).
+- No removal or addition of sections, projects, or images.
