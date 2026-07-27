@@ -4,27 +4,19 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { resumeData } from "@/data/resumeData";
 import profilePhoto from "@/assets/profile-photo.png";
 import resumePdf from "@/assets/Neelanjana_Basu.pdf.asset.json";
+import { LotusLeaves, VineTendril, Fish, TreeOfLife } from "@/assets/motifs/Motifs";
 
 export const HeroSection = () => {
   return (
     <section id="hero" className="relative bg-background overflow-hidden">
-      {/* Soft animated background blobs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-pink-300/30 to-purple-400/20 blur-3xl"
-        />
-        <motion.div
-          animate={{ scale: [1.2, 1, 1.2], rotate: [360, 180, 0] }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-cyan-300/30 to-teal-400/20 blur-3xl"
-        />
-        <motion.div
-          animate={{ y: [-20, 20, -20] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-orange-200/20 to-pink-300/20 blur-3xl"
-        />
+      {/* Corner cluster: top-right */}
+      <div className="absolute top-6 right-4 sm:top-10 sm:right-10 opacity-90">
+        <TreeOfLife size={56} />
+      </div>
+
+      {/* Margin punctuation: left side */}
+      <div className="absolute left-4 sm:left-10 top-1/3 opacity-80">
+        <LotusLeaves size={32} />
       </div>
 
       <div className="relative z-10 section-container flex flex-col justify-center py-16">
@@ -39,19 +31,19 @@ export const HeroSection = () => {
             <img
               src={profilePhoto}
               alt={resumeData.personal.name}
-              className="w-28 h-28 rounded-full object-cover mx-auto ring-4 ring-border/50 shadow-lg"
+              className="w-28 h-28 rounded-full object-cover mx-auto ring-2 ring-border shadow-lg"
               loading="eager"
               width={112}
               height={112}
             />
           </motion.div>
 
-          {/* Main heading with italic serif styling */}
+          {/* Main heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-medium text-foreground mb-4 leading-tight font-serif"
+            className="text-5xl sm:text-6xl lg:text-7xl font-medium text-foreground mb-4 leading-tight"
           >
             {resumeData.personal.name.split(" ")[0]}{" "}
             <span className="italic">{resumeData.personal.name.split(" ").slice(1).join(" ")}</span>
@@ -75,6 +67,9 @@ export const HeroSection = () => {
             className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto mb-8 text-justify"
           >
             Ten years in product before that, most of it at Amazon, most recently Senior Product Manager on Add to Cart in Search. I like problems where nobody has agreed on the question yet. Open to AI product roles. Permanently curious, reliably specific.
+            <span className="inline-block align-middle ml-2">
+              <Fish size={20} />
+            </span>
           </motion.p>
 
           {/* Jump links */}
@@ -98,6 +93,16 @@ export const HeroSection = () => {
             </a>
           </motion.div>
 
+          {/* Divider as motif */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.52 }}
+            className="flex justify-center mb-10 opacity-80"
+          >
+            <VineTendril size={18} />
+          </motion.div>
+
           {/* Social links row */}
           <motion.div
             id="contact"
@@ -113,7 +118,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Neelanjana on GitHub"
-                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-all duration-300"
                 >
                   <Github className="w-4 h-4" />
                 </a>
@@ -127,7 +132,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Neelanjana on LinkedIn"
-                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-all duration-300"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
@@ -141,7 +146,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Neelanjana on Substack"
-                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-all duration-300"
                 >
                   <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">
                     <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
@@ -155,7 +160,7 @@ export const HeroSection = () => {
                 <a
                   href={`mailto:${resumeData.personal.email}`}
                   aria-label="Email Neelanjana"
-                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-all duration-300"
                 >
                   <Mail className="w-4 h-4" />
                 </a>
@@ -170,7 +175,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Download Neelanjana's resume"
-                  className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-all duration-300"
                 >
                   <Download className="w-4 h-4" />
                 </a>
@@ -191,7 +196,7 @@ export const HeroSection = () => {
             </Tooltip>
           </motion.div>
 
-          {/* Stats row - minimal style */}
+          {/* Stats row */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -206,7 +211,7 @@ export const HeroSection = () => {
                 transition={{ delay: 0.8 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl sm:text-4xl font-serif font-medium text-foreground mb-1">
+                <div className="text-3xl sm:text-4xl font-medium text-foreground mb-1">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -225,7 +230,6 @@ export const HeroSection = () => {
             <ChevronDown className="w-5 h-5 mx-auto mt-2 text-muted-foreground animate-bounce" />
           </motion.div>
         </div>
-
       </div>
     </section>
   );
