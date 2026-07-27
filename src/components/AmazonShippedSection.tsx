@@ -59,6 +59,8 @@ const portfolioItems = [
       "Built automated tool for optimizing category curation based on customer expectations.",
     impact: "£25M Revenue",
     image: pantryImg,
+    focus: "center center",
+
     tags: ["Automation", "Analytics"],
     story:
       "Pantry was meant to be Amazon's corner shop for everyday essentials, but the assortment reflected what suppliers listed rather than what customers actually bought. We had a national feed of live Nielsen point-of-sale data sitting almost unused, so I turned it into a merchandising tool organised the way a real supermarket allocates shelf space. £25M of extra cash earned just by choosing better selection for our customers.",
