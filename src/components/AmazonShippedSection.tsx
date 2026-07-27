@@ -123,17 +123,8 @@ export const AmazonShippedSection = () => {
                           className="w-full h-full object-cover"
                           style={{ objectPosition: item.focus }}
                         />
-
-
-                        <button
-                          onClick={() => setFlippedId(item.id)}
-                          aria-label={`Read the story behind ${item.title}`}
-                          className="absolute bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-semibold shadow-lg hover:bg-foreground/90 hover:scale-105 transition-all"
-                        >
-                          <BookOpen className="w-4 h-4" />
-                          Read the story
-                        </button>
                       </motion.div>
+
                     ) : (
                       <motion.div
                         key="story"
