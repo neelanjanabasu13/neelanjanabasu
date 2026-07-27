@@ -54,7 +54,7 @@ export const FloatingNav = () => {
         className="fixed top-0 left-0 right-0 z-50 hidden md:block"
       >
         <div className={`max-w-6xl mx-auto px-6 py-4 transition-all duration-300 ${isScrolled ? "pt-3" : "pt-4"}`}>
-          <div className={`flex items-center justify-between rounded-full px-6 py-3 border border-border transition-all duration-300 ${isScrolled ? "bg-background/95 shadow-soft backdrop-blur-sm" : "bg-background/80"}`}>
+          <div className={`flex items-center justify-between rounded-full px-6 py-3 border border-border transition-all duration-300 ${isScrolled ? "bg-background/95 shadow-md backdrop-blur-sm" : "bg-background/80"}`}>
             {/* Logo/Brand */}
             <button
               onClick={() => scrollToSection("hero")}
