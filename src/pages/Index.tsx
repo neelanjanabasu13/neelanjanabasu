@@ -1,3 +1,4 @@
+import { CursorTrail } from "@/components/CursorTrail";
 import { FloatingNav } from "@/components/FloatingNav";
 import { HeroSection } from "@/components/HeroSection";
 import { AmazonPeerTicker } from "@/components/AmazonPeerTicker";
@@ -17,6 +18,7 @@ import { VineScrollbar } from "@/components/VineScrollbar";
 const Index = () => {
   return (
     <main className="relative min-h-screen">
+      <CursorTrail />
       <PageEdgeRails />
       <VineScrollbar />
       <SectionRail />
