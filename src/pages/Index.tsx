@@ -36,7 +36,9 @@ const Index = () => {
       <SectionDivider variant="zigzag" />
       <GuestbookSection />
       <SectionDivider variant="dotline" />
+      <PostscriptSection />
     </main>
+
   );
 };
 
