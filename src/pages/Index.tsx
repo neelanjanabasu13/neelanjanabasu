@@ -6,6 +6,7 @@ import { AmazonShippedSection } from "@/components/AmazonShippedSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { WorkWithMeSection } from "@/components/WorkWithMeSection";
 import { EducationSection } from "@/components/EducationSection";
+import { GuestbookSection } from "@/components/GuestbookSection";
 
 const Index = () => {
   return (
