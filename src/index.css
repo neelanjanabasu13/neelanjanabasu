@@ -258,6 +258,12 @@
   animation: ticker 60s linear infinite;
 }
 
+@media (max-width: 768px) {
+  .animate-ticker {
+    animation-duration: 25s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-ticker {
     animation: none;
