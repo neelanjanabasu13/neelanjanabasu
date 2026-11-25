@@ -5,6 +5,7 @@ import { LeafTrio } from "@/assets/motifs/Motifs";
 
 const actualNavItems = [
   { id: "ai-products", label: "AI builds" },
+  { id: "quietcrew", label: "Quietcrew" },
   { id: "portfolio", label: "Work portfolio" },
   { id: "experience", label: "Experience" },
   { id: "education", label: "Education" },

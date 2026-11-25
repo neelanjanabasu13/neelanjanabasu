@@ -3,6 +3,7 @@ import { FloatingNav } from "@/components/FloatingNav";
 import { HeroSection } from "@/components/HeroSection";
 import { AmazonPeerTicker } from "@/components/AmazonPeerTicker";
 import { AIBuiltSection } from "@/components/AIBuiltSection";
+import { QuietcrewSection } from "@/components/QuietcrewSection";
 import { AmazonShippedSection } from "@/components/AmazonShippedSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { WorkWithMeSection } from "@/components/WorkWithMeSection";
@@ -27,6 +28,8 @@ const Index = () => {
       <SectionDivider variant="lotus" />
       <AmazonPeerTicker />
       <AIBuiltSection />
+      <SectionDivider variant="zigzag" />
+      <QuietcrewSection />
       <SectionDivider variant="wave" />
       <AmazonShippedSection />
       <SectionDivider variant="fish" />
