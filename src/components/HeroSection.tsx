@@ -95,7 +95,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Lovable Expert Partner profile"
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-[#DC5A2E] bg-card/60 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
                 >
                   <BadgeCheck className="h-4 w-4 text-primary" aria-hidden="true" />
                   Lovable Expert Partner

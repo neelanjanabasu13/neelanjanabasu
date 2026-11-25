@@ -43,8 +43,10 @@ export const QuietcrewSection = () => (
         <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">
           What I <span className="italic">sell</span>
         </h2>
-        <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-          Quietcrew is my UK AI and automation consultancy, with live products people can buy today.
+        <p className="text-muted-foreground text-lg max-w-4xl mx-auto text-justify">
+          Alongside building, I founded{" "}
+          <a href="https://quietcrew.ai" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground underline underline-offset-4 decoration-[#DC5A2E] hover:decoration-foreground">Quietcrew</a>
+          , my own UK AI and automation consultancy, where I take products from idea to paying customers on my own: these are live, priced and on sale today, and Lovable has certified me as an Expert Partner for the client builds I take on there.
         </p>
       </motion.div>
       <div className="grid gap-5 md:grid-cols-3">
