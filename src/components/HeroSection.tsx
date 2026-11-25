@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Download, Linkedin, Mail, ChevronDown, Github } from "lucide-react";
+import { MapPin, Download, Linkedin, Mail, ChevronDown, Github, BadgeCheck } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { resumeData } from "@/data/resumeData";
 import profilePhoto from "@/assets/profile-photo.png";
@@ -80,6 +80,32 @@ export const HeroSection = () => {
               <Fish size={20} />
             </span>
           </motion.p>
+
+          {/* Expert Partner badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45 }}
+            className="flex justify-center mb-8"
+          >
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="https://lovable-partner-directory.lovable.app/partners/quietcrew"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Lovable Expert Partner profile"
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                >
+                  <BadgeCheck className="h-4 w-4 text-primary" aria-hidden="true" />
+                  Lovable Expert Partner
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>
+                Verified listing on the Lovable Partner Directory
+              </TooltipContent>
+            </Tooltip>
+          </motion.div>
 
           {/* Jump links */}
           <motion.div
