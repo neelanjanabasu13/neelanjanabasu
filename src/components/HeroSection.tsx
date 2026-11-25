@@ -115,6 +115,12 @@ export const HeroSection = () => {
             className="flex flex-wrap justify-center gap-6 mb-12"
           >
             <a
+              href="#quietcrew"
+              className="text-foreground font-medium underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors"
+            >
+              What I sell at Quietcrew
+            </a>
+            <a
               href="#ai-products"
               className="text-foreground font-medium underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors"
             >

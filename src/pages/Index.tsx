@@ -27,9 +27,9 @@ const Index = () => {
       <HeroSection />
       <SectionDivider variant="lotus" />
       <AmazonPeerTicker />
-      <AIBuiltSection />
-      <SectionDivider variant="zigzag" />
       <QuietcrewSection />
+      <SectionDivider variant="zigzag" />
+      <AIBuiltSection />
       <SectionDivider variant="wave" />
       <AmazonShippedSection />
       <SectionDivider variant="fish" />
