@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Peacock, LeafTrio, Sun, LotusLeaves, Fish, TreeOfLife } from "@/assets/motifs/Motifs";
 import { PanelLabel } from "./PanelLabel";
+import { WorkInquiry } from "./WorkInquiry";
 
 const testimonials = [
   {
@@ -93,6 +94,7 @@ export const WorkWithMeSection = () => {
             );
           })}
         </div>
+        <WorkInquiry />
       </div>
     </section>
   );

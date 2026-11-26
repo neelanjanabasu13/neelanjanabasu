@@ -20,14 +20,6 @@ const offers = [
     url: "https://quietcrew.ai/outshine",
     accent: "#1B6E86",
   },
-  {
-    name: "Advisory and builds",
-    audience: "For teams adopting AI",
-    price: "£99 Workflow Audit",
-    hook: "A Workflow Audit that finds where AI and automation can improve day-to-day work, plus 1:1 advisory sessions to help put those changes into practice.",
-    url: "https://quietcrew.ai",
-    accent: "#C1272D",
-  },
 ];
 
 export const QuietcrewSection = () => (
