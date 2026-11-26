@@ -46,6 +46,30 @@ const projects: AiProject[] = [
     ],
   },
   {
+    title: "AfterBell Collective",
+    platform: "Lovable",
+    hook: "An after-school booking demo that follows one place from parent enquiry to school dismissal: availability, timetable clashes, sibling pricing, and the register and payment record the provider is left with.",
+    links: [
+      { label: "Walkthrough", url: "https://contra.com/p/XB26PL3P-lessposting-this-for-the-second?r=neelanjana_basu_sr293gut" },
+    ],
+  },
+  {
+    title: "STASH",
+    platform: "Lovable",
+    hook: "An AI research workspace for unfinished ideas: import old notes or a public repository, and KROWE checks them against live web sources, then shows quotations, links and a build now, watch or park call.",
+    links: [
+      { label: "Live", url: "https://buildyourstash.lovable.app/" },
+    ],
+  },
+  {
+    title: "Kitty Gift Circle",
+    platform: "Lovable",
+    hook: "Group gifting built for the PayPal AI Hackathon: one link, a shared pot, card signatures and gift suggestions that fit the budget, with PayPal authorisations recalculating each share against the final price.",
+    links: [
+      { label: "Live", url: "https://kitty-gift-circle.lovable.app/" },
+    ],
+  },
+  {
     title: "Email Agent",
     platform: "Codex",
     hook: "My first AI agent: automating email triage and drafting end to end, the build that started the Shipping Anyway series.",
