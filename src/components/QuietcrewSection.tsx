@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { PanelLabel } from "./PanelLabel";
 
 const offers = [
@@ -49,31 +50,58 @@ export const QuietcrewSection = () => (
           , my own UK AI and automation consultancy, where I take products from idea to paying customers on my own: these are live, priced and on sale today, and Lovable has certified me as an Expert Partner for the client builds I take on there.
         </p>
       </motion.div>
-      <div className="grid gap-5 md:grid-cols-3">
-        {offers.map((o, i) => (
-          <motion.a
-            key={o.name}
-            href={o.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
-            whileHover={{ y: -4 }}
-            className="folk-card group hover:border-foreground/30 flex flex-col p-6"
-            style={{ borderTop: `6px solid ${o.accent}` }}
-          >
-            <span className="text-xs font-medium text-muted-foreground mb-2">{o.audience}</span>
-            <h3 className="text-xl font-medium text-foreground mb-1">{o.name}</h3>
-            <p className="text-sm font-medium text-foreground mb-3">{o.price}</p>
-            <p className="text-muted-foreground text-sm flex-1 text-justify">{o.hook}</p>
-            <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-foreground">
-              Visit <ExternalLink className="w-3.5 h-3.5" aria-hidden />
-            </span>
-          </motion.a>
-        ))}
-      </div>
+      <OfferDeck />
     </div>
   </section>
 );
+
+const OfferDeck = () => {
+  const [i, setI] = useState(0);
+  const n = offers.length;
+  const go = (d: number) => setI((v) => (v + d + n) % n);
+  return (
+    <div className="max-w-xl mx-auto">
+      <div className="relative h-64 sm:h-56">
+        {offers.map((o, idx) => {
+          const pos = (idx - i + n) % n;
+          return (
+            <motion.a
+              key={o.name}
+              href={o.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={pos === 0 ? 0 : -1}
+              aria-hidden={pos !== 0}
+              animate={{ y: pos * 12, scale: 1 - pos * 0.04, opacity: pos > 2 ? 0 : 1 - pos * 0.25 }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              style={{ zIndex: n - pos, borderTop: `6px solid ${o.accent}`, pointerEvents: pos === 0 ? "auto" : "none" }}
+              className="folk-card absolute inset-0 flex flex-col p-6 origin-top"
+            >
+              <div className="flex items-baseline justify-between gap-3 mb-2">
+                <h3 className="text-xl font-medium text-foreground">{o.name}</h3>
+                <span className="text-sm font-medium text-foreground whitespace-nowrap">{o.price}</span>
+              </div>
+              <span className="text-xs font-medium text-muted-foreground mb-3">{o.audience}</span>
+              <p className="text-muted-foreground text-sm flex-1 text-justify">{o.hook}</p>
+              <ExternalLink className="w-4 h-4 self-end text-foreground" aria-label={`Visit ${o.name}`} />
+            </motion.a>
+          );
+        })}
+      </div>
+      <div className="flex items-center justify-center gap-4 mt-8">
+        <button onClick={() => go(-1)} aria-label="Previous offer" title="Previous offer" className="p-1 text-foreground hover:text-foreground/70">
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <div className="flex items-center gap-2">
+          {offers.map((o, idx) => (
+            <button key={o.name} onClick={() => setI(idx)} aria-label={`Show ${o.name}`} title={o.name}
+              className={`h-2 rounded-full transition-all ${idx === i ? "bg-foreground w-4" : "w-2 bg-foreground/25 hover:bg-foreground/40"}`} />
+          ))}
+        </div>
+        <button onClick={() => go(1)} aria-label="Next offer" title="Next offer" className="p-1 text-foreground hover:text-foreground/70">
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+    </div>
+  );
+};
