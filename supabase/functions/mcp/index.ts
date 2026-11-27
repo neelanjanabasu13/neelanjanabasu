@@ -72,6 +72,7 @@ var projects = [
   },
   {
     title: "Slack Agent for Invisible Work",
+    award: "Winner, Slack \xD7 Supermums London Hackathon",
     platform: "Slack + Replit",
     hook: "A Slack agent that surfaces the invisible work across teams, built and won at the offline Slack \xD7 Supermums hackathon in London.",
     links: [
