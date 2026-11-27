@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ProjectCard } from "./ProjectCard";
 import { AICarousel } from "./AICarousel";
+import { GitHubActivity } from "./GitHubActivity";
 import { TreeOfLife, VineTendril, LotusLeaves } from "@/assets/motifs/Motifs";
 import { PanelLabel } from "./PanelLabel";
 
@@ -292,6 +293,7 @@ export const AIBuiltSection = () => {
             ))}
           </div>
           <AICarousel key={frame} projects={shown} />
+          <GitHubActivity />
         </motion.div>
       </div>
     </section>
