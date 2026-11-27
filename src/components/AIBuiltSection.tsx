@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ProjectCard } from "./ProjectCard";
 import { AICarousel } from "./AICarousel";
@@ -225,7 +226,17 @@ const aiProducts: Project[] = [
   },
 ];
 
+const PERSONAL_IDS = new Set([7, 10, 6, 5, 9]);
+const FRAMES = [
+  { key: "hackathons", label: "Hackathons" },
+  { key: "personal", label: "For myself" },
+] as const;
+
 export const AIBuiltSection = () => {
+  const [frame, setFrame] = useState<"hackathons" | "personal">("hackathons");
+  const shown = aiProducts.filter((p) =>
+    frame === "personal" ? PERSONAL_IDS.has(p.id) : !PERSONAL_IDS.has(p.id)
+  );
   return (
     <section id="ai-products" className="py-12 bg-background relative">
       {/* Corner cluster */}
@@ -262,7 +273,24 @@ export const AIBuiltSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <AICarousel projects={aiProducts} />
+          <div role="tablist" aria-label="Project frame" className="flex justify-center gap-2">
+            {FRAMES.map((f) => (
+              <button
+                key={f.key}
+                role="tab"
+                aria-selected={frame === f.key}
+                onClick={() => setFrame(f.key)}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+                  frame === f.key
+                    ? "bg-foreground text-background border-foreground"
+                    : "border-border text-foreground hover:border-foreground/40"
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+          <AICarousel key={frame} projects={shown} />
         </motion.div>
       </div>
     </section>
