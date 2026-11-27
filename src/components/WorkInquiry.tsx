@@ -32,7 +32,7 @@ export const WorkInquiry = () => {
     <div id="hire" className="folk-card mt-10 p-6 sm:p-8 max-w-3xl mx-auto">
       <h3 className="text-2xl font-medium text-foreground mb-2">Advisory and builds</h3>
       <p className="text-muted-foreground text-sm mb-5 text-justify">
-        A £99 Workflow Audit that finds where AI and automation can improve day-to-day work, plus 1:1 advisory sessions and custom builds through Quietcrew to help put those changes into practice.
+        A workflow audit that finds where AI and automation can improve day-to-day work, plus 1:1 advisory sessions and custom builds through Quietcrew to help put those changes into practice. Send me a note about what you are working on and I will reply with what fits and what it would cost.
       </p>
       {state === "done" ? (
         <p className="text-foreground font-medium" role="status">Thank you, your note has reached me and I will reply by email.</p>
