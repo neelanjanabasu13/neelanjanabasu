@@ -73,7 +73,7 @@ var projects = [
   {
     title: "Slack Agent for Invisible Work",
     platform: "Slack + Replit",
-    hook: "A Slack agent that surfaces the work nobody sees, built for the Devpost Agent Challenge.",
+    hook: "A Slack agent that surfaces the invisible work across teams, built and won at the offline Slack \xD7 Supermums hackathon in London.",
     links: [
       { label: "Build story", url: "https://neelanjana.substack.com/p/i-cooked-up-a-slack-agent-that-makes" },
       { label: "GitHub", url: "https://github.com/neelanjanabasu13/receipts-app" }

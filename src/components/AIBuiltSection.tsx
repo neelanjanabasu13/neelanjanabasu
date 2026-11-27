@@ -67,8 +67,9 @@ const aiProducts: Project[] = [
   {
     id: 2,
     title: "Slack Agent for Invisible Work",
+    award: "Winner, Slack × Supermums London Hackathon",
     platform: "Slack + Replit",
-    hook: "A Slack agent that surfaces the work nobody sees, built for the Devpost Agent Challenge.",
+    hook: "A Slack agent that surfaces the invisible work across teams, built and won at the offline Slack × Supermums hackathon in London.",
     links: [
       {
         label: "Build story",
