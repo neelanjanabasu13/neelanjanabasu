@@ -25,13 +25,13 @@ export const GitHubActivity = () => {
   return (
     <div className="mt-10">
       <div className="flex items-center justify-between mb-3 text-sm text-muted-foreground">
-        <span>{total} contributions on GitHub in the last year</span>
+        <span>{total} public contributions on GitHub in the last year</span>
         <a href={`https://github.com/${USER}`} target="_blank" rel="noopener noreferrer" aria-label="Open my GitHub profile" className="hover:text-foreground">
           <Github className="w-4 h-4" />
         </a>
       </div>
       <div className="overflow-x-auto">
-        <div className="flex gap-[3px] w-max mx-auto" role="img" aria-label={`GitHub contribution graph, ${total} contributions in the last year`}>
+        <div className="flex gap-[3px] w-max mx-auto" role="img" aria-label={`GitHub contribution graph, ${total} public contributions in the last year`}>
           {weeks.map((w, i) => (
             <div key={i} className="flex flex-col gap-[3px]">
               {w.map((d, j) => (
