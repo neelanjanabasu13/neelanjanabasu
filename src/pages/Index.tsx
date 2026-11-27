@@ -13,6 +13,7 @@ import { PostscriptSection } from "@/components/PostscriptSection";
 import { PageEdgeRails } from "@/components/PageEdgeRails";
 import { SectionRail } from "@/components/SectionRail";
 import { SectionDivider } from "@/components/SectionDivider";
+import { WorkWithMeCta } from "@/components/WorkWithMeCta";
 import { VineScrollbar } from "@/components/VineScrollbar";
 
 
@@ -28,10 +29,13 @@ const Index = () => {
       <SectionDivider variant="lotus" />
       <AmazonPeerTicker />
       <QuietcrewSection />
+      <WorkWithMeCta />
       <SectionDivider variant="zigzag" />
       <AIBuiltSection />
+      <WorkWithMeCta />
       <SectionDivider variant="wave" />
       <AmazonShippedSection />
+      <WorkWithMeCta />
       <SectionDivider variant="fish" />
       <ExperienceSection />
       <SectionDivider variant="peacock" />

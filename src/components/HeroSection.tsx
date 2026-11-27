@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Download, Linkedin, Mail, ChevronDown, Github, BadgeCheck } from "lucide-react";
+import { MapPin, Download, Linkedin, Mail, ChevronDown, Github, BadgeCheck, ArrowUpRight } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { resumeData } from "@/data/resumeData";
 import profilePhoto from "@/assets/profile-photo.png";
@@ -94,11 +94,15 @@ export const HeroSection = () => {
                   href="https://lovable-partner-directory.lovable.app/partners/quietcrew"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Lovable Expert Partner profile"
+                  aria-label="View my Lovable Expert Partner profile (opens in a new tab)"
                   className="inline-flex items-center gap-2 rounded-full border-2 border-[#DC5A2E] bg-card/60 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
                 >
                   <BadgeCheck className="h-4 w-4 text-primary" aria-hidden="true" />
                   Lovable Expert Partner
+                  <span className="ml-1 inline-flex items-center gap-1 rounded-full bg-primary px-2.5 py-0.5 text-xs font-semibold text-primary-foreground">
+                    View profile
+                    <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
+                  </span>
                 </a>
               </TooltipTrigger>
               <TooltipContent>
@@ -131,6 +135,12 @@ export const HeroSection = () => {
               className="text-foreground font-medium underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors"
             >
               What I built at Amazon
+            </a>
+            <a
+              href="#hire"
+              className="text-foreground font-medium underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors"
+            >
+              Work with me
             </a>
           </motion.div>
 
